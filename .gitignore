@@ -1,0 +1,8 @@
+node_modules/
+bower_components/
+.DS_Store
+.editorconfig
+.eslintrc.js
+/public/main.css
+/pa11y_screenCapture/*
+*.env*
