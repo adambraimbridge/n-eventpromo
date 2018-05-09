@@ -4,7 +4,6 @@
 //dummy array of topics
 //const indexOfEventTopics = ['00000000-0000-0000-0000-000000000000'];
 module.exports = function (eventConcepts) {
-	console.log(eventConcepts);
 
 	const url = '/eventpromo/api/';
 	const headers = new Headers();
