@@ -1,2 +1,151 @@
 @import "n-ui-foundations/main";
-@import "./styles/basic";
+
+.event-promo {
+	margin-bottom: 50px;
+}
+
+//copied from the onward-journey layout styles in grid/article
+.event-promo--takeover,
+.event-promo__content {
+	grid-area: onward;
+}
+
+.event-promo--takeover {
+	-ms-grid-row: 8;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 5;
+	grid-column: 1 / span 5;
+}
+// end copy and paste
+
+.event-promo--full-width {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		background: getColor('black-5');
+		width: 100vw;
+		margin-left: -50vw;
+		left: 50%;
+		height: 100%;
+		top: 0;
+		z-index: -1;
+	}
+}
+
+.event-promo--takeover {
+
+	@include oGridRespondTo(L) {
+		width: 90%;
+		margin: 0 auto;
+
+		.o-teaser-collection__item:nth-child(n+5) {
+			margin-top: 24px;
+		}
+	}
+
+	.standalone-teaser-heading {
+		margin: 40px 0 24px;
+	}
+}
+
+.event-promo__title {
+	@include oTypographySans(1);
+	&:after {
+		content: '';
+		display: block;
+		width: 60px;
+		margin-top: 5px;
+		border-bottom: 4px solid getColor('black');
+		position: absolute;
+		z-index: 1;
+	}
+}
+
+.event-promo {
+	.n-image-wrapper--placeholder.n-image-wrapper--lazy-loading:before {
+		animation: none;
+	}
+}
+
+//inline newsletter replacement block
+.event-promo-inline {
+
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 100%;
+	border: 1px solid getColor('black');
+}
+
+.event-promo-inline__img {
+	position: absolute;
+	right: -5%;
+	bottom: -15%;
+	max-width: 50%;
+}
+
+.event-promo-inline__description {
+	display: inline-block;
+	flex-grow: 1;
+	margin-top: 12px;
+}
+
+.event-promo-inline__submit {
+	@include oButtons();
+	@include oButtonsSize(big);
+	margin: 16px 16px 16px 0;
+}
+
+//inline newsletter replacement block
+.event-promo-inline {
+
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 100%;
+	border: 1px solid getColor('black');
+}
+
+.event-promo-inline__img {
+	position: absolute;
+	right: -5%;
+	bottom: -15%;
+	max-width: 50%;
+}
+
+.event-promo-inline__description {
+	display: inline-block;
+	flex-grow: 1;
+	margin-top: 12px;
+}
+
+.event-promo-inline__submit {
+	@include oButtons();
+	@include oButtonsSize(big);
+	margin: 16px 16px 16px 0;
+}
+
+.event-promo--rhr {
+	padding: 4px;
+}
+
+.event-promo--simple {
+	display: block;
+	padding: 20px;
+	.event-promo__description {
+		margin: 0 oTypographySpacingSize(5) 0 0;
+		font-weight: 600;
+		vertical-align: middle;
+	}
+	.event-promo__form {
+		display: inline-block;
+	}
+	.event-promo__submit {
+		@include oButtonsTheme(primary);
+		margin-left: 0;
+	}
+}
+
