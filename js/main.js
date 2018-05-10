@@ -7,8 +7,8 @@ module.exports.init = () => {
 
 	//How do we define which slot to be used?
 	//const promoSlots = document.querySelectorAll('.js-event-promo');
-	const promoSlot = document.querySelector('.js-event-promo');
-	const eventTags = document.querySelector('#js-event-promo-data').innerHTML;
+	//const promoSlot = document.querySelector('.js-event-promo');
+	//const eventTags = document.querySelector('#js-event-promo-data').innerHTML;
 
 	// if(eventTags) {
 
