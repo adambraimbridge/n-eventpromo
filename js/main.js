@@ -5,8 +5,6 @@ const template = require('../templates/event-promo-inarticle.html');
 function mapEventData(theEvent) {
 	return new Promise((resolve, reject) => {
 		if(theEvent) {
-			console.log(typeof theEvent);
-			console.log(theEvent.prefLabel);
 			const mappedEvent = {
 				id: theEvent.id,
 				title: theEvent.prefLabel,
@@ -32,24 +30,13 @@ module.exports.init = () => {
 
 	if(document.querySelector('.js-event-promo-data')) {
 		const theEvent = JSON.parse(document.querySelector('.js-event-promo-data').innerHTML);
-		console.log(theEvent);
 
 		return mapEventData(theEvent)
 		.then((eventData) => {
-			console.log(eventData);
 			return promoSlot.innerHTML = template(eventData);
 		})
 		.catch(() => {
-			console.log('reject');
 			return;
 		});
 	}
-
-	// if(!theEvent) {
-	// 	console.log(theEvent);
-	// 	return;
-	// }
-
-
-
 };
