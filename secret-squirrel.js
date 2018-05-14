@@ -13,5 +13,6 @@ module.exports = {
 			'ca72f1e8-a206-4061-8360-ba0bc3288e0e',
 			'6cd42b94-247e-4033-af2e-1472e8e055ee',
 			'0afcb673-ad8d-4227-b4a7-cbb93a1389ab'
+		]
 	}
 };
