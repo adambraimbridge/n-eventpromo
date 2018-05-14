@@ -1,0 +1,42 @@
+{
+    "id": "01111111-1111-1111-1111-111111111111",
+    "type": "http://www.ft.com/ontology/BusinessEvent",
+    "prefLabel": "An AI Strategy Map for the CIO",
+    "shortLabel": "Short label for this concept",
+    "strapline": "Deploying artificial intelligence to drive productivity growth",
+    "description": "Artificial intelligence and machine learning are compelling CIOs to re-think IT strategies.",
+    "_imageUrl": "https://live.ft.com/var/ftlive/storage/images/events/an-ai-strategy-map-for-the-cio/895713-1-eng-GB/An-AI-Strategy-Map-for-the-CIO.jpg",
+    "eventURL": "link to the event",
+    "emailAddress": "Email address for this event",
+    "facebookPage": "Facebook page for this event",
+    "twitterHandle": "Twitter handle for this event",
+    "scheduledStartTime": "2018-04-25T13:00:00+00:00",
+    "scheduledEndTime": "2018-04-25T16:00:00+00:00",
+    "relatedConcepts": [
+      {
+        "id": "http://api.ft.com/things/11111111-1111-1111-1111-111111111111",
+        "predicate": "http://www.ft.com/ontology/hasEventFocus"
+      },
+      {
+        "id": "http://api.ft.com/things/eca03e94-2f68-46f6-8ef4-747fdecf80ae",
+        "predicate": "http://www.ft.com/ontology/hasEventLocation"
+      },
+      {
+        "id": "http://api.ft.com/things/21111111-1111-1111-1111-111111111111",
+        "predicate": "http://www.ft.com/ontology/hasSpeaker"
+      },
+      {
+        "id": "http://api.ft.com/things/ca72f1e8-a206-4061-8360-ba0bc3288e0e",
+        "predicate": "http://www.ft.com/ontology/hasSpeaker"
+      },
+      {
+        "id": "http://api.ft.com/things/6cd42b94-247e-4033-af2e-1472e8e055ee",
+        "predicate": "http://www.ft.com/ontology/hasSpeaker"
+      },
+      {
+        "id": "http://api.ft.com/things/0afcb673-ad8d-4227-b4a7-cbb93a1389ab",
+        "predicate": "http://www.ft.com/ontology/involvesPerson"
+      }
+    ],
+    "lastUpdate": "1525098575"
+  }
