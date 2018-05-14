@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('@financial-times/n-internal-tool');
-//const fixtures = require('./fixtures.json');
+const fixtures = require('./fixtures.json');
 const chalk = require('chalk');
 const errorHighlight = chalk.bold.red;
 const highlight = chalk.bold.green;
@@ -23,8 +23,9 @@ const app = module.exports = express({
 
 app.get('/', (req, res) => {
 	res.render('demo', Object.assign({
-		title: 'Test App'
-	} /*, TODO add fixtures*/));
+		title: 'Test App',
+		fixtures: JSON.stringify(fixtures)
+	}));
 });
 
 function runPa11yTests () {

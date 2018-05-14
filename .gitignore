@@ -3,6 +3,6 @@ bower_components/
 .DS_Store
 .editorconfig
 .eslintrc.js
-/public/main.css
+/public/
 /pa11y_screenCapture/*
 *.env*
