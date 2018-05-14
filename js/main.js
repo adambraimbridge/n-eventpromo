@@ -1,44 +1,55 @@
 //import {broadcast} from 'n-ui-foundations';
 //const lazyLoadImages = require('n-image').lazyLoad;
-//const eventPromoClient = require('./eventpromo-client');
-//const template = require('../templates/event-promo-inarticle');
+const template = require('../templates/event-promo-inarticle.html');
+
+function mapEventData(theEvent) {
+	return new Promise((resolve, reject) => {
+		if(theEvent) {
+			console.log(typeof theEvent);
+			console.log(theEvent.prefLabel);
+			const mappedEvent = {
+				id: theEvent.id,
+				title: theEvent.prefLabel,
+				cta: theEvent.eventDetailsUrl,
+				mainImage: theEvent._imageUrl,
+				start: theEvent.scheduledStartTime,
+				eventUrl: theEvent.eventURL,
+				eventFocus: 'Brexit' //TODO get this from the data returned
+			}
+			resolve(mappedEvent);
+		} else {
+			reject('no event');
+		}
+
+	});
+}
 
 module.exports.init = () => {
 
 	//How do we define which slot to be used?
-	//const promoSlots = document.querySelectorAll('.js-event-promo');
-	//const promoSlot = document.querySelector('.js-event-promo');
-	//const eventTags = document.querySelector('#js-event-promo-data').innerHTML;
+	const promoSlot = document.querySelector('.js-event-promo');
+	let theEvent;
 
-	// if(eventTags) {
+	if(document.querySelector('.js-event-promo-data')) {
+		const theEvent = JSON.parse(document.querySelector('.js-event-promo-data').innerHTML);
+		console.log(theEvent);
 
-	// 	eventPromoClient(eventTags)
-	// 	.then((event) => {
-	// 		//return the basics for rendering an event
-	// 		if (event === undefined) {
-	// 			return;
-	// 		}
+		return mapEventData(theEvent)
+		.then((eventData) => {
+			console.log(eventData);
+			return promoSlot.innerHTML = template(eventData);
+		})
+		.catch(() => {
+			console.log('reject');
+			return;
+		});
+	}
 
-	// 		return {
-	// 			id: event.id,
-	// 			title: event.prefLabel,
-	// 			cta: event.eventDetailsUrl,
-	// 			mainImage: event._imageUrl,
-	// 			start: event.scheduledStartTime,
-	// 			eventUrl: event.eventURL,
-	// 			eventFocus: 'Brexit' //TODO get this from the data returned
-	// 		};
-
-	// 	}).then(eventData => {
-	// 		if(!eventData) {
-	// 			return;
-	// 		}
-	// 		promoSlot.innerHTML = template(eventData);
-	// 	})
-	// 	.catch(error => {
-	// 		throw error;
-	// 	});
+	// if(!theEvent) {
+	// 	console.log(theEvent);
+	// 	return;
 	// }
 
-	return;
+
+
 };

@@ -1,1 +1,3 @@
-export * from './js/main';
+module.exports = {
+	eventPromoClient: require('./js/main')
+}
