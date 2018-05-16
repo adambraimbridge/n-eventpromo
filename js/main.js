@@ -26,7 +26,6 @@ module.exports.init = () => {
 
 	//How do we define which slot to be used?
 	const promoSlot = document.querySelector('.js-event-promo');
-	let theEvent;
 
 	if(document.querySelector('.js-event-promo-data')) {
 		const theEvent = JSON.parse(document.querySelector('.js-event-promo-data').innerHTML);
