@@ -1,0 +1,32 @@
+
+//inline newsletter replacement block
+.event-promo-inline {
+	padding: 20px 20px 0;
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 100%;
+	border: 1px solid getColor('black-70');
+}
+
+.event-promo-inline__img {
+	position: absolute;
+    top: -10%;
+    right: 2%;
+    max-width: 320px;
+}
+
+.event-promo-inline__btn {
+	@include oButtons();
+	@include oButtonsSize(big);
+	margin: 16px 16px 16px 0;
+}
+
+.event-promo-inline__cta {
+	margin-top:40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}

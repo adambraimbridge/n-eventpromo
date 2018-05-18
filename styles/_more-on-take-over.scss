@@ -1,0 +1,46 @@
+
+//copied from the onward-journey layout styles in grid/article
+.event-promo--takeover,
+.event-promo__content {
+	grid-area: onward;
+}
+
+.event-promo--takeover {
+	// -ms-grid-row: 8;
+	// -ms-grid-column: 1;
+	// -ms-grid-column-span: 5;
+	grid-row: 8;
+	grid-column: 1 / span 5;
+}
+// end copy and paste
+
+.event-promo--full-width {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		background: getColor('black-5');
+		width: 100vw;
+		margin-left: -50vw;
+		left: 50%;
+		height: 100%;
+		top: 0;
+		z-index: -1;
+	}
+}
+
+.event-promo--takeover {
+
+	@include oGridRespondTo(L) {
+		width: 90%;
+		margin: 0 auto;
+
+		.o-teaser-collection__item:nth-child(n+5) {
+			margin-top: 24px;
+		}
+	}
+
+	.standalone-teaser-heading {
+		margin: 40px 0 24px;
+	}
+}
