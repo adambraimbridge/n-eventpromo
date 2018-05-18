@@ -1,14 +1,21 @@
-<div>
-	<span class="event-promo__description">More about {{eventFocus}} with
-		<a href="https://live.ft.com/">Live FT</a>
-	</span>
-</div>
-<section class="event-promo-inline event-promo--simple">
-	<h2>{{title}}</h2>
-	<span>{{id}}</span>
-	<div class="event-promo-inline__form">
-		<a href="{{eventUrl}}" class="event-promo-inline__submit">Find out more</a>
+<section class="event-promo-inline" data-event-focus="{{eventFocus}}" data-focus-concept="{{id}}">
+	<div class="event-promo-inline__blocks">
+		<div class="event-promo__title-block">
+			<h2 class="event-promo__title">{{title}}</h2>
+			<span class="event-promo__location">London</span>|
+			<span class="event-promo__date">{{start}}</span>
+		</div>
+		<div>
+			<img class="event-promo-inline__img" src="{{mainImage}}" alt="{{title}}">
+		</div>
+	</div>
+	<div class="event-promo-inline__blocks event-promo-inline__cta">
+		<div>
+			<a href="{{eventUrl}}" class="event-promo-inline__btn">Find out more</a>
+		</div>
+		<div class="event-promo-inline__brand">
+			<span>Presented by</span><span>logo goes here</span>
+		</div>
 	</div>
 
-	<img class="event-promo-inline__img" src="{{mainImage}}" alt="{{title}}">
 </section>
