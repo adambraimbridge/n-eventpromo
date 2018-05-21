@@ -12,11 +12,23 @@
 	}
 }
 .event-promo__title-block {
-	max-width: 50%;
+	@include oGridRespondTo($from: S, $until: XL) {
+		max-width: 50%;
+	}
+	@include oGridRespondTo($until: S) {
+		order:1;
+		max-width: 100%;
+	}
 }
 .event-promo__title {
-	margin:0 0 5px;
-	@include oTypographyDisplayBold($scale: 6);
+	@include oGridRespondTo($from: S, $until: XL) {
+		margin:0 0 5px;
+		@include oTypographyDisplayBold($scale: 6);
+	}
+	@include oGridRespondTo($until: S) {
+		margin-bottom: 0;
+		@include oTypographyDisplayBold($scale: 4);
+	}
 }
 
 .event-promo__location {
@@ -24,7 +36,5 @@
 	text-transform: uppercase;
 
 }
-
-
 
 @import './styles/inarticle';

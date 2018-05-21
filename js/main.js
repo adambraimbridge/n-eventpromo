@@ -10,7 +10,7 @@ function mapEventData(theEvent) {
 				id: theEvent.id,
 				title: theEvent.prefLabel,
 				cta: theEvent.eventDetailsUrl,
-				mainImage: theEvent._imageUrl,
+				mainImage: encodeURI(theEvent._imageUrl),
 				start: moment(theEvent.scheduledStartTime).format('D MMMM YYYY'),
 				eventUrl: theEvent.eventURL,
 				eventFocus: 'Brexit' //TODO get this from the data returned
