@@ -1,5 +1,6 @@
 //import {broadcast} from 'n-ui-foundations';
 //const lazyLoadImages = require('n-image').lazyLoad;
+const moment = require('moment');
 const template = require('../templates/event-promo-inarticle.html');
 
 function mapEventData(theEvent) {
@@ -10,7 +11,7 @@ function mapEventData(theEvent) {
 				title: theEvent.prefLabel,
 				cta: theEvent.eventDetailsUrl,
 				mainImage: theEvent._imageUrl,
-				start: theEvent.scheduledStartTime,
+				start: moment(theEvent.scheduledStartTime).format('D MMMM YYYY'),
 				eventUrl: theEvent.eventURL,
 				eventFocus: 'Brexit' //TODO get this from the data returned
 			}
