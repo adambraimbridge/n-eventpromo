@@ -2,8 +2,11 @@
 	<div class="event-promo-inline__blocks">
 		<div class="event-promo__title-block">
 			<h2 class="event-promo__title">{{title}}</h2>
-			<span class="event-promo__location">London</span>|
-			<span class="event-promo__date">{{start}}</span>
+			<div class="event-promo__location">
+				<span>London</span>|
+				<span class="event-promo__date">{{start}}</span>
+			</div>
+
 		</div>
 		<div>
 			<img class="event-promo-inline__img" src="{{mainImage}}" alt="{{title}}">
@@ -11,10 +14,10 @@
 	</div>
 	<div class="event-promo-inline__blocks event-promo-inline__cta">
 		<div>
-			<a href="{{eventUrl}}" class="event-promo-inline__btn">Find out more</a>
+			<a href="{{eventUrl}}" class="event-promo-inline__btn">Register now</a>
 		</div>
 		<div class="event-promo-inline__brand">
-			<span>Presented by</span><span>logo goes here</span>
+			<span>Presented by</span><span class="event-promo__visually-hidden" >FT live</span>
 		</div>
 	</div>
 

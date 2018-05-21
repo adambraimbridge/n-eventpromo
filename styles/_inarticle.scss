@@ -13,14 +13,18 @@
 .event-promo-inline__img {
 	position: absolute;
 	top: -10%;
-	right: 2%;
+	right: 2.5%;
 	max-width: 320px;
 }
 
 .event-promo-inline__btn {
 	@include oButtons();
 	@include oButtonsSize(big);
+	//event btn style overrides
 	margin: 16px 16px 16px 0;
+	color: getColor('black-70');
+	border: 1px solid getColor('black-70');
+
 }
 
 .event-promo-inline__cta {
@@ -29,4 +33,28 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.event-promo-inline__brand {
+	display: flex;
+	align-items: center;
+	span {
+		padding-right: 10px;
+	}
+	&::after {
+		display: inline-block;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: 50%;
+		background-color: transparent;
+		content: ' ';
+		width: 40px;
+		height: 40px;
+		background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/specialisttitle-v1:brand-live-ft-logo?source=n-eventpromo')
+	}
+
+}
+
+.event-promo__visually-hidden {
+	display: none;
 }

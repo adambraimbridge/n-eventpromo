@@ -1,9 +1,5 @@
 @import "n-ui-foundations/main";
-<<<<<<< HEAD
 @import 'o-buttons/main';
-=======
-@import "o-buttons/main";
->>>>>>> master
 
 .event-promo {
 	margin-bottom: 50px;
@@ -20,10 +16,17 @@
 }
 .event-promo__title {
 	margin:0 0 5px;
-	@include oTypographySerif(1);
-	font-size: 40px;
-	line-height: 1.2em;
-	font-weight: bolder;
+	@include oTypographyDisplayBold($scale: 6);
+	//font-size: 40px;
+	//line-height: 1.1em;
 }
+
+.event-promo__location {
+	@include oTypographyDisplay($scale: 1);
+	text-transform: uppercase;
+
+}
+
+
 
 @import './styles/inarticle';
