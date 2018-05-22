@@ -5,11 +5,11 @@
 	flex-direction: column;
 	position: relative;
 	border: 1px solid getColor('black-70');
-	@include oGridRespondTo($from: S, $until: XL) {
+	@include oGridRespondTo($from: M) {
 		padding: 20px 20px 0;
 	}
 
-	@include oGridRespondTo($until: S) {
+	@include oGridRespondTo($until: M) {
 		padding: 0;
 	}
 }
@@ -17,18 +17,18 @@
 .event-promo-inline__blocks {
 	display: flex;
 
-	@include oGridRespondTo($until: S) {
+	@include oGridRespondTo($until: M) {
 		flex-direction: column;
 	}
 }
 
 .event-promo-inline__img {
-	@include oGridRespondTo($from: S, $until: XL) {
+	@include oGridRespondTo($from: M) {
 		position: absolute;
 		top: -10%;
 		right: 2.5%;
 	}
-	@include oGridRespondTo($until: S) {
+	@include oGridRespondTo($until: M) {
 		position: relative;
 		top: 0;
 		right:0;
@@ -45,11 +45,11 @@
 	color: getColor('black-70');
 	border: 1px solid getColor('black-70');
 
-	@include oGridRespondTo($from: S, $until: XL) {
+	@include oGridRespondTo($from: M) {
 		margin: 16px 16px 16px 0;
 	}
 
-	@include oGridRespondTo($until: S) {
+	@include oGridRespondTo($until: M) {
 		margin: 8px auto;
 	}
 }
@@ -60,11 +60,11 @@
 	justify-content: space-between;
 	align-items: center;
 
-	@include oGridRespondTo($from: S, $until: XL) {
+	@include oGridRespondTo($from: M) {
 		margin-top:40px;
 	}
 
-	@include oGridRespondTo($until: S) {
+	@include oGridRespondTo($until: M) {
 		margin-bottom: 10px;
 		flex-direction: column;
 	}
@@ -88,7 +88,7 @@
 		background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/specialisttitle-v1:brand-live-ft-logo?source=n-eventpromo')
 	}
 
-	@include oGridRespondTo($until: S) {
+	@include oGridRespondTo($until: M) {
 		padding-left: 61%;
 	}
 }
