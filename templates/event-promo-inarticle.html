@@ -1,19 +1,22 @@
 <section class="event-promo-inline" data-event-focus="{{eventFocus}}" data-focus-concept="{{id}}">
 	<div class="event-promo-inline__blocks">
 		<div class="event-promo__title-block">
-			<h2 class="event-promo__title">{{title}}</h2>
+			<a href="{{eventUrl}}" class="event-promo__title" data-trackable="event-promo">{{eventTitle}}</a>
 			<div class="event-promo__location">
-				<span>London</span> | <span class="event-promo__date">{{start}}</span>
+				<span>{{eventLocation}}</span> | <span class="event-promo__date">{{eventStart}}</span>
 			</div>
 
 		</div >
-		<div class="event-promo-inline__img-block">
-			<img class="event-promo-inline__img" src="https://www.ft.com/__origami/service/image/v2/images/raw/{{mainImage}}?source=next&amp;fit=scale-down&amp;compression=best&amp;width=320" alt="{{title}}" data-n-image-lazy-load-js role="presentation" >
-		</div>
+		<a href="{{eventUrl}}" data-trackable="event-promo">
+			<div class="n-image-wrapper o-teaser__image-placeholder event-promo-inline__img-block">
+				<img class="event-promo-inline__img" src="https://www.ft.com/__origami/service/image/v2/images/raw/{{mainImage}}?source=next&amp;fit=scale-down&amp;compression=best&amp;width=320" alt="{{eventTitle}}" data-n-image-lazy-load-js role="presentation" >
+			</div>
+		</a>
+
 	</div>
 	<div class="event-promo-inline__blocks event-promo-inline__cta">
 		<div>
-			<a href="{{eventUrl}}" class="event-promo-inline__btn">Register now</a>
+			<a href="{{eventUrl}}" class="event-promo-inline__btn"  data-trackable="event-promo" >Register now</a>
 		</div>
 		<div class="event-promo-inline__brand">
 			<span>Presented by</span><span class="event-promo__visually-hidden" >FT live</span>
