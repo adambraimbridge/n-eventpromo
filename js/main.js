@@ -8,12 +8,12 @@ function mapEventData(theEvent) {
 		if(theEvent) {
 			const mappedEvent = {
 				id: theEvent.id,
-				title: theEvent.prefLabel,
+				eventTitle: theEvent.prefLabel,
 				cta: theEvent.eventDetailsUrl,
 				mainImage: encodeURI(theEvent._imageUrl),
-				start: moment(theEvent.scheduledStartTime).format('D MMMM YYYY'),
+				eventStart: moment(theEvent.scheduledStartTime).format('D MMMM YYYY'),
 				eventUrl: theEvent.eventURL,
-				eventFocus: 'Brexit' //TODO get this from the data returned
+				eventLocation: 'London' //TODO get this from the tags
 			}
 			resolve(mappedEvent);
 		} else {

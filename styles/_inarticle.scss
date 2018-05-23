@@ -12,6 +12,10 @@
 	@include oGridRespondTo($until: M) {
 		padding: 0;
 	}
+
+	@include oGridRespondTo($until: S) {
+		max-width: 95%;
+	}
 }
 
 .event-promo-inline__blocks {
@@ -51,6 +55,8 @@
 
 	@include oGridRespondTo($until: M) {
 		margin: 8px auto;
+		padding-left: 80px;
+    	padding-right: 80px;
 	}
 }
 
@@ -73,6 +79,7 @@
 .event-promo-inline__brand {
 	display: flex;
 	align-items: center;
+	@include oTypographySans($scale: -2);
 	span {
 		padding-right: 10px;
 	}
@@ -83,13 +90,17 @@
 		background-position: 50%;
 		background-color: transparent;
 		content: ' ';
-		width: 40px;
-		height: 40px;
+		width: 60px;
+		height: 60px;
 		background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/specialisttitle-v1:brand-live-ft-logo?source=n-eventpromo')
 	}
 
 	@include oGridRespondTo($until: M) {
-		padding-left: 61%;
+		padding-left: 75%;
+	}
+
+	@include oGridRespondTo($until: S) {
+		padding-left: 65%;
 	}
 }
 
