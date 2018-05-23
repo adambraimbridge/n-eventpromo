@@ -27,8 +27,8 @@
 }
 .event-promo__title {
 	padding: 2px 0;
-    color: inherit;
-    text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 	border: 0;
 
 	@include oGridRespondTo($from: M) {
