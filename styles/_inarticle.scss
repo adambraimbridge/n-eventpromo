@@ -96,11 +96,8 @@
 	}
 
 	@include oGridRespondTo($until: M) {
-		padding-left: 75%;
-	}
-
-	@include oGridRespondTo($until: S) {
-		padding-left: 65%;
+		align-self: flex-end;
+    	padding-right: 20px;
 	}
 }
 
