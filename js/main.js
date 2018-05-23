@@ -1,7 +1,7 @@
 //import {broadcast} from 'n-ui-foundations';
 //const lazyLoadImages = require('n-image').lazyLoad;
 const moment = require('moment');
-const template = require('../templates/event-promo-inarticle.html');
+const template = require('../templates/inarticle.html');
 
 function mapEventData(theEvent) {
 	return new Promise((resolve, reject) => {
