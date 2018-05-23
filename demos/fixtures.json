@@ -20,22 +20,6 @@
       {
         "id": "http://api.ft.com/things/eca03e94-2f68-46f6-8ef4-747fdecf80ae",
         "predicate": "http://www.ft.com/ontology/hasEventLocation"
-      },
-      {
-        "id": "http://api.ft.com/things/21111111-1111-1111-1111-111111111111",
-        "predicate": "http://www.ft.com/ontology/hasSpeaker"
-      },
-      {
-        "id": "http://api.ft.com/things/ca72f1e8-a206-4061-8360-ba0bc3288e0e",
-        "predicate": "http://www.ft.com/ontology/hasSpeaker"
-      },
-      {
-        "id": "http://api.ft.com/things/6cd42b94-247e-4033-af2e-1472e8e055ee",
-        "predicate": "http://www.ft.com/ontology/hasSpeaker"
-      },
-      {
-        "id": "http://api.ft.com/things/0afcb673-ad8d-4227-b4a7-cbb93a1389ab",
-        "predicate": "http://www.ft.com/ontology/involvesPerson"
       }
     ],
     "lastUpdate": "1525098575"
