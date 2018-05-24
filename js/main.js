@@ -1,44 +1,42 @@
 //import {broadcast} from 'n-ui-foundations';
 //const lazyLoadImages = require('n-image').lazyLoad;
-//const eventPromoClient = require('./eventpromo-client');
-//const template = require('../templates/event-promo-inarticle');
+const moment = require('moment');
+const template = require('../templates/inarticle.html');
+
+function mapEventData(theEvent) {
+	return new Promise((resolve, reject) => {
+		if (theEvent) {
+			const mappedEvent = {
+				id: theEvent.id,
+				eventTitle: theEvent.prefLabel,
+				cta: theEvent.eventDetailsUrl,
+				mainImage: encodeURI(theEvent._imageUrl),
+				eventStart: moment(theEvent.scheduledStartTime).format('D MMMM YYYY'),
+				eventUrl: theEvent.eventURL,
+				eventLocation: 'London' //TODO get this from the tags
+			}
+			resolve(mappedEvent);
+		} else {
+			reject('no event');
+		}
+
+	});
+}
 
 module.exports.init = () => {
 
 	//How do we define which slot to be used?
-	//const promoSlots = document.querySelectorAll('.js-event-promo');
-	//const promoSlot = document.querySelector('.js-event-promo');
-	//const eventTags = document.querySelector('#js-event-promo-data').innerHTML;
+	const promoSlot = document.querySelector('.js-event-promo');
 
-	// if(eventTags) {
+	if (document.querySelector('.js-event-promo-data')) {
+		const theEvent = JSON.parse(document.querySelector('.js-event-promo-data').innerHTML);
 
-	// 	eventPromoClient(eventTags)
-	// 	.then((event) => {
-	// 		//return the basics for rendering an event
-	// 		if (event === undefined) {
-	// 			return;
-	// 		}
-
-	// 		return {
-	// 			id: event.id,
-	// 			title: event.prefLabel,
-	// 			cta: event.eventDetailsUrl,
-	// 			mainImage: event._imageUrl,
-	// 			start: event.scheduledStartTime,
-	// 			eventUrl: event.eventURL,
-	// 			eventFocus: 'Brexit' //TODO get this from the data returned
-	// 		};
-
-	// 	}).then(eventData => {
-	// 		if(!eventData) {
-	// 			return;
-	// 		}
-	// 		promoSlot.innerHTML = template(eventData);
-	// 	})
-	// 	.catch(error => {
-	// 		throw error;
-	// 	});
-	// }
-
-	return;
+		return mapEventData(theEvent)
+			.then((eventData) => {
+				return promoSlot.innerHTML = template(eventData);
+			})
+			.catch(() => {
+				return;
+			});
+	}
 };

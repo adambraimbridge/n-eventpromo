@@ -1,0 +1,101 @@
+//inline newsletter replacement block
+.event-promo-inline {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	@include oGridRespondTo($from: M) {
+		padding: 20px 20px 0;
+		border: 1px solid getColor('black-70');
+	}
+	@include oGridRespondTo($until: M) {
+		padding: 0;
+	}
+	@include oGridRespondTo($until: S) {
+		//flex-basis: 70%;
+	}
+}
+
+.event-promo-inline__blocks {
+	display: flex;
+	@include oGridRespondTo($until: M) {
+		flex-direction: column; //padding:20px;
+	}
+}
+
+.event-promo-inline__img {
+	@include oGridRespondTo($from: M) {
+		position: absolute;
+		top: -10%;
+		right: 2.5%;
+	}
+	@include oGridRespondTo($until: M) {
+		position: relative;
+		top: 0;
+		right: 0;
+		width: 100%;
+		order: -1;
+	}
+}
+
+.event-promo-inline__btn {
+	@include oButtons();
+	@include oButtonsSize(big); //event btn style overrides
+	color: getColor('black-70');
+	border: 1px solid getColor('black-70');
+	@include oGridRespondTo($from: M) {
+		margin: 16px 16px 16px 0;
+	}
+	@include oGridRespondTo($until: M) {
+		margin: 8px auto;
+		padding-left: 80px;
+		padding-right: 80px;
+	}
+}
+
+.event-promo-inline__cta {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	@include oGridRespondTo($from: M) {
+		margin-top:40px;
+	}
+	@include oGridRespondTo($until: M) {
+		margin-bottom: 10px;
+		flex-direction: column;
+		border: 1px solid getColor('black-70');
+		border-top: none;
+		width: 80vw;
+		padding: 0 20px;
+		align-self: center;
+	}
+}
+
+.event-promo-inline__brand {
+	display: flex;
+	align-items: center;
+	@include oTypographySans($scale: -2);
+	span {
+		padding-right: 10px;
+	}
+	&::after {
+		display: inline-block;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: 50%;
+		background-color: transparent;
+		content: ' ';
+		width: 60px;
+		height: 60px;
+		background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/specialisttitle-v1:brand-live-ft-logo?source=n-eventpromo')
+	}
+	@include oGridRespondTo($until: M) {
+		align-self: flex-end;
+		padding-bottom: 10px;
+	}
+}
+
+.event-promo__visually-hidden {
+	@include oNormaliseVisuallyHidden();
+}
