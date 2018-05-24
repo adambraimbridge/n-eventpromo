@@ -8,7 +8,7 @@ Shared configuration and templates for ft live event promotions on ft.com
 
 Add the component:
 
-`npm install n-eventpromo --save`
+`npm install @financial-times/n-eventpromo`
 
 ## Usage
 ---
@@ -27,7 +27,7 @@ The POC of this Ui component will render if the following two conditions are tru
 1. feature flag showEventPromo = true
 2. There is an event object with the class of 'event-promo-js' in a script tag as follows.
 
-`<script class="event-promo-js"type="application/json"> {
+`<script class="event-promo-js"type="application/json">
 	</script>`
 
 The event object example is expected to have the following properties:
