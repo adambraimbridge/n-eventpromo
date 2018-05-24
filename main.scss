@@ -1,9 +1,15 @@
 @import "n-ui-foundations/main";
 @import 'o-buttons/main';
+@import 'o-grid/main';
 
+@include oGridAddLayout(
+	$layout-name: MS,
+	$layout-width: 700px
+);
+$o-grid-debug-mode: true;
 .event-promo {
 	margin-bottom: 50px;
-	max-width: 700px;
+	max-width: 740px;
 }
 
 .event-promo {
@@ -13,7 +19,7 @@
 }
 .event-promo__title-block {
 	@include oGridRespondTo($from: M) {
-		max-width: 50%;
+		flex-basis: 50%;
 	}
 	@include oGridRespondTo($until: M) {
 		order:1;
@@ -23,6 +29,9 @@
 		background-color: getColor('paper');
 		z-index: 12;
 		align-self: center;
+
+		border: 1px solid getColor('black-70');
+		border-bottom: none;
 	}
 }
 .event-promo__title {
