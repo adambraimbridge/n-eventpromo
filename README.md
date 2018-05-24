@@ -40,3 +40,9 @@ The event object example is expected to have the following properties:
 		location: 'city'
 		eventUrl: `eventURL from the live ft site' ,
 	}`
+
+
+## Demo page
+`$ make demo`: Serves examples of the component locally (http://localhost:5005), using dummy data and in isolation from an app.
+
+This is done on a simple express app which renders a single demo page that calls the partials to exhibit, populating them with data from a fixture.
