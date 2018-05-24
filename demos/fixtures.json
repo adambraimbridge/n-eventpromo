@@ -1,26 +1,26 @@
 {
-    "id": "01111111-1111-1111-1111-111111111111",
-    "type": "http://www.ft.com/ontology/BusinessEvent",
-    "prefLabel": "An AI Strategy Map for the CIO",
-    "shortLabel": "Short label for this concept",
-    "strapline": "Deploying artificial intelligence to drive productivity growth",
-    "description": "Artificial intelligence and machine learning are compelling CIOs to re-think IT strategies.",
-    "_imageUrl": "https://live.ft.com/var/ftlive/storage/images/events/an-ai-strategy-map-for-the-cio/895713-1-eng-GB/An-AI-Strategy-Map-for-the-CIO.jpg",
-    "eventURL": "link to the event",
-    "emailAddress": "Email address for this event",
-    "facebookPage": "Facebook page for this event",
-    "twitterHandle": "Twitter handle for this event",
-    "scheduledStartTime": "2018-04-25T13:00:00+00:00",
-    "scheduledEndTime": "2018-04-25T16:00:00+00:00",
-    "relatedConcepts": [
-      {
-        "id": "http://api.ft.com/things/11111111-1111-1111-1111-111111111111",
-        "predicate": "http://www.ft.com/ontology/hasEventFocus"
-      },
-      {
-        "id": "http://api.ft.com/things/eca03e94-2f68-46f6-8ef4-747fdecf80ae",
-        "predicate": "http://www.ft.com/ontology/hasEventLocation"
-      }
-    ],
-    "lastUpdate": "1525098575"
-  }
+  "id": "f17e63fd1eda51789dc5e6bdd8e3dfae",
+  "type": "http://www.ft.com/ontology/BusinessEvent",
+  "prefLabel": "FT Brexit and Beyond Summit",
+  "shortLabel": "FT Brexit and Beyond Summit",
+  "strapline": "Planning for Post-Brexit Growth",
+  "description": "The Financial Times is proud to announce the third FT Brexit and Beyond Summit. As negotiations continue, agreements are made and the shape of Brexit becomes clearer, stakeholders from business, politics and academia will gather in June 2018 to discuss what it all means.\n\nHear expert analysis on the latest developments  from senior FT journalists plugged into Westminster, Brussels and the UK regions. Explore the economic transition facing the UK, listen to case studies of how businesses are planning for the future and discuss how success can be achieved in a post-Brexit landscape.",
+  "_imageUrl": "https://live.ft.com/var/ftlive/storage/images/events/2018/ft-brexit-and-beyond-summit/888258-7-eng-GB/FT-Brexit-and-Beyond-Summit.png" ,
+  "eventURL": "https://live.ft.com/Events/2018/FT-Brexit-and-Beyond-Summit",
+  "emailAddress": "",
+  "facebookPage": "",
+  "twitterHandle": "",
+  "scheduledStartTime": "2018-12-06T07:00:00.000Z",
+  "scheduledEndTime": "2018-12-06T18:00:00.000Z",
+  "relatedConcepts": [
+    {
+      "id": "19b95057-4614-45fb-9306-4d54049354db",
+      "predicate": "http://www.ft.com/ontology/hasEventFocus"
+    },
+    {
+      "id": "d90b783d-8eb9-30bb-b078-c0cef19bacb0",
+      "predicate": "http://www.ft.com/ontology/hasEventLocation"
+    }
+  ],
+  "lastUpdate": "1525098575"
+}
