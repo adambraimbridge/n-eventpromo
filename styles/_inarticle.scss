@@ -8,11 +8,9 @@
 		padding: 20px 20px 0;
 		border: 1px solid getColor('black-70');
 	}
-
 	@include oGridRespondTo($until: M) {
 		padding: 0;
 	}
-
 	@include oGridRespondTo($until: S) {
 		//flex-basis: 70%;
 	}
@@ -20,10 +18,8 @@
 
 .event-promo-inline__blocks {
 	display: flex;
-
 	@include oGridRespondTo($until: M) {
-		flex-direction: column;
-		//padding:20px;
+		flex-direction: column; //padding:20px;
 	}
 }
 
@@ -36,24 +32,20 @@
 	@include oGridRespondTo($until: M) {
 		position: relative;
 		top: 0;
-		right:0;
+		right: 0;
 		width: 100%;
-		order:-1;
+		order: -1;
 	}
 }
 
 .event-promo-inline__btn {
 	@include oButtons();
-	@include oButtonsSize(big);
-	//event btn style overrides
-
+	@include oButtonsSize(big); //event btn style overrides
 	color: getColor('black-70');
 	border: 1px solid getColor('black-70');
-
 	@include oGridRespondTo($from: M) {
 		margin: 16px 16px 16px 0;
 	}
-
 	@include oGridRespondTo($until: M) {
 		margin: 8px auto;
 		padding-left: 80px;
@@ -66,11 +58,9 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-
 	@include oGridRespondTo($from: M) {
 		margin-top:40px;
 	}
-
 	@include oGridRespondTo($until: M) {
 		margin-bottom: 10px;
 		flex-direction: column;
@@ -100,10 +90,9 @@
 		height: 60px;
 		background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/specialisttitle-v1:brand-live-ft-logo?source=n-eventpromo')
 	}
-
 	@include oGridRespondTo($until: M) {
 		align-self: flex-end;
-		padding-bottom:10px;
+		padding-bottom: 10px;
 	}
 }
 
