@@ -1,37 +1,27 @@
 @import "n-ui-foundations/main";
 @import 'o-buttons/main';
-@import 'o-grid/main';
 
-@include oGridAddLayout(
-	$layout-name: MS,
-	$layout-width: 700px
-);
-$o-grid-debug-mode: true;
 .event-promo {
 	margin-bottom: 50px;
 	max-width: 740px;
 }
 
-.event-promo {
-	.n-image-wrapper--placeholder.n-image-wrapper--lazy-loading:before {
-		animation: none;
-	}
-}
 .event-promo__title-block {
 	@include oGridRespondTo($from: M) {
 		flex-basis: 50%;
 	}
 	@include oGridRespondTo($until: M) {
 		order:1;
-		margin-top: -20px;
+		margin-top: -30px;
 		max-width: 100%;
-		padding: 0 20px;
+		padding: 10px 20px;
 		background-color: getColor('paper');
-		z-index: 12;
+		z-index: 1;
 		align-self: center;
-
 		border: 1px solid getColor('black-70');
 		border-bottom: none;
+		width: 80vw;
+    	align-self: center;
 	}
 }
 .event-promo__title {
