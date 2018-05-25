@@ -13,7 +13,7 @@ function mapEventData (theEvent) {
 				eventStart: moment(theEvent.scheduledStartTime).format('D MMMM YYYY'),
 				eventUrl: theEvent.eventURL,
 				eventLocation: 'London' //TODO get this from the tags
-			}
+			};
 			resolve(mappedEvent);
 		} else {
 			reject('no event');
