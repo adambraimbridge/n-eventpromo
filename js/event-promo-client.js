@@ -1,21 +1,28 @@
-module.exports = (eventConcepts) => {
-
+async function getEventsFromApi (eventConcepts = []) {
 	const url = '/eventpromo/api/';
-	const headers = new Headers();
 
-	headers.append('Content-Type', 'application/json');
-
-	return fetch(url, {
-		// need cookie to get personalised or ab-tested responses
-		method: 'POST',
-		body: JSON.stringify(eventConcepts),
-		headers
-	} )
-		.then(res => res.json())
-		.then(promoEvents => {
-			return promoEvents.eventpromos[0];
-		})
-		.catch(error => {
-			throw error;
+	try {
+		const httpResult = await fetch(url, {
+			body: JSON.stringify(eventConcepts),
+			headers: {
+				'accept': 'application/json',
+				'content-type': 'application/json'
+			},
+			method: 'POST'
 		});
+
+		const events = await httpResult.json();
+		console.log('**fetching data for concepts**', JSON.stringify(eventConcepts, null, 2));
+		console.log('**api endpoint**', url);
+		console.log('**fetch events**', events);
+
+		return events;
+	}
+	catch(error) {
+		throw error;
+	}
+}
+
+module.exports = {
+	getEventsFromApi
 };

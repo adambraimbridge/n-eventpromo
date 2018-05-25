@@ -1,7 +1,5 @@
-//import {broadcast} from 'n-ui-foundations';
-//const lazyLoadImages = require('n-image').lazyLoad;
 const moment = require('moment');
-const eventPromoClient = require('./event-promo-client');
+const eventPromo = require('./event-promo-client');
 const template = require('../templates/inarticle.html');
 
 function mapEventData(theEvent) {
@@ -32,7 +30,10 @@ module.exports = () => {
 	if (document.querySelector('.js-event-promo-data')) {
 		const concepts = JSON.parse(document.querySelector('.js-event-promo-data').innerHTML);
 
-		eventPromoClient(concepts)
+		eventPromo.getEventsFromApi(concepts)
+		.then(promoEvents => {
+			return promoEvents.eventpromos[0];
+		})
 		.then(mapEventData)
 		.then(mappedEvent => {
 			return promoSlot.innerHTML = template(mappedEvent);
