@@ -43,6 +43,7 @@
 .event-promo__location {
 	@include oTypographyDisplay($scale: 1);
 	text-transform: uppercase;
+	margin-top: 20px;
 }
 
 @import './styles/inarticle';

@@ -26,8 +26,8 @@
 .event-promo-inline__img {
 	@include oGridRespondTo($from: M) {
 		position: absolute;
-		top: -10%;
-		right: 2.5%;
+		top: -20px;
+		right: 20px;
 	}
 	@include oGridRespondTo($until: M) {
 		position: relative;

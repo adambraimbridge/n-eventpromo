@@ -37,7 +37,7 @@ module.exports = () => {
 		.then(mappedEvent => {
 			return promoSlot.innerHTML = template(mappedEvent);
 		})
-		.catch(err => {
+		.catch(() => {
 			//fail silently
 			return;
 		});
