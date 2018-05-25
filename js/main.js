@@ -1,6 +1,7 @@
 //import {broadcast} from 'n-ui-foundations';
 //const lazyLoadImages = require('n-image').lazyLoad;
 const moment = require('moment');
+const eventPromoClient = require('./event-promo-client');
 const template = require('../templates/inarticle.html');
 
 function mapEventData(theEvent) {
@@ -23,20 +24,33 @@ function mapEventData(theEvent) {
 	});
 }
 
-module.exports.init = () => {
+module.exports = () => {
 
 	//How do we define which slot to be used?
 	const promoSlot = document.querySelector('.js-event-promo');
 
 	if (document.querySelector('.js-event-promo-data')) {
-		const theEvent = JSON.parse(document.querySelector('.js-event-promo-data').innerHTML);
+		const concepts = JSON.parse(document.querySelector('.js-event-promo-data').innerHTML);
 
-		return mapEventData(theEvent)
-			.then((eventData) => {
-				return promoSlot.innerHTML = template(eventData);
-			})
-			.catch(() => {
-				return;
-			});
+		eventPromoClient(concepts)
+		.then((anEvent) => {
+			console.log(anEvent);
+			return anEvent;
+		})
+		.then(mapEventData)
+		.then(mappedEvent => {
+			console.log(mappedEvent)
+			return promoSlot.innerHTML = template(mappedEvent);
+		});
+
+
+		//TODO replace with the return value of eventPromoClient
+		// return mapEventData(concepts)
+		// 	.then((eventData) => {
+		// 		return promoSlot.innerHTML = template(eventData);
+		// 	})
+		// 	.catch(() => {
+		// 		return;
+		// 	});
 	}
 };

@@ -1,3 +1,4 @@
+
 module.exports = {
-	eventPromoClient: require('./js/main')
+	promoInit: require('./js/main')
 }
