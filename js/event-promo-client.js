@@ -1,13 +1,7 @@
-//const queryString = require('query-string');
-
-
-module.exports = (eventConcepts)   => {
+module.exports = (eventConcepts) => {
 
 	const url = '/eventpromo/api/';
-    const headers = new Headers();
-    let theEvent;
-
-    console.log(eventConcepts);
+	const headers = new Headers();
 
 	headers.append('Content-Type', 'application/json');
 
@@ -19,9 +13,8 @@ module.exports = (eventConcepts)   => {
 	} )
 		.then(res => res.json())
 		.then(promoEvents => {
-            console.log(promoEvents);
-            return promoEvents.eventpromos[0];
-        })
+			return promoEvents.eventpromos[0];
+		})
 		.catch(error => {
 			throw error;
 		});
