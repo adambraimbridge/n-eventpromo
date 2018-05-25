@@ -1,4 +1,4 @@
-<section class="event-promo-inline" data-event-focus="{{eventFocus}}" data-focus-concept="{{id}}">
+<div class="event-promo-inline" data-event-focus="{{eventFocus}}" data-focus-concept="{{id}}">
 	<div class="event-promo-inline__blocks">
 		<div class="event-promo__title-block">
 			<a href="{{eventUrl}}" class="event-promo__title" data-trackable="event-promo">{{eventTitle}}</a>
@@ -9,9 +9,11 @@
 
 		</div>
 		<a href="{{eventUrl}}" data-trackable="event-promo">
-			<div class="n-image-wrapper o-teaser__image-placeholder event-promo-inline__img-block">
+			<div class="event-promo-inline__img-block">
 				<img class="event-promo-inline__img" src="https://www.ft.com/__origami/service/image/v2/images/raw/{{mainImage}}?source=next&amp;fit=scale-down&amp;compression=best&amp;width=340"
-				alt="{{eventTitle}}" data-n-image-lazy-load-js role="presentation">
+				srcset="https://www.ft.com/__origami/service/image/v2/images/raw/{{mainImage}}?source=next&amp;fit=scale-down&amp;compression=best&amp;width=340 w340,
+				https://www.ft.com/__origami/service/image/v2/images/raw/{{mainImage}}?source=next&amp;fit=scale-down&amp;compression=best&amp;width=600 w600"
+				alt="{{eventTitle}}" data-n-image-lazy-load-js role="presentation" size:"(max-width: 600px) 100vw, 50vw">
 			</div>
 		</a>
 
@@ -26,4 +28,4 @@
 		</div>
 	</div>
 
-</section>
+</div>
