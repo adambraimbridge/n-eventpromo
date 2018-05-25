@@ -12,9 +12,9 @@ async function getEventsFromApi (eventConcepts = []) {
 		});
 
 		const events = await httpResult.json();
-		console.log('**fetching data for concepts**', JSON.stringify(eventConcepts, null, 2));
-		console.log('**api endpoint**', url);
-		console.log('**fetch events**', events);
+		// console.log('**fetching data for concepts**', JSON.stringify(eventConcepts, null, 2));
+		// console.log('**api endpoint**', url);
+		// console.log('**fetch events**', events);
 
 		return events;
 	}
