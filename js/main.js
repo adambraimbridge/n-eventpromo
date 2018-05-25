@@ -33,14 +33,13 @@ module.exports = () => {
 		const concepts = JSON.parse(document.querySelector('.js-event-promo-data').innerHTML);
 
 		eventPromoClient(concepts)
-		.then((anEvent) => {
-			console.log(anEvent);
-			return anEvent;
-		})
 		.then(mapEventData)
 		.then(mappedEvent => {
-			console.log(mappedEvent)
 			return promoSlot.innerHTML = template(mappedEvent);
+		})
+		.catch(err => {
+			//fail silently
+			return;
 		});
 	}
 };
