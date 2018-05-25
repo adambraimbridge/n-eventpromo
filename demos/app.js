@@ -1,7 +1,8 @@
 'use strict';
 
 const express = require('@financial-times/n-internal-tool');
-const fixtures = require('./fixtures.json');
+const fixtures = require('./conceptFixtures.json');
+const eventFixture = require('./fixtures.json');
 const chalk = require('chalk');
 const errorHighlight = chalk.bold.red;
 const highlight = chalk.bold.green;
@@ -26,6 +27,11 @@ app.get('/', (req, res) => {
 		title: 'Test App',
 		fixtures: JSON.stringify(fixtures)
 	}));
+});
+
+//Mock api request
+app.post('/eventpromo/api/', (req, res) => {
+	res.send(eventFixture);
 });
 
 function runPa11yTests () {

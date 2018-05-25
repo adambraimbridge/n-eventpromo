@@ -2,7 +2,7 @@
   "name": "n-eventpromo",
   "description": "Shared configuration and templates for ft live event promotions on ft.com",
   "main": [
-    "index.js",
+    "main.js",
     "main.scss"
   ],
   "authors": [
