@@ -42,15 +42,5 @@ module.exports = () => {
 			console.log(mappedEvent)
 			return promoSlot.innerHTML = template(mappedEvent);
 		});
-
-
-		//TODO replace with the return value of eventPromoClient
-		// return mapEventData(concepts)
-		// 	.then((eventData) => {
-		// 		return promoSlot.innerHTML = template(eventData);
-		// 	})
-		// 	.catch(() => {
-		// 		return;
-		// 	});
 	}
 };
