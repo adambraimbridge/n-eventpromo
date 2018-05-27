@@ -1,5 +1,3 @@
-const url = '/eventpromo/api/';
-
 // async function getEventsFromApi (eventConcepts = []) {
 // 	const url = '/eventpromo/api/';
 
