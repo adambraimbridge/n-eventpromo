@@ -1,9 +1,8 @@
-//import {broadcast} from 'n-ui-foundations';
-//const lazyLoadImages = require('n-image').lazyLoad;
 const moment = require('moment');
+const eventPromo = require('./event-promo-client');
 const template = require('../templates/inarticle.html');
 
-function mapEventData(theEvent) {
+function mapEventData (theEvent) {
 	return new Promise((resolve, reject) => {
 		if (theEvent) {
 			const mappedEvent = {
@@ -14,7 +13,7 @@ function mapEventData(theEvent) {
 				eventStart: moment(theEvent.scheduledStartTime).format('D MMMM YYYY'),
 				eventUrl: theEvent.eventURL,
 				eventLocation: 'London' //TODO get this from the tags
-			}
+			};
 			resolve(mappedEvent);
 		} else {
 			reject('no event');
@@ -23,19 +22,24 @@ function mapEventData(theEvent) {
 	});
 }
 
-module.exports.init = () => {
+module.exports = () => {
 
 	//How do we define which slot to be used?
 	const promoSlot = document.querySelector('.js-event-promo');
 
 	if (document.querySelector('.js-event-promo-data')) {
-		const theEvent = JSON.parse(document.querySelector('.js-event-promo-data').innerHTML);
+		const concepts = JSON.parse(document.querySelector('.js-event-promo-data').innerHTML);
 
-		return mapEventData(theEvent)
-			.then((eventData) => {
-				return promoSlot.innerHTML = template(eventData);
+		return eventPromo.getEventsFromApi(concepts)
+			.then(promoEvents => {
+				return promoEvents.eventpromos[0];
+			})
+			.then(mapEventData)
+			.then(mappedEvent => {
+				return promoSlot.innerHTML = template(mappedEvent);
 			})
 			.catch(() => {
+				//fail silently
 				return;
 			});
 	}

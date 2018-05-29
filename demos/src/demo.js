@@ -1,2 +1,2 @@
-const { eventPromoClient } = require('../../index');
-eventPromoClient.init();
+const { promoInit } = require('../../main');
+promoInit();
