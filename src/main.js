@@ -19,7 +19,7 @@ function mapEventData (theEvent) {
 	return mappedEvent;
 }
 
-module.exports = async () => {
+async function eventPromoInit () {
 	const promoSlot = document.querySelector('.js-event-promo');
 
 	if (document.querySelector('.js-event-promo-data')) {
@@ -32,10 +32,11 @@ module.exports = async () => {
 			promoSlot.innerHTML = template(mappedEvent);
 		}
 		catch (err) {
-			//fail silently
-			return false;
+			throw err;
 		}
 
 		return true;
 	}
 };
+
+module.exports = eventPromoInit;
