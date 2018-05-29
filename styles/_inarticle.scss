@@ -64,20 +64,24 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	padding-top: 20px;
 	padding-bottom: 20px;
 	@include oGridRespondTo($from: M) {
 		margin-top:40px;
 	}
 	@include oGridRespondTo($until: M) {
 		margin-bottom: 10px;
-		flex-direction: column;
+		//flex-direction: column;
 		border: 1px solid getColor('black-70');
 		border-top: none;
-		width: 80vw;
-		padding: 0 20px;
+		width: 85vw;
+		padding: 0 20px 20px;
 		align-self: center;
 	}
 
+	@include oGridRespondTo($until: S) {
+		flex-direction: column;
+	}
 	@include oGridRespondTo($from: L, $until:XL) {
 		margin:0;
 		margin-left: 20px;
@@ -95,15 +99,19 @@
 	@include oButtonsSize(big); //event btn style overrides
 	color: getColor('black-70');
 	border: 1px solid getColor('black-70');
+	padding-left: 80px;
+	padding-right: 80px;
+	min-width: 280px;
+
 	@include oGridRespondTo($from: M) {
 		margin: 16px 16px 16px 0;
+
 	}
+
 	@include oGridRespondTo($until: M) {
 		margin: 8px auto;
-		padding-left: 80px;
-		padding-right: 80px;
-		min-width: 280px;
 	}
+
 }
 
 .event-promo-inline__brand {
