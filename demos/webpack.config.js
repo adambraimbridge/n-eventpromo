@@ -12,7 +12,8 @@ const webpackConfig = nWebpack({
 	includes: [
 		path.join(__dirname, '../')
 	],
-	exclude: [/node_modules/]
+	exclude: [/node_modules/],
+	babelPlugins: ['transform-async-to-generator']
 });
 
 module.exports = webpackConfig;

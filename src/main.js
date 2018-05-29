@@ -3,44 +3,40 @@ const eventPromo = require('./event-promo-client');
 const template = require('../templates/inarticle.html');
 
 function mapEventData (theEvent) {
-	return new Promise((resolve, reject) => {
-		if (theEvent) {
-			const mappedEvent = {
-				id: theEvent.id,
-				eventTitle: theEvent.prefLabel,
-				cta: theEvent.eventDetailsUrl,
-				mainImage: encodeURI(theEvent._imageUrl),
-				eventStart: moment(theEvent.scheduledStartTime).format('D MMMM YYYY'),
-				eventUrl: theEvent.eventURL,
-				eventLocation: 'London' //TODO get this from the tags
-			};
-			resolve(mappedEvent);
-		} else {
-			reject('no event');
-		}
+	if (! theEvent) {
+		throw new Error('no event');
+	}
 
-	});
+	const mappedEvent = {
+		id: theEvent.id,
+		eventTitle: theEvent.prefLabel,
+		cta: theEvent.eventDetailsUrl,
+		mainImage: encodeURI(theEvent._imageUrl),
+		eventStart: moment(theEvent.scheduledStartTime).format('D MMMM YYYY'),
+		eventUrl: theEvent.eventURL,
+		eventLocation: 'London' //TODO get this from the tags
+	};
+	return mappedEvent;
 }
 
-module.exports = () => {
-
-	//How do we define which slot to be used?
+async function eventPromoInit () {
 	const promoSlot = document.querySelector('.js-event-promo');
 
 	if (document.querySelector('.js-event-promo-data')) {
 		const concepts = JSON.parse(document.querySelector('.js-event-promo-data').innerHTML);
 
-		return eventPromo.getEventsFromApi(concepts)
-			.then(promoEvents => {
-				return promoEvents.eventpromos[0];
-			})
-			.then(mapEventData)
-			.then(mappedEvent => {
-				return promoSlot.innerHTML = template(mappedEvent);
-			})
-			.catch(() => {
-				//fail silently
-				return;
-			});
+		try {
+			const promoEvents = await eventPromo.getEventsFromApi(concepts);
+			const mappedEvent = mapEventData(promoEvents.eventpromos[0]);
+
+			promoSlot.innerHTML = template(mappedEvent);
+		}
+		catch (err) {
+			throw err;
+		}
+
+		return true;
 	}
 };
+
+module.exports = eventPromoInit;
