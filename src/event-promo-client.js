@@ -1,8 +1,9 @@
 async function getEventsFromApi (eventConcepts = []) {
 	const url = '/eventpromo/api/';
 
+	let fetchResponse;
 	try {
-		const fetchResponse = await fetch(url, {
+		fetchResponse = await fetch(url, {
 			body: JSON.stringify(eventConcepts),
 			headers: {
 				'accept': 'application/json',
@@ -10,13 +11,17 @@ async function getEventsFromApi (eventConcepts = []) {
 			},
 			method: 'POST'
 		});
+	}
+	catch (err) {
+		throw new Error('failed to fetch eventpromos from enventpromo-api');
+	}
 
+	try {
 		const eventPromos = await fetchResponse.json();
-
 		return eventPromos;
 	}
 	catch (err) {
-		throw err;
+		throw new Error('failed to parse response from enventpromo-api');
 	}
 }
 

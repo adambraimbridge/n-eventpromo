@@ -3,10 +3,6 @@ const eventPromo = require('./event-promo-client');
 const template = require('../templates/inarticle.html');
 
 function mapEventData (theEvent) {
-	if (! theEvent) {
-		throw new Error('no event');
-	}
-
 	const mappedEvent = {
 		id: theEvent.id,
 		eventTitle: theEvent.prefLabel,
@@ -25,18 +21,23 @@ async function eventPromoInit () {
 	if (document.querySelector('.js-event-promo-data')) {
 		const concepts = JSON.parse(document.querySelector('.js-event-promo-data').innerHTML);
 
+		let promoEvents;
 		try {
-			const promoEvents = await eventPromo.getEventsFromApi(concepts);
-			const mappedEvent = mapEventData(promoEvents.eventpromos[0]);
-
-			promoSlot.innerHTML = template(mappedEvent);
+			promoEvents = await eventPromo.getEventsFromApi(concepts);
 		}
 		catch (err) {
-			throw err;
+			throw new Error('failed to fetch eventpromos');
 		}
+
+		if (! Array.isArray(promoEvents.eventpromos) || !promoEvents.eventpromos.length) {
+			throw new Error('no eventpromo match for this event');
+		}
+
+		const mappedEvent = mapEventData(promoEvents.eventpromos[0]);
+		promoSlot.innerHTML = template(mappedEvent);
 
 		return true;
 	}
-};
+}
 
 module.exports = eventPromoInit;
