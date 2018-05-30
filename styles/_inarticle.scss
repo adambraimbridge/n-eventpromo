@@ -27,9 +27,7 @@
 }
 
 .event-promo-inline__img {
-
-	width:45%;
-
+	width:42%;
 	@include oGridRespondTo($from: M) {
 		position: absolute;
 		top: -$ep-standard-space;
@@ -54,36 +52,52 @@
 	margin-top:30px;
 
 	@include oGridRespondTo($until: M) {
-		margin-bottom: $ep-standard-space/2;
+		margin-bottom: $ep-half-space;
 		margin-top:0;
-		margin-right: $ep-standard-space;
-		margin-left: $ep-standard-space;
+		margin-right: $ep-half-space;
+		margin-left: $ep-half-space;
 		border: 1px solid getColor('black-70');
 		border-top: none;
 		padding: 0 $ep-standard-space $ep-standard-space;
+	}
+
+	@include oGridRespondTo($until: S) {
+		flex-direction: column;
 	}
 
 	@include oGridRespondTo($from: L, $until:XL) {
 		margin-top:0;
 	}
 
+	> div {
+		@include oGridRespondTo($until: S) {
+			justify-content: center;
+			margin-top: $ep-standard-space;
+		}
+	}
+
+}
+
+.event-promo-inline__btn-block {
+	@include oGridRespondTo($until: S) {
+		width: 100%;
+	}
 }
 
 .event-promo-inline__btn {
 	@include oButtons();
-	@include oButtonsSize(big); //event btn style overrides
-	@include oTypographySans($scale: 2);
 	color: getColor('black-70');
 	border: 1px solid getColor('black-70');
+	@include oButtonsSize(big); //event btn style overrides
 
 	@include oGridRespondTo($from: M) {
-		margin: 16px 16px 16px 0;
-
+		@include oTypographySans($scale: 2);
 	}
 
-	@include oGridRespondTo($until: M) {
-		margin: 8px auto;
+	@include oGridRespondTo($until: S) {
+		width:100%;
 	}
+
 
 }
 
@@ -92,7 +106,7 @@
 	align-items: center;
 	@include oTypographySans($scale: -2);
 	span {
-		padding-right: $ep-standard-space/2;
+		padding-right: $ep-half-space;
 	}
 	&::after {
 		display: inline-block;
@@ -107,10 +121,5 @@
 	}
 	@include oGridRespondTo($until: M) {
 		align-self: flex-end;
-		padding-bottom: $ep-standard-space/2;
 	}
-}
-
-.event-promo__visually-hidden {
-	@include oNormaliseVisuallyHidden();
 }
