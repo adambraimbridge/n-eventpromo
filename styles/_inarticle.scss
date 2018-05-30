@@ -5,15 +5,10 @@
 	flex-direction: column;
 	position: relative;
 	@include oGridRespondTo($from: M) {
-		padding: 20px 20px 0;
+		padding: $ep-standard-space $ep-standard-space 0;
 		border: 1px solid getColor('black-70');
 	}
 	@include oGridRespondTo($until: M) {
-		padding: 0;
-	}
-
-	@include oGridRespondTo($from: L, $until:XL) {
-		border:none;
 		padding: 0;
 	}
 }
@@ -21,11 +16,7 @@
 .event-promo-inline__blocks {
 	display: flex;
 	@include oGridRespondTo($until: M) {
-		flex-direction: column; //padding:20px;
-	}
-
-	@include oGridRespondTo($from: L, $until:XL) {
-		flex-direction: column; //padding:20px;
+		flex-direction: column;
 	}
 }
 
@@ -36,21 +27,13 @@
 }
 
 .event-promo-inline__img {
-
+	width:42%;
 	@include oGridRespondTo($from: M) {
 		position: absolute;
-		top: -20px;
-		right: 20px;
+		top: -$ep-standard-space;
+		right: $ep-standard-space;
 	}
 	@include oGridRespondTo($until: M) {
-		position: relative;
-		top: 0;
-		right: 0;
-		width: 100%;
-		order: -1;
-	}
-
-	@include oGridRespondTo($from: L, $until:XL) {
 		position: relative;
 		top: 0;
 		right: 0;
@@ -64,53 +47,57 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	@include oGridRespondTo($from: M) {
-		margin-top:40px;
-	}
+	padding-top: $ep-standard-space;
+	padding-bottom: $ep-standard-space;
+	margin-top:30px;
+
 	@include oGridRespondTo($until: M) {
-		margin-bottom: 10px;
-		//flex-direction: column;
+		margin-bottom: $ep-half-space;
+		margin-top:0;
+		margin-right: $ep-half-space;
+		margin-left: $ep-half-space;
 		border: 1px solid getColor('black-70');
 		border-top: none;
-		width: 85vw;
-		padding: 0 20px 20px;
-		align-self: center;
+		padding: 0 $ep-standard-space $ep-standard-space;
 	}
 
 	@include oGridRespondTo($until: S) {
 		flex-direction: column;
 	}
+
 	@include oGridRespondTo($from: L, $until:XL) {
-		margin:0;
-		margin-left: 20px;
-		margin-right: 20px;
-		border-bottom: 1px solid getColor('black-70');
-		border-left: 1px solid getColor('black-70');
-		border-right: 1px solid getColor('black-70');
-		padding: 0 20px 20px;
+		margin-top:0;
+	}
+
+	> div {
+		@include oGridRespondTo($until: S) {
+			justify-content: center;
+			margin-top: $ep-standard-space;
+		}
 	}
 
 }
 
+.event-promo-inline__btn-block {
+	@include oGridRespondTo($until: S) {
+		width: 100%;
+	}
+}
+
 .event-promo-inline__btn {
 	@include oButtons();
-	@include oButtonsSize(big); //event btn style overrides
 	color: getColor('black-70');
 	border: 1px solid getColor('black-70');
-	padding-left: 80px;
-	padding-right: 80px;
-	min-width: 280px;
+	@include oButtonsSize(big); //event btn style overrides
 
 	@include oGridRespondTo($from: M) {
-		margin: 16px 16px 16px 0;
-
+		@include oTypographySans($scale: 2);
 	}
 
-	@include oGridRespondTo($until: M) {
-		margin: 8px auto;
+	@include oGridRespondTo($until: S) {
+		width:100%;
 	}
+
 
 }
 
@@ -119,7 +106,7 @@
 	align-items: center;
 	@include oTypographySans($scale: -2);
 	span {
-		padding-right: 10px;
+		padding-right: $ep-half-space;
 	}
 	&::after {
 		display: inline-block;
@@ -134,10 +121,5 @@
 	}
 	@include oGridRespondTo($until: M) {
 		align-self: flex-end;
-		padding-bottom: 10px;
 	}
-}
-
-.event-promo__visually-hidden {
-	@include oNormaliseVisuallyHidden();
 }

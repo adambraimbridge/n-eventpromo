@@ -2,6 +2,7 @@
 @import 'o-buttons/main';
 
 $ep-standard-space:20px;
+$ep-half-space:$ep-standard-space/2;
 
 .event-promo {
 	margin-bottom: 50px;
@@ -10,34 +11,19 @@ $ep-standard-space:20px;
 
 .event-promo__title-block {
 	@include oGridRespondTo($from: M) {
-		flex-basis: 50%;
+		flex-basis: 55%;
 	}
 	@include oGridRespondTo($until: M) {
 		order: 1;
 		margin-top: -30px;
+		margin-left:$ep-half-space;
+		margin-right:$ep-half-space;
 		max-width: 100%;
-		padding: 10px $ep-standard-space;
+		padding: $ep-half-space $ep-standard-space;
 		background-color: getColor('paper');
 		z-index: 1;
 		border: 1px solid getColor('black-70');
 		border-bottom: none;
-		width: 85vw;
-		align-self: center;
-	}
-
-	@include oGridRespondTo($from: L, $until:XL) {
-		order: 1;
-		margin-top: -30px;
-		margin-left: $ep-standard-space;
-		margin-right: $ep-standard-space;
-		max-width: 100%;
-		padding: 10px $ep-standard-space;
-		background-color: getColor('paper');
-		z-index: 1;
-		border: 1px solid getColor('black-70');
-		border-bottom: none;
-		width: auto;
-		align-self: auto;
 	}
 }
 
@@ -49,22 +35,25 @@ $ep-standard-space:20px;
 	@include oGridRespondTo($from: M) {
 		margin:0 0 5px;
 		@include oTypographyDisplayBold($scale: 6);
-		padding-left: 4px;
 	}
 	@include oGridRespondTo($until: M) {
 		margin-bottom: 0;
-		@include oTypographyDisplayBold($scale: 4);
+		@include oTypographyDisplayBold($scale: 5);
 	}
 
 	@include oGridRespondTo($from: L, $until:XL) {
-		@include oTypographyDisplayBold($scale: 4);
+		@include oTypographyDisplayBold($scale: 5);
 	}
 }
 
 .event-promo__location {
 	@include oTypographyDisplay($scale: 1);
 	text-transform: uppercase;
-	margin-top: $ep-standard-space;
+	margin-top: $ep-half-space;
+}
+
+.event-promo__visually-hidden {
+	@include oNormaliseVisuallyHidden();
 }
 
 @import './styles/inarticle';
