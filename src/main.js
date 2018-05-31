@@ -15,12 +15,15 @@ function mapEventData (theEvent) {
 	return mappedEvent;
 }
 
-function hasValidConceptIds (concepts) {
+function hasValidConcepts (concepts) {
 	const validKeys = ['focus', 'speakers'];
+	const conceptIds = concepts.conceptIds;
 
-	for (const key of validKeys) {
-		if ((key in concepts) && Array.isArray(concepts[key]) && concepts[key].length > 0) {
-			return true;
+	if (conceptIds) {
+		for (const key of validKeys) {
+			if ((key in conceptIds) && Array.isArray(conceptIds[key]) && conceptIds[key].length > 0) {
+				return true;
+			}
 		}
 	}
 
@@ -35,7 +38,7 @@ async function eventPromoInit () {
 	}
 
 	const concepts = JSON.parse(promoDataSelector.innerHTML);
-	if (!concepts || !hasValidConceptIds(concepts)) {
+	if (!concepts || !hasValidConcepts(concepts)) {
 		throw new Error('no valid concept ids for eventpromo');
 	}
 
