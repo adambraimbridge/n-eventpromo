@@ -1,2 +1,16 @@
 const { promoInit } = require('../../main');
-promoInit();
+
+async function init () {
+	if (!document.querySelector('.event-promo')) {
+		throw new Error('.event-promo not found');
+	}
+
+	try {
+		await promoInit();
+	}
+	catch (err) {
+		throw new Error('failed to initialise eventpromo');
+	}
+}
+
+init ();
