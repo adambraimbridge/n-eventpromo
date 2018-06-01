@@ -11,4 +11,9 @@ describe('hasValidConcept()', () => {
 		expect(subject(invalidConceptObject)).toBe(false);
 	});
 
+	test('given a concept object with invalid concept values returns false', () => {
+		const emptyConceptObject = {};
+		expect(subject(emptyConceptObject)).toBe(false);
+	});
+
 });
