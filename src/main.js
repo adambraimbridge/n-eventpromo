@@ -1,34 +1,9 @@
-const moment = require('moment');
+
 const eventPromo = require('./event-promo-client');
+const mapEventData = require('./lib/mapEventData');
+const hasValidConcepts = require('./lib/hasValidConcept');
 const template = require('../templates/inarticle.html');
 
-function mapEventData (theEvent) {
-	const mappedEvent = {
-		id: theEvent.id,
-		eventTitle: theEvent.prefLabel,
-		cta: theEvent.eventDetailsUrl,
-		mainImage: encodeURI(theEvent._imageUrl),
-		eventStart: moment(theEvent.scheduledStartTime).format('D MMMM YYYY'),
-		eventUrl: theEvent.eventURL,
-		eventLocation: 'London' //TODO get this from the tags
-	};
-	return mappedEvent;
-}
-
-function hasValidConcepts (concepts) {
-	const validKeys = ['focus', 'speakers'];
-	const conceptIds = concepts.conceptIds;
-
-	if (conceptIds) {
-		for (const key of validKeys) {
-			if ((key in conceptIds) && Array.isArray(conceptIds[key]) && conceptIds[key].length > 0) {
-				return true;
-			}
-		}
-	}
-
-	return false;
-}
 async function eventPromoInit () {
 	const promoDataSelector = document.querySelector('.js-event-promo-data');
 	const promoSlotSelector = document.querySelector('.js-event-promo');
