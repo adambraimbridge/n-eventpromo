@@ -1,5 +1,5 @@
 
-const eventPromo = require('./event-promo-client');
+const eventPromo = require('./lib/event-promo-client');
 const mapEventData = require('./lib/mapEventData');
 const hasValidConcepts = require('./lib/hasValidConcept');
 const template = require('../templates/inarticle.html');
