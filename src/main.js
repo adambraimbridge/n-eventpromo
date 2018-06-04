@@ -15,29 +15,49 @@ function mapEventData (theEvent) {
 	return mappedEvent;
 }
 
-async function eventPromoInit () {
-	const promoSlot = document.querySelector('.js-event-promo');
+function hasValidConcepts (concepts) {
+	const validKeys = ['focus', 'speakers'];
+	const conceptIds = concepts.conceptIds;
 
-	if (document.querySelector('.js-event-promo-data')) {
-		const concepts = JSON.parse(document.querySelector('.js-event-promo-data').innerHTML);
-
-		let promoEvents;
-		try {
-			promoEvents = await eventPromo.getEventsFromApi(concepts);
+	if (conceptIds) {
+		for (const key of validKeys) {
+			if ((key in conceptIds) && Array.isArray(conceptIds[key]) && conceptIds[key].length > 0) {
+				return true;
+			}
 		}
-		catch (err) {
-			throw new Error('failed to fetch eventpromos');
-		}
-
-		if (! Array.isArray(promoEvents.eventpromos) || !promoEvents.eventpromos.length) {
-			throw new Error('no eventpromo match for this event');
-		}
-
-		const mappedEvent = mapEventData(promoEvents.eventpromos[0]);
-		promoSlot.innerHTML = template(mappedEvent);
-
-		return true;
 	}
+
+	return false;
+}
+async function eventPromoInit () {
+	const promoDataSelector = document.querySelector('.js-event-promo-data');
+	const promoSlotSelector = document.querySelector('.js-event-promo');
+
+	if (!promoDataSelector || !promoSlotSelector) {
+		throw new Error('no dom for eventpromo');
+	}
+
+	const concepts = JSON.parse(promoDataSelector.innerHTML);
+	if (!concepts || !hasValidConcepts(concepts)) {
+		throw new Error('no valid concept ids for eventpromo');
+	}
+
+	let promoEvents;
+	try {
+		promoEvents = await eventPromo.getEventsFromApi(concepts);
+	}
+	catch (err) {
+		throw new Error('failed to fetch eventpromos');
+	}
+
+	if (!Array.isArray(promoEvents.eventpromos) || !promoEvents.eventpromos.length) {
+		throw new Error('no eventpromo match for this event');
+	}
+
+	const mappedEvent = mapEventData(promoEvents.eventpromos[0]);
+	promoSlotSelector.innerHTML = template(mappedEvent);
+
+	return true;
 }
 
 module.exports = eventPromoInit;
