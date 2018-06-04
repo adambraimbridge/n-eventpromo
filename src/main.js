@@ -1,4 +1,3 @@
-
 const eventPromo = require('./lib/event-promo-client');
 const mapEventData = require('./lib/mapEventData');
 const hasValidConcepts = require('./lib/hasValidConcept');

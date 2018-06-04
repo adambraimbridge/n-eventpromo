@@ -1,23 +1,8 @@
-'use strict';
-const chai = require('chai');
-const { JSDOM } = require('jsdom');
-//const sinon = require('sinon');
-const sinonChai = require('sinon-chai');
-
-//const expect = chai.expect;
-chai.use(sinonChai);
+//const subject = require('../src/main');
 
 describe('Unit tests: main', () => {
 
 	beforeEach(() => {
-		global.window = new JSDOM('<html data-content-id="ARTICLE-ID">' +
-			'<head></head>' +
-			'<body>' +
-			'	<div class="native-ad__first"></div></section>' +
-			'</body>' +
-			'</html>').window;
-		global.document = window.document;
-
 	});
 
 	afterEach(() => {
@@ -26,33 +11,33 @@ describe('Unit tests: main', () => {
 	describe('eventPromoInit method', () => {
 		describe('error cases', () => {
 			describe('when dom missing', () => {
-				it('should throw error when .js-even-promo-data missing', () => {
+				test('should throw error when .js-even-promo-data missing', () => {
 
 				});
-				it('should throw error when .js-even-promo missing', () => {
+				test('should throw error when .js-even-promo missing', () => {
 
 				});
 			});
 			describe('when concepts are invalid', () => {
-				it('should throw error when concepts are empty', () => {
+				test('should throw error when concepts are empty', () => {
 
 				});
-				it('should throw error when concepts keys are empty', () => {
+				test('should throw error when concepts keys are empty', () => {
 
 				});
 			});
-			it('should throw error when api call fails', () => {
+			test('should throw error when api call fails', () => {
 
 			});
-			it('should throw error when api call returns no event', () => {
+			test('should throw error when api call returns no event', () => {
 
 			});
 		});
 		describe('success', () => {
-			it('should update dom', () => {
+			test('should update dom', () => {
 
 			});
-			it('should return true', () => {
+			test('should return true', () => {
 
 			});
 		});
