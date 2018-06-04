@@ -5,13 +5,17 @@ node_modules/@financial-times/n-gage/index.mk:
 -include node_modules/@financial-times/n-gage/index.mk
 
 unit-test:
-	mocha --recursive --reporter spec tests
+	#mocha --recursive --reporter spec tests
+	jest tests --coverage
 
 test:
 	# TODO: don't ignore a11y but don't block releasing it in it's current state
 	export IGNORE_A11Y=true; \
 	make verify
 	make unit-test
+
+test-debug:
+	jest tests --coverage --debug
 
 demo-build:
 	@rm -rf bower_components/n-eventpromo
