@@ -1,5 +1,5 @@
 module.exports = {
 	transform: {
-        '\\.html$': 'jest-handlebars'
-    }
-}
+		'\\.html$': 'jest-handlebars'
+	}
+};
