@@ -3,9 +3,9 @@ const mapEventData = require('./lib/mapEventData');
 const hasValidConcepts = require('./lib/hasValidConcept');
 const template = require('../templates/inarticle.html');
 
-async function eventPromoInit (root) {
-	const promoDataSelector = root.querySelector('.js-event-promo-data');
-	const promoSlotSelector = root.querySelector('.js-event-promo');
+async function eventPromoInit (rootEl) {
+	const promoDataSelector = rootEl.querySelector('.js-event-promo-data');
+	const promoSlotSelector = rootEl.querySelector('.js-event-promo');
 
 	if (!promoDataSelector || !promoSlotSelector) {
 		throw new Error('no dom for eventpromo');
