@@ -6,7 +6,7 @@ async function init () {
 	}
 
 	try {
-		await promoInit();
+		await promoInit(document);
 	}
 	catch (err) {
 		throw new Error('failed to initialise eventpromo');

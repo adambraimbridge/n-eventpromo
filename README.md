@@ -19,7 +19,7 @@ Then include in your client side code with a flag conditional. So something like
 
 
 	if(local.flags.showEventPromo) {
-		eventPromoInit()
+		eventPromoInit(rootEl)
 	}
 
 

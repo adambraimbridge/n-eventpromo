@@ -13,6 +13,5 @@ describe('mapEventData()', () => {
 		expect(subject).toHaveProperty('eventUrl', anEvent.eventURL);
 		expect(subject).toHaveProperty('eventStart', '12 June 2018');
 		expect(subject).toHaveProperty('eventLocation', 'London');
-		//expect(true).toBeTruthy();
 	});
 });
