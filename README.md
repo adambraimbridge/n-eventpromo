@@ -10,6 +10,8 @@ Add the component:
 
 `npm install @financial-times/n-eventpromo`
 
+`bower install n-eventpromo`
+
 ## Usage
 ---
 
@@ -22,25 +24,28 @@ Then include in your client side code with a flag conditional. So something like
 		eventPromoInit(rootEl)
 	}
 
+In the template the component should be included as follows:
 
-The POC of this Ui component will render if the following two conditions are true.
+    `{{#if @root.flags.showEventPromo}}
+            <script class="js-event-promo-data" type="application/json">{{{json eventTags}}}</script>
+            <div class="event-promo js-event-promo" data-trackable="event-promo">
+            </div>
+            {{/if}}
+    `
+
+The POC of this Ui component will render if the following two conditions are meet:
 1. feature flag showEventPromo = true
-2. There is an event object with the class of 'event-promo-js' in a script tag as follows.
+2. The 'js-event-promo-data' script tag is populated with eventTags object with the class of as follows.
 
-`<script class="event-promo-js"type="application/json">
-	</script>`
 
-The event object example is expected to have the following properties:
+Example eventTags object:
 
-	`{
-		id: 'event uuid' ,
-		title: 'the prefLabel',
-		mainImage: 'image url',
-		start: 'date in the following format D MMMM YYYY',
-		location: 'city'
-		eventUrl: `eventURL from the live ft site' ,
-	}`
-
+    '{
+        "conceptIds": {
+            "focus": ["uuid","uuid" ...],
+            "speakers": ["uuid","uuid" ...]
+        }
+    }'
 
 ## Demo page
 `$ make demo`: Serves examples of the component locally (http://localhost:5005), using dummy data and in isolation from an app.
