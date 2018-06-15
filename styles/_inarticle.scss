@@ -6,7 +6,7 @@
 	position: relative;
 	@include oGridRespondTo($from: S) {
 		padding: $ep-standard-space $ep-standard-space 0;
-		border: 1px solid getColor('black-70');
+		border: 1px solid getColor('black-20');
 	}
 	@include oGridRespondTo($until: S) {
 		padding: 0;
