@@ -51,7 +51,7 @@
 	padding-bottom: $ep-standard-space;
 
 	@include oGridRespondTo($from: S) {
-		margin-top:$ep-standard-space;
+		margin-top: 15px;
 	}
 
 	@include oGridRespondTo($until: S) {
@@ -100,8 +100,6 @@
 	@include oGridRespondTo($until: S) {
 		width:100%;
 	}
-
-
 }
 
 .event-promo-inline__brand {
