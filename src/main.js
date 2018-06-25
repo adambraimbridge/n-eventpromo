@@ -2,7 +2,7 @@ const eventPromo = require('./lib/event-promo-client');
 const mapEventData = require('./lib/mapEventData');
 const hasValidConcepts = require('./lib/hasValidConcept');
 const variantTemplate = require('../templates/variant.html');
-const controlTemplate = require('../templates/inarticle.html');
+const controlTemplate = require('../templates/control.html');
 
 async function eventPromoInit (rootEl) {
 	const promoDataSelector = rootEl.querySelector('.js-event-promo-data');
@@ -31,7 +31,7 @@ async function eventPromoInit (rootEl) {
 	}
 
 	const mappedEvent = mapEventData(promoEvents.eventpromos[0]);
-	promoSlotSelector.innerHTML = showVariant ? variantTemplate(mappedEvent) : controlTemplate(mappedEvent);
+	promoSlotSelector.innerHTML = showVariant === 'variant' ? variantTemplate(mappedEvent) : controlTemplate(mappedEvent);
 
 	return true;
 }
