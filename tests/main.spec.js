@@ -147,9 +147,10 @@ describe('Unit tests: main', () => {
 			});
 		});
 
-		xdescribe('variant success', () => {
+		describe.skip('variant success', () => {
 
 			test('should update dom using variant template', async () => {
+
 				fetchMock.post('/eventpromo/api/', liveEvent);
 				const eventSource = liveEvent.eventpromos[0];
 				const eventContainer = document.querySelector('.event-promo-container');
@@ -165,15 +166,6 @@ describe('Unit tests: main', () => {
 				expect(injectedPromo.childElementCount).toBeGreaterThan(0);
 				expect(eventTitle).toEqual(eventSource.prefLabel);
 				expect(eventCta.href).toEqual(eventSource.eventURL);
-
-			});
-			test('should return true', async () => {
-				const eventContainer = document.querySelector('.event-promo-container');
-
-				fetchMock.post('/eventpromo/api/', liveEvent);
-				eventContainer.innerHTML = eventPromoDataEl;
-
-				expect(await eventPromoInit(document)).toEqual(true);
 			});
 		});
 	});
