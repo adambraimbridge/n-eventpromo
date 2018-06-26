@@ -2,36 +2,62 @@
 .event-promo-inarticle {
 	margin-top: 30px;
 	display: flex;
-	flex-direction: column;
 	position: relative;
 	@include oGridRespondTo($from: S) {
-		padding: $ep-standard-space $ep-standard-space 0;
-		border: 1px solid getColor('black-20');
+		//padding: $ep-standard-space $ep-standard-space 0;
 	}
 	@include oGridRespondTo($until: S) {
+		flex-direction: column;
 		padding: 0;
 	}
 }
-
 .event-promo-inarticle__blocks {
 	display: flex;
+
 	@include oGridRespondTo($until: S) {
 		flex-direction: column;
 	}
 }
 
+.event-promo__details {
+	background-color: rgba(38, 43, 51, 0.9);
+	color: getColor('white');
+	z-index: 10;
+
+	padding:$ep-standard-space;
+	@include oGridRespondTo($from: S) {
+		width: 400px;
+		//height: 280px;
+	}
+	@include oGridRespondTo($until: S) {
+		max-width: 100%;
+		margin-top:-$ep-standard-space*2;
+		margin-left: $ep-half-space;
+		margin-right: $ep-half-space;
+		margin-bottom: 0;
+		padding:$ep-standard-space;
+		padding-bottom:$ep-half-space;
+	}
+}
+
+
+
 .event-promo-inarticle__img-block {
+	@include oGridRespondTo($until: S) {
+		order:-1;
+	}
 	a {
 		border-bottom:none;
 	}
 }
 
 .event-promo-inarticle__img {
-	width:42%;
+
 	@include oGridRespondTo($from: S) {
-		position: absolute;
-		top: -$ep-standard-space;
-		right: $ep-standard-space;
+		margin-left: -100px;
+		z-index:-1;
+		width:400px;
+		height:226px;
 	}
 	@include oGridRespondTo($until: S) {
 		position: relative;
@@ -42,26 +68,33 @@
 	}
 }
 
+.event-promo-inarticle__tags {
+	display: flex;
+	@include oTypographySans($scale: 1);
+	padding-top:  $ep-standard-space *2;
+
+	span {
+		padding-right: $ep-standard-space;
+	}
+
+	@include oGridRespondTo($until: S) {
+		padding-top:  $ep-standard-space *1.5;
+	}
+}
+
 .event-promo-inarticle__cta {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	padding-top: $ep-standard-space;
-	padding-bottom: $ep-standard-space;
-
-	@include oGridRespondTo($from: S) {
-		margin-top: 15px;
-	}
+	padding-bottom: $ep-half-space;
 
 	@include oGridRespondTo($until: S) {
 		margin-bottom: $ep-half-space;
 		margin-top:0;
-		margin-right: $ep-half-space;
-		margin-left: $ep-half-space;
-		border: 1px solid getColor('black-70');
 		border-top: none;
-		padding: 0 $ep-standard-space $ep-standard-space;
+		padding: 0;
 	}
 
 	@include oGridRespondTo($until: S) {
@@ -75,7 +108,7 @@
 	> div {
 		@include oGridRespondTo($until: S) {
 			justify-content: center;
-			margin-top: $ep-standard-space;
+			margin-top: $ep-half-space;
 		}
 	}
 
@@ -89,8 +122,7 @@
 
 .event-promo-inarticle__btn {
 	@include oButtons();
-	color: getColor('black-70');
-	border: 1px solid getColor('black-70');
+	@include oButtonsTheme(primary);
 	@include oButtonsSize(big); //event btn style overrides
 
 	@include oGridRespondTo($from: S) {
