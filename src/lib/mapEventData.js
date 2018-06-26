@@ -7,6 +7,7 @@ module.exports = (theEvent) => {
 		mainImage: encodeURI(theEvent._imageUrl),
 		eventStart: oDate.format(theEvent.scheduledStartTime, 'dd MMMM yyyy'),
 		eventUrl: theEvent.eventURL,
-		eventLocation: theEvent.location
+		eventLocation: theEvent.location,
+		tags: theEvent.tags
 	};
 };
