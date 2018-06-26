@@ -11,6 +11,7 @@ module.exports = (theEvent) => {
 		eventStart: oDate.format(theEvent.scheduledStartTime, 'dd MMMM yyyy'),
 		eventUrl: eventUrl.toString(),
 		segmentId: theEvent.segmentId,
-		eventLocation: theEvent.location
+		eventLocation: theEvent.location,
+		tags: theEvent.tags
 	};
 };
