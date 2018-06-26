@@ -15,6 +15,12 @@ let document = dom.window.document;
 
 describe('Unit tests: main', () => {
 
+	beforeEach(() => {
+		global.FT = {
+			flags : {}
+		};
+	});
+
 	afterEach(() => {
 		fetchMock.restore();
 	});
@@ -138,6 +144,28 @@ describe('Unit tests: main', () => {
 				eventContainer.innerHTML = eventPromoDataEl;
 
 				expect(await eventPromoInit(document)).toEqual(true);
+			});
+		});
+
+		describe.skip('variant success', () => {
+
+			test('should update dom using variant template', async () => {
+
+				fetchMock.post('/eventpromo/api/', liveEvent);
+				const eventSource = liveEvent.eventpromos[0];
+				const eventContainer = document.querySelector('.event-promo-container');
+				eventContainer.innerHTML = eventPromoDataEl;
+
+				await eventPromoInit(document);
+
+				const injectedPromo = document.querySelector('.event-promo-inline');
+				const eventTitle = document.querySelector('.event-promo__title').innerHTML;
+				const eventCta = document.querySelector('.event-promo-inline__btn');
+
+				expect(injectedPromo).toBeTruthy();
+				expect(injectedPromo.childElementCount).toBeGreaterThan(0);
+				expect(eventTitle).toEqual(eventSource.prefLabel);
+				expect(eventCta.href).toEqual(eventSource.eventURL);
 			});
 		});
 	});

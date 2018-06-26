@@ -1,11 +1,13 @@
 const eventPromo = require('./lib/event-promo-client');
 const mapEventData = require('./lib/mapEventData');
 const hasValidConcepts = require('./lib/hasValidConcept');
-const template = require('../templates/inarticle.html');
+const variantTemplate = require('../templates/variant.html');
+const controlTemplate = require('../templates/control.html');
 
 async function eventPromoInit (rootEl) {
 	const promoDataSelector = rootEl.querySelector('.js-event-promo-data');
 	const promoSlotSelector = rootEl.querySelector('.js-event-promo');
+	const showVariant = window.FT.flags.eventPromoVariantTest || false;
 
 	if (!promoDataSelector || !promoSlotSelector) {
 		throw new Error('no dom for eventpromo');
@@ -29,7 +31,7 @@ async function eventPromoInit (rootEl) {
 	}
 
 	const mappedEvent = mapEventData(promoEvents.eventpromos[0]);
-	promoSlotSelector.innerHTML = template(mappedEvent);
+	promoSlotSelector.innerHTML = showVariant === 'variant' ? variantTemplate(mappedEvent) : controlTemplate(mappedEvent);
 
 	return true;
 }

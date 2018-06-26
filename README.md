@@ -50,4 +50,7 @@ Example eventTags object:
 ## Demo page
 `$ make demo`: Serves examples of the component locally (http://localhost:5005), using dummy data and in isolation from an app.
 
+### Preview AB versions
+If you are running this on localhost there will not be FT.flags on the windows object. No fear you can toggle the test variant by setting a query param: `?v=variant`
+
 This is done on a simple express app which renders a single demo page that calls the partials to exhibit, populating them with data from a fixture.
