@@ -133,8 +133,8 @@ describe('Unit tests: main', () => {
 
 				expect(injectedPromo).toBeTruthy();
 				expect(injectedPromo.childElementCount).toBeGreaterThan(0);
-				expect(eventTitle).toEqual(eventSource.prefLabel);
-				expect(eventCta.href).toEqual(eventSource.eventURL);
+				expect(eventTitle).toEqual(eventSource.title);
+				expect(eventCta.href).toEqual(eventSource.eventUrl);
 
 			});
 			test('should return true', async () => {
@@ -164,8 +164,8 @@ describe('Unit tests: main', () => {
 
 				expect(injectedPromo).toBeTruthy();
 				expect(injectedPromo.childElementCount).toBeGreaterThan(0);
-				expect(eventTitle).toEqual(eventSource.prefLabel);
-				expect(eventCta.href).toEqual(eventSource.eventURL);
+				expect(eventTitle).toEqual(eventSource.title);
+				expect(eventCta.href).toEqual(eventSource.eventUrl);
 			});
 		});
 	});

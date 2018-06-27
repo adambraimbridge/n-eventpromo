@@ -3,10 +3,10 @@ const oDate = require('o-date');
 module.exports = (theEvent) => {
 	return {
 		id: theEvent.id,
-		eventTitle: theEvent.prefLabel,
-		mainImage: encodeURI(theEvent._imageUrl),
+		eventTitle: theEvent.title,
+		mainImage: encodeURI(theEvent.imageUrl),
 		eventStart: oDate.format(theEvent.scheduledStartTime, 'dd MMMM yyyy'),
-		eventUrl: theEvent.eventURL,
+		eventUrl: theEvent.eventUrl,
 		eventLocation: theEvent.location
 	};
 };
