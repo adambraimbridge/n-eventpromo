@@ -38,6 +38,10 @@
 		padding:$ep-standard-space;
 		padding-bottom:$ep-half-space;
 	}
+
+	a:hover {
+		color: getColor('black-20');
+	}
 }
 
 
@@ -75,6 +79,17 @@
 
 	span {
 		padding-right: $ep-standard-space;
+
+		&::before {
+			content: '•';
+			padding-right: $ep-standard-space;
+
+		}
+	}
+
+	:first-child::before {
+		content: '';
+		padding-right: 0;
 	}
 
 	@include oGridRespondTo($until: S) {
