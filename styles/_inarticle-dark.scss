@@ -57,6 +57,7 @@
 
 .event-promo-inarticle__img {
 
+
 	@include oGridRespondTo($from: S) {
 		margin-left: -100px;
 		z-index:-1;
@@ -74,15 +75,15 @@
 
 .event-promo-inarticle__tags {
 	display: flex;
-	@include oTypographySans($scale: 1);
+	@include oTypographySans($scale: 0);
 	padding-top:  $ep-standard-space *2;
 
 	span {
-		padding-right: $ep-standard-space;
+		padding-right: $ep-standard-space/2;
 
 		&::before {
 			content: '•';
-			padding-right: $ep-standard-space;
+			padding-right: $ep-standard-space/2;
 
 		}
 	}
