@@ -131,11 +131,13 @@ describe('Unit tests: main', () => {
 				const eventTitle = document.querySelector('.event-promo__title').innerHTML;
 				const eventCta = document.querySelector('.event-promo-inarticle__btn');
 
+				const expectedUrl = new URL(eventSource.eventUrl);
+				expectedUrl.searchParams.set('segmentId', eventSource.segmentId);
+
 				expect(injectedPromo).toBeTruthy();
 				expect(injectedPromo.childElementCount).toBeGreaterThan(0);
-				expect(eventTitle).toEqual(eventSource.prefLabel);
-				expect(eventCta.href).toEqual(eventSource.eventURL);
-
+				expect(eventTitle).toEqual(eventSource.title);
+				expect(eventCta.href).toEqual(expectedUrl.toString());
 			});
 			test('should return true', async () => {
 				const eventContainer = document.querySelector('.event-promo-container');
@@ -162,10 +164,13 @@ describe('Unit tests: main', () => {
 				const eventTitle = document.querySelector('.event-promo__title').innerHTML;
 				const eventCta = document.querySelector('.event-promo-inarticle__btn');
 
+				const expectedUrl = new URL(eventSource.eventUrl);
+				expectedUrl.searchParams.set('segmentId', eventSource.segmentId);
+
 				expect(injectedPromo).toBeTruthy();
 				expect(injectedPromo.childElementCount).toBeGreaterThan(0);
-				expect(eventTitle).toEqual(eventSource.prefLabel);
-				expect(eventCta.href).toEqual(eventSource.eventURL);
+				expect(eventTitle).toEqual(eventSource.title);
+				expect(eventCta.href).toEqual(expectedUrl);
 			});
 		});
 	});
