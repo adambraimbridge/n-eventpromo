@@ -12,6 +12,6 @@ module.exports = (theEvent) => {
 		eventUrl: eventUrl.toString(),
 		segmentId: theEvent.segmentId,
 		eventLocation: theEvent.location,
-		tags: theEvent.tags
+		tags: theEvent.sectorTags
 	};
 };

@@ -20,10 +20,11 @@
       "scheduledEndTime": "2018-06-12T18:00:00.000Z",
       "scheduledStartTime": "2018-06-12T07:00:00.000Z",
       "score": 0,
-      "sectorTags": [],
+      "sectorTags": ["boris","may", "Junker"],
       "segmentId": "11259aab-28bd-cf0b-29c5-d6cde7eeac80",
       "strapline": "Planning for Post-Brexit Growth",
-      "title": "FT Brexit and Beyond Summit"
+      "title": "FT Brexit and Beyond Summit",
+      "location": "Planet Earth"
     }
   ]
 }
