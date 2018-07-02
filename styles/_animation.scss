@@ -1,6 +1,13 @@
-.fade {
-	//-webkit-animation: fade 5s;
+.fade-0 {
 	animation: fade 30s infinite;
+	}
+
+.fade-1 {
+		animation: fade 30s 5s infinite;
+	}
+
+.fade-2 {
+		animation: fade 30s 10s infinite;
 	}
 
 
