@@ -11,9 +11,9 @@
 		padding: 0;
 	}
 }
+
 .event-promo-inarticle__blocks {
 	display: flex;
-
 	@include oGridRespondTo($until: S) {
 		flex-direction: column;
 	}
@@ -23,56 +23,46 @@
 	background-color: rgba(38, 43, 51, 0.9);
 	color: getColor('white');
 	z-index: 10;
-	padding:$ep-standard-space;
-
+	padding: $ep-standard-space;
 	@include oGridRespondTo($from: M) {
 		max-width: 400px;
-		min-width: 360px;
-		//height: 280px;
-	}
-	// @include oGridRespondTo($until: M) {
+		min-width: 360px; //height: 280px;
+	} // @include oGridRespondTo($until: M) {
 	// 	flex-basis: 80%;
 	// 	min-width: 250px;
 	// }
 	@include oGridRespondTo($until: S) {
 		max-width: 100%;
-		margin-top:-$ep-standard-space*2;
+		margin-top: -$ep-standard-space*2;
 		margin-left: $ep-half-space;
 		margin-right: $ep-half-space;
 		margin-bottom: 0;
-		padding:$ep-standard-space;
-		padding-bottom:$ep-half-space;
+		padding: $ep-standard-space;
+		padding-bottom: $ep-half-space;
 	}
-
 	a:hover {
 		color: getColor('black-20');
 	}
 }
-
-
 
 .event-promo-inarticle__img-block {
 	@include oGridRespondTo($until: S) {
 		order:-1;
 	}
 	a {
-		border-bottom:none;
+		border-bottom: none;
 	}
 }
 
 .event-promo-inarticle__img {
-
-
 	@include oGridRespondTo($from: M) {
 		width:400px;
-		height:226px;
+		height: 226px;
 	}
-
 	@include oGridRespondTo($from: S) {
 		margin-left: -100px;
-		z-index:-1;
+		z-index: -1;
 	}
-
 	@include oGridRespondTo($until: S) {
 		position: relative;
 		top: 0;
@@ -85,25 +75,20 @@
 .event-promo-inarticle__tags {
 	display: flex;
 	@include oTypographySans($scale: 0);
-	padding-top:  $ep-standard-space *2;
-
+	padding-top: $ep-standard-space *2;
 	span {
 		padding-right: $ep-standard-space/2;
-
 		&::before {
 			content: '•';
 			padding-right: $ep-standard-space/2;
-
 		}
 	}
-
 	:first-child::before {
 		content: '';
 		padding-right: 0;
 	}
-
 	@include oGridRespondTo($until: S) {
-		padding-top:  $ep-standard-space *1.5;
+		padding-top: $ep-standard-space *1.5;
 	}
 }
 
@@ -113,23 +98,19 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-
 	@include oGridRespondTo($until: S) {
 		margin-bottom: $ep-half-space;
-		margin-top:0;
+		margin-top: 0;
 		border-top: none;
 		padding: 0;
 	}
-
 	@include oGridRespondTo($until: S) {
 		flex-direction: column;
 	}
-
 	@include oGridRespondTo($from: L, $until:XL) {
-		margin-top:0;
+		margin-top: 0;
 	}
-
-	> div {
+	>div {
 		padding-top: $ep-standard-space;
 		padding-bottom: $ep-half-space;
 		@include oGridRespondTo($until: S) {
@@ -137,7 +118,6 @@
 			margin-top: $ep-half-space;
 		}
 	}
-
 }
 
 .event-promo-inarticle__btn-block {
@@ -150,13 +130,11 @@
 	@include oButtons();
 	@include oButtonsTheme(primary);
 	@include oButtonsSize(big); //event btn style overrides
-
 	@include oGridRespondTo($from: S) {
 		@include oTypographySans($scale: 2);
 	}
-
 	@include oGridRespondTo($until: S) {
-		width:100%;
+		width: 100%;
 	}
 }
 
@@ -184,22 +162,18 @@
 }
 
 .event-promo-inarticle__image-list {
-
-	> li {
-			position: absolute;
-			top:0;
-			right:0;
-
-			&:nth-child(1){
-				z-index:1;
-			 }
-
-			 &:nth-child(2){
-				z-index:0;
-			 }
-
-			 &:nth-child(3){
-				z-index:-1;
-			 }
+	>li {
+		position: absolute;
+		top: 0;
+		right: 0;
+		&:nth-child(1) {
+			z-index: 1;
 		}
+		&:nth-child(2) {
+			z-index: 0;
+		}
+		&:nth-child(3) {
+			z-index: -1;
+		}
+	}
 }
