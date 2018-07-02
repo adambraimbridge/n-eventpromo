@@ -1,34 +1,47 @@
 <div class="event-promo-inarticle" data-event-focus="{{eventFocus}}" data-focus-concept="{{id}}">
 	<div class="event-promo-inarticle__blocks">
-		<div class="event-promo__title-block">
-			<h1>Variant promo</h1>
-
-			<!-- <a href="{{eventUrl}}" class="event-promo__title" data-trackable="event-promo">{{eventTitle}}</a>
+		<div class="event-promo__details">
+			<a href="{{eventUrl}}" class="event-promo__title" data-trackable="event-promo">{{eventTitle}}</a>
 			<div class="event-promo__location">
 				<span>{{eventLocation}}</span> |
 				<span class="event-promo__date">{{eventStart}}</span>
-			</div> -->
-
+			</div>
+			{{#if tags}}
+				<div class="event-promo-inarticle__tags">
+					{{#each tags}}
+						<span>{{this}}</span>
+					{{/each}}
+				</div>
+			{{/if}}
+			<div class="event-promo-inarticle__cta">
+				<div  class="event-promo-inarticle__btn-block">
+					<a href="{{eventUrl}}" class="event-promo-inarticle__btn" data-trackable="event-promo">Register now</a>
+				</div >
+				<div class="event-promo-inarticle__brand">
+					<span>Presented by</span>
+					<span class="event-promo__visually-hidden">FT live</span>
+				</div>
+			</div>
 		</div>
-
-			<!-- <div class="event-promo-inarticle__img-block">
-				<a href="{{eventUrl}}" data-trackable="event-promo">
-					<img class="event-promo-inarticle__img"
-					srcset="https://www.ft.com/__origami/service/image/v2/images/raw/{{mainImage}}?source=next&amp;fit=cover&amp;compression=best&amp;width=340 340w,
-						https://www.ft.com/__origami/service/image/v2/images/raw/{{mainImage}}?source=next&amp;fit=cover&amp;compression=best&amp;width=740 740w"
-						alt="{{eventTitle}}" data-n-image-lazy-load-js role="presentation" size:"(max-width: 46.24em) 100vw, 45vw">
-					</a>
-			</div> -->
 
 	</div>
-	<!-- <div class="event-promo-inarticle__blocks event-promo-inarticle__cta">
-		<div  class="event-promo-inarticle__btn-block">
-			<a href="{{eventUrl}}" class="event-promo-inarticle__btn" data-trackable="event-promo">Register now</a>
-		</div >
-		<div class="event-promo-inarticle__brand">
-			<span>Presented by</span>
-			<span class="event-promo__visually-hidden">FT live</span>
-		</div>
-	</div> -->
+	<div class="event-promo-inarticle__blocks event-promo-inarticle__img-block">
+		<a href="{{eventUrl}}" data-trackable="event-promo">
+				<img class="event-promo-inarticle__img fade"
+				srcset="https://www.ft.com/__origami/service/image/v2/images/raw/{{mainImage}}?source=next&amp;fit=cover&amp;compression=best&amp;width=340 340w,
+					https://www.ft.com/__origami/service/image/v2/images/raw/{{mainImage}}?source=next&amp;fit=cover&amp;compression=best&amp;width=400 740w"
+					alt="{{eventTitle}}" data-n-image-lazy-load-js role="presentation" size:"(max-width: 46.24em) 100vw, 45vw">
+			<!-- <ul>
+				<li>
 
+				</li>
+				<li>
+						Image 2
+				</li>
+				<li>
+						Image 3
+				</li>
+			</ul> -->
+			</a>
+	</div>
 </div>
