@@ -1,13 +1,16 @@
 .fade-0 {
-	animation: fade 30s infinite;
+		z-index: 1;
+		animation: fade 20s infinite;
 	}
 
 .fade-1 {
-		animation: fade 30s 5s infinite;
+		z-index: 0;
+		animation: fade 20s 10s infinite;
 	}
 
 .fade-2 {
-		animation: fade 30s 10s infinite;
+		z-index: -1;
+		animation: fade 20s 20s infinite;
 	}
 
 
