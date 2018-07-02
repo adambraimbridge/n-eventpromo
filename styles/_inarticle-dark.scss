@@ -52,8 +52,6 @@
 
 
 .event-promo-inarticle__img-block {
-
-	width:100%;
 	@include oGridRespondTo($until: S) {
 		order:-1;
 	}
