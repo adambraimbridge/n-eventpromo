@@ -26,22 +26,16 @@
 
 	</div>
 	<div class="event-promo-inarticle__blocks event-promo-inarticle__img-block">
-		<a href="{{eventUrl}}" data-trackable="event-promo">
-				<img class="event-promo-inarticle__img fade"
-				srcset="https://www.ft.com/__origami/service/image/v2/images/raw/{{mainImage}}?source=next&amp;fit=cover&amp;compression=best&amp;width=340 340w,
-					https://www.ft.com/__origami/service/image/v2/images/raw/{{mainImage}}?source=next&amp;fit=cover&amp;compression=best&amp;width=400 740w"
-					alt="{{eventTitle}}" data-n-image-lazy-load-js role="presentation" size:"(max-width: 46.24em) 100vw, 45vw">
-			<!-- <ul>
-				<li>
-
-				</li>
-				<li>
-						Image 2
-				</li>
-				<li>
-						Image 3
-				</li>
-			</ul> -->
-			</a>
+			{{#if images}}
+				<ul>
+						{{#each images}}
+						<a href="{{../eventUrl}}" data-trackable="event-promo">
+							<img class="event-promo-inarticle__img fade-{{@index}}" srcset="https://www.ft.com/__origami/service/image/v2/images/raw/{{this}}?source=next&amp;fit=cover&amp;compression=best&amp;width=340 340w,
+								https://www.ft.com/__origami/service/image/v2/images/raw/{{this}}?source=next&amp;fit=cover&amp;compression=best&amp;width=400 740w"
+								alt="{{eventTitle}}" data-n-image-lazy-load-js role="presentation" size:"(max-width: 46.24em) 100vw, 45vw">
+						</a>
+						{{/each}}
+				</ul>
+			{{/if}}
 	</div>
 </div>
