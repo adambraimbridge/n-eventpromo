@@ -23,12 +23,17 @@
 	background-color: rgba(38, 43, 51, 0.9);
 	color: getColor('white');
 	z-index: 10;
-
 	padding:$ep-standard-space;
-	@include oGridRespondTo($from: S) {
-		width: 400px;
+
+	@include oGridRespondTo($from: M) {
+		max-width: 400px;
+		min-width: 360px;
 		//height: 280px;
 	}
+	// @include oGridRespondTo($until: M) {
+	// 	flex-basis: 80%;
+	// 	min-width: 250px;
+	// }
 	@include oGridRespondTo($until: S) {
 		max-width: 100%;
 		margin-top:-$ep-standard-space*2;
@@ -47,6 +52,8 @@
 
 
 .event-promo-inarticle__img-block {
+
+	width:100%;
 	@include oGridRespondTo($until: S) {
 		order:-1;
 	}
@@ -58,12 +65,16 @@
 .event-promo-inarticle__img {
 
 
-	@include oGridRespondTo($from: S) {
-		margin-left: -100px;
-		z-index:-1;
+	@include oGridRespondTo($from: M) {
 		width:400px;
 		height:226px;
 	}
+
+	@include oGridRespondTo($from: S) {
+		margin-left: -100px;
+		z-index:-1;
+	}
+
 	@include oGridRespondTo($until: S) {
 		position: relative;
 		top: 0;
@@ -101,10 +112,9 @@
 .event-promo-inarticle__cta {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	padding-top: $ep-standard-space;
-	padding-bottom: $ep-half-space;
 
 	@include oGridRespondTo($until: S) {
 		margin-bottom: $ep-half-space;
@@ -122,6 +132,8 @@
 	}
 
 	> div {
+		padding-top: $ep-standard-space;
+		padding-bottom: $ep-half-space;
 		@include oGridRespondTo($until: S) {
 			justify-content: center;
 			margin-top: $ep-half-space;
