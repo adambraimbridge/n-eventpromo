@@ -162,6 +162,13 @@
 }
 
 .event-promo-inarticle__image-list {
+
+	@include oGridRespondTo($until: S) {
+		position: relative;
+	}
+
+	list-style: none;
+	padding: 0;
 	>li {
 		position: absolute;
 		top: 0;
@@ -174,6 +181,10 @@
 		}
 		&:nth-child(3) {
 			z-index: -1;
+		}
+
+		@include oGridRespondTo($until: S) {
+			width: 100%;
 		}
 	}
 }
