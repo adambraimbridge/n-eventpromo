@@ -17,7 +17,6 @@ module.exports = (theEvent) => {
 		eventUrl: eventUrl.toString(),
 		segmentId: theEvent.segmentId,
 		eventLocation: theEvent.location,
-		tags: theEvent.sectorTags,
 		staticImage: ['event_break_out.jpg', 'event_clapping_hands.jpg'],
 		images
 	};
