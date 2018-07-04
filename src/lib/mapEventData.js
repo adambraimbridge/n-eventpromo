@@ -2,10 +2,20 @@ const oDate = require('o-date');
 
 const staticAssets = 'https://www.ft.com/__assets/creatives/better-promo/';
 
-module.exports = (theEvent) => {
+module.exports = (theEvent, variant) => {
 	const eventUrl = new URL(theEvent.eventUrl);
-	const images = [encodeURI(theEvent.imageUrl), encodeURI(`${staticAssets}/event_break_out.jpg`), encodeURI(`${staticAssets}/event_clapping_hands.jpg`)];
 
+	//AB test logic remove/refactor on test conclusion
+	let images = [];
+	let showVariant = false;
+
+	if(variant === 'variant') {
+		showVariant = true;
+		images.push(
+			theEvent.imageUrl,
+			`${staticAssets}event_break_out.jpg`,
+			`${staticAssets}event_clapping_hands.jpg`);
+	}
 
 	eventUrl.searchParams.set('segmentId', theEvent.segmentId);
 
@@ -17,7 +27,7 @@ module.exports = (theEvent) => {
 		eventUrl: eventUrl.toString(),
 		segmentId: theEvent.segmentId,
 		eventLocation: theEvent.location,
-		staticImage: ['event_break_out.jpg', 'event_clapping_hands.jpg'],
-		images
+		images,
+		showVariant
 	};
 };
