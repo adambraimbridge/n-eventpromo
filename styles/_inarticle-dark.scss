@@ -30,7 +30,7 @@ $imageHight: 226px;
 .event-promo__details {
 	background-color: rgba(38, 43, 51, 0.8);
 	color: getColor('white');
-	z-index: 10;
+	z-index: 4;
 	padding: $ep-standard-space;
 
 	a:hover {
@@ -170,6 +170,28 @@ $imageHight: 226px;
 
 //variant specific styles
 .event-promo--variant {
+
+	.event-promo__control {
+		z-index:2;
+		border-radius: 20px;
+		height: 40px;
+		width: 40px;
+		top: 4;
+		right: 4;
+		display: inline-block;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-color: transparent;
+		vertical-align: baseline;
+		background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:pause?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg);
+		position: absolute;
+		color: getColor('white');
+		background-color: rgba(38, 43, 51, 0.5);
+	}
+
+	.event-promo__control--paused {
+		background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:play?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg);
+	}
 
 	.event-promo-inarticle__img-block {
 
