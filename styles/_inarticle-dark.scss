@@ -1,15 +1,22 @@
 //inarticle newsletter replacement block
+$imageWidth: 400px;
+$imageHight: 226px;
+
 .event-promo-inarticle {
+	max-width: 700px;
+	margin-bottom: 50px;
 	margin-top: 30px;
 	display: flex;
 	position: relative;
-	@include oGridRespondTo($from: S) {
-		//padding: $ep-standard-space $ep-standard-space 0;
-	}
+
 	@include oGridRespondTo($until: S) {
 		flex-direction: column;
 		padding: 0;
 	}
+
+	@include oGridRespondTo($from: L, $until:XL) {
+			width:540px;
+		}
 }
 
 .event-promo-inarticle__blocks {
@@ -24,13 +31,11 @@
 	color: getColor('white');
 	z-index: 10;
 	padding: $ep-standard-space;
-	@include oGridRespondTo($from: M) {
-		max-width: 400px;
-		min-width: 360px; //height: 280px;
-	} // @include oGridRespondTo($until: M) {
-	// 	flex-basis: 80%;
-	// 	min-width: 250px;
-	// }
+
+	a:hover {
+		color: getColor('black-20');
+	}
+
 	@include oGridRespondTo($until: S) {
 		max-width: 100%;
 		margin-top: -$ep-standard-space*2;
@@ -40,55 +45,51 @@
 		padding: $ep-standard-space;
 		padding-bottom: $ep-half-space;
 	}
-	a:hover {
-		color: getColor('black-20');
+
+	@include oGridRespondTo($from: S) {
+		flex-basis: 60%;
+		min-width: 250px;
+	}
+
+	@include oGridRespondTo(S,M) {
+		flex-basis: 75%;
+	}
+
+	@include oGridRespondTo(L, XL) {
+		width:290px
 	}
 }
-
 .event-promo-inarticle__img-block {
 	@include oGridRespondTo($until: S) {
 		order:-1;
 	}
 	a {
 		border-bottom: none;
+		position: absolute;
+		top: 0;
+		right: 0;
 	}
 }
 
 .event-promo-inarticle__img {
-	@include oGridRespondTo($from: M) {
-		width:400px;
-		height: 226px;
-	}
+	position: relative;
+	top: 0;
+	right: 0;
+	width: 100%;
+	order: -1;
+
 	@include oGridRespondTo($from: S) {
+		width:340px;
 		margin-left: -100px;
 		z-index: -1;
 	}
-	@include oGridRespondTo($until: S) {
-		position: relative;
-		top: 0;
-		right: 0;
-		width: 100%;
-		order: -1;
-	}
-}
 
-.event-promo-inarticle__tags {
-	display: flex;
-	@include oTypographySans($scale: 0);
-	padding-top: $ep-standard-space *2;
-	span {
-		padding-right: $ep-standard-space/2;
-		&::before {
-			content: '•';
-			padding-right: $ep-standard-space/2;
-		}
+	@include oGridRespondTo($from: M) {
+		width:380px;
 	}
-	:first-child::before {
-		content: '';
-		padding-right: 0;
-	}
-	@include oGridRespondTo($until: S) {
-		padding-top: $ep-standard-space *1.5;
+
+	@include oGridRespondTo(L, XL) {
+		width:300px;
 	}
 }
 
@@ -130,11 +131,14 @@
 	@include oButtons();
 	@include oButtonsTheme(primary);
 	@include oButtonsSize(big); //event btn style overrides
-	@include oGridRespondTo($from: S) {
-		@include oTypographySans($scale: 2);
-	}
+
+
 	@include oGridRespondTo($until: S) {
 		width: 100%;
+	}
+
+	@include oGridRespondTo($from: S) {
+		@include oTypographySans($scale: 2);
 	}
 }
 
@@ -161,30 +165,31 @@
 	}
 }
 
-.event-promo-inarticle__image-list {
+//variant specific styles
+.event-promo--variant {
 
-	@include oGridRespondTo($until: S) {
-		position: relative;
-	}
-
-	list-style: none;
-	padding: 0;
-	>li {
-		position: absolute;
-		top: 0;
-		right: 0;
-		&:nth-child(1) {
-			z-index: 1;
-		}
-		&:nth-child(2) {
-			z-index: 0;
-		}
-		&:nth-child(3) {
-			z-index: -1;
-		}
-
+	.event-promo__details {
 		@include oGridRespondTo($until: S) {
-			width: 100%;
+			margin-top: 220px;
+		}
+	}
+	.event-promo-inarticle__img-block {
+
+		a {
+			&:nth-child(1) {
+				z-index: 1;
+			}
+			&:nth-child(2) {
+				z-index: 0;
+			}
+			&:nth-child(3) {
+				z-index: -1;
+			}
+
+			@include oGridRespondTo($until: S) {
+				width: 100%;
+			}
 		}
 	}
 }
+
