@@ -1,15 +1,15 @@
 .event-promo--variant {
 	.fade-0 {
 		z-index: 1;
-		animation: fade 25s 5s infinite;
+		animation: fade 16s 4s infinite;
 	}
 	.fade-1 {
 		z-index: 0;
-		animation: fade 30s 10s infinite;
+		animation: fade 16s 8s infinite;
 	}
 	.fade-2 {
 		z-index: -1;
-		animation: fade 25s 15s infinite;
+		animation: fade 16s 12s infinite;
 	}
 	@keyframes fade {
 		0% {
