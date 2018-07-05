@@ -56,9 +56,6 @@ $imageHight: 226px;
 		flex-basis: 75%;
 	}
 
-	@include oGridRespondTo(L, XL) {
-		width:290px
-	}
 }
 .event-promo-inarticle__img-block {
 	a {
@@ -121,7 +118,8 @@ $imageHight: 226px;
 		padding-bottom: $ep-half-space;
 		@include oGridRespondTo($until: S) {
 			justify-content: center;
-			margin-top: $ep-half-space;
+			padding-bottom: 0;
+			//margin-top: $ep-half-space;
 		}
 	}
 }
