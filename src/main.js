@@ -1,6 +1,7 @@
 const eventPromo = require('./lib/event-promo-client');
 const mapEventData = require('./lib/mapEventData');
 const hasValidConcepts = require('./lib/hasValidConcept');
+const animationToggle = require('./lib/animation-control');
 const template = require('../templates/inarticle_dark.html');
 
 async function eventPromoInit (rootEl) {
@@ -31,6 +32,10 @@ async function eventPromoInit (rootEl) {
 
 	const mappedEvent = mapEventData(promoEvents.eventpromos[0], showVariant);
 	promoSlotSelector.innerHTML = template(mappedEvent);
+
+	if(showVariant) {
+		animationToggle();
+	}
 
 	return true;
 }
