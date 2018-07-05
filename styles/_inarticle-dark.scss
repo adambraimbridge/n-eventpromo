@@ -11,6 +11,7 @@ $imageHight: 226px;
 
 	@include oGridRespondTo($until: S) {
 		flex-direction: column;
+		flex-direction: column-reverse;
 		padding: 0;
 	}
 
@@ -60,14 +61,19 @@ $imageHight: 226px;
 	}
 }
 .event-promo-inarticle__img-block {
-	@include oGridRespondTo($until: S) {
-		order:-1;
-	}
 	a {
 		border-bottom: none;
 		position: absolute;
 		top: 0;
 		right: 0;
+
+		@include oGridRespondTo($until: S) {
+			width: 100%;
+		}
+	}
+
+	@include oGridRespondTo($until: S) {
+		min-height: 200px;
 	}
 }
 
@@ -76,7 +82,6 @@ $imageHight: 226px;
 	top: 0;
 	right: 0;
 	width: 100%;
-	order: -1;
 
 	@include oGridRespondTo($from: S) {
 		width:340px;
@@ -168,11 +173,6 @@ $imageHight: 226px;
 //variant specific styles
 .event-promo--variant {
 
-	.event-promo__details {
-		@include oGridRespondTo($until: S) {
-			margin-top: 220px;
-		}
-	}
 	.event-promo-inarticle__img-block {
 
 		a {
@@ -184,10 +184,6 @@ $imageHight: 226px;
 			}
 			&:nth-child(3) {
 				z-index: -1;
-			}
-
-			@include oGridRespondTo($until: S) {
-				width: 100%;
 			}
 		}
 	}

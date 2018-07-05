@@ -4,11 +4,6 @@
 $ep-standard-space:20px;
 $ep-half-space:$ep-standard-space/2;
 
-.event-promo {
-	// margin-bottom: 50px;
-	// max-width: 700px;
-}
-
 .event-promo__title {
 	@include oTypographyDisplayBold($scale: 5);
 	padding: 2px 0;
