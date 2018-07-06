@@ -1,16 +1,18 @@
 .event-promo--variant {
 
 	.fade-0 {
+		opacity: 0;
 		z-index: 1;
-		animation: fade 16s 4s infinite;
+		animation: fade 16s 2s infinite;
 	}
 	.fade-1 {
+		opacity: 0;
 		z-index: 0;
-		animation: fade 16s 8s infinite;
+		animation: fade 16s 6s infinite;
 	}
 	.fade-2 {
+		opacity: 1;
 		z-index: -1;
-		animation: fade 16s 12s infinite;
 	}
 
 	.paused {
@@ -18,13 +20,16 @@
 	}
 	@keyframes fade {
 		0% {
+			opacity: 0;
+		}
+		25% {
 			opacity: 1;
 		}
-		50% {
+		60% {
 			opacity: 0;
 		}
 		100% {
-			opacity: 1;
+			opacity: 0;
 		}
 	}
 }

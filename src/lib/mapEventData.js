@@ -12,9 +12,9 @@ module.exports = (theEvent, variant) => {
 	if(variant === 'variant') {
 		showVariant = true;
 		images.push(
-			theEvent.imageUrl,
 			`${staticAssets}break_out.jpg`,
-			`${staticAssets}audiance_clapping.jpg`);
+			`${staticAssets}audiance_clapping.jpg`,
+			theEvent.imageUrl);
 	}
 
 	eventUrl.searchParams.set('segmentId', theEvent.segmentId);

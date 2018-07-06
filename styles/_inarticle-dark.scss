@@ -1,6 +1,4 @@
 //inarticle newsletter replacement block
-$imageWidth: 400px;
-$imageHight: 226px;
 
 .event-promo-inarticle {
 	max-width: 700px;
@@ -192,20 +190,5 @@ $imageHight: 226px;
 
 	.event-promo__control--paused {
 		background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:play?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg);
-	}
-
-	.event-promo-inarticle__img-block {
-
-		a {
-			&:nth-child(1) {
-				z-index: 1;
-			}
-			&:nth-child(2) {
-				z-index: 0;
-			}
-			&:nth-child(3) {
-				z-index: -1;
-			}
-		}
 	}
 }
