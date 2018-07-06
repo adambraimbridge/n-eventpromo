@@ -4,57 +4,39 @@
 $ep-standard-space:20px;
 $ep-half-space:$ep-standard-space/2;
 
-.event-promo {
-	margin-bottom: 50px;
-	max-width: 740px;
-}
-
-.event-promo__title-block {
-	@include oGridRespondTo($from: S) {
-		min-height: 110px;
-		flex-basis: 54%;
-	}
-	@include oGridRespondTo($until: S) {
-		order: 1;
-		margin-top: -30px;
-		margin-left:$ep-half-space;
-		margin-right:$ep-half-space;
-		max-width: 100%;
-		padding: $ep-half-space $ep-standard-space;
-		background-color: getColor('paper');
-		z-index: 1;
-		border: 1px solid getColor('black-70');
-		border-bottom: none;
-	}
-}
-
 .event-promo__title {
 	@include oTypographyDisplayBold($scale: 5);
 	padding: 2px 0;
 	color: inherit;
 	text-decoration: none;
 	border: 0;
-	@include oGridRespondTo($from: M) {
-		margin:0 0 5px;
-		@include oTypographyDisplayBold($scale: 6);
-	}
+
+
 	@include oGridRespondTo($until: S) {
 		margin-bottom: 0;
 	}
+	@include oGridRespondTo($from: M) {
+		@include oTypographyDisplayBold($scale: 6);
+	}
 
-	@include oGridRespondTo($from: L, $until:XL) {
+	@include oGridRespondTo(L, XL) {
 		@include oTypographyDisplayBold($scale: 5);
 	}
 }
 
 .event-promo__location {
-	@include oTypographyDisplay($scale: 1);
-	text-transform: uppercase;
+	@include oTypographySans($scale: 2);
 	margin-top: $ep-half-space;
+
+	@include oGridRespondTo($until: S) {
+		margin-top: 0;
+		@include oTypographySans($scale: 3);
+	}
 }
 
 .event-promo__visually-hidden {
 	@include oNormaliseVisuallyHidden();
 }
 
-@import './styles/inarticle';
+@import './styles/inarticle-dark';
+@import './styles/animation';

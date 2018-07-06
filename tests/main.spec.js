@@ -127,9 +127,9 @@ describe('Unit tests: main', () => {
 
 				await eventPromoInit(document);
 
-				const injectedPromo = document.querySelector('.event-promo-inline');
+				const injectedPromo = document.querySelector('.event-promo-inarticle');
 				const eventTitle = document.querySelector('.event-promo__title').innerHTML;
-				const eventCta = document.querySelector('.event-promo-inline__btn');
+				const eventCta = document.querySelector('.event-promo-inarticle__btn');
 
 				const expectedUrl = new URL(eventSource.eventUrl);
 				expectedUrl.searchParams.set('segmentId', eventSource.segmentId);
@@ -160,9 +160,9 @@ describe('Unit tests: main', () => {
 
 				await eventPromoInit(document);
 
-				const injectedPromo = document.querySelector('.event-promo-inline');
+				const injectedPromo = document.querySelector('.event-promo-inarticle');
 				const eventTitle = document.querySelector('.event-promo__title').innerHTML;
-				const eventCta = document.querySelector('.event-promo-inline__btn');
+				const eventCta = document.querySelector('.event-promo-inarticle__btn');
 
 				const expectedUrl = new URL(eventSource.eventUrl);
 				expectedUrl.searchParams.set('segmentId', eventSource.segmentId);
