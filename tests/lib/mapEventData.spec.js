@@ -10,6 +10,7 @@ describe('mapEventData()', () => {
 		const expectedUrl = new URL(anEvent.eventUrl);
 		const imageArray = [];
 		expectedUrl.searchParams.set('segmentId', anEvent.segmentId);
+		expectedUrl.searchParams.set('variant', subject.showVariant);
 
 		expect(subject).toHaveProperty('id', anEvent.id);
 		expect(subject).toHaveProperty('eventTitle', anEvent.title);
@@ -30,6 +31,7 @@ describe('mapEventData()', () => {
 		const expectedUrl = new URL(anEvent.eventUrl);
 		const imageArray = [];
 		expectedUrl.searchParams.set('segmentId', anEvent.segmentId);
+		expectedUrl.searchParams.set('variant', subject.showVariant);
 
 		expect(subject).toHaveProperty('showVariant', false);
 		expect(subject.images).toEqual(expect.arrayContaining(imageArray));
@@ -40,6 +42,7 @@ describe('mapEventData()', () => {
 		const subject = mapEventData(anEvent, 'variant');
 		const expectedUrl = new URL(anEvent.eventUrl);
 		expectedUrl.searchParams.set('segmentId', anEvent.segmentId);
+		expectedUrl.searchParams.set('variant', subject.showVariant);
 
 		expect(subject).toHaveProperty('showVariant', true);
 		expect(subject.images).toEqual(expect.arrayContaining(imageArrayFixture));
