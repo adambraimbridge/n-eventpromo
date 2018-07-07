@@ -30,6 +30,9 @@
 	color: getColor('white');
 	z-index: 4;
 	padding: $ep-standard-space;
+	display: flex;
+    flex-flow: column;
+    justify-content: space-between;
 
 	a:hover {
 		color: getColor('black-20');
@@ -47,12 +50,19 @@
 
 	@include oGridRespondTo($from: S) {
 		flex-basis: 60%;
-		min-width: 250px;
+		min-width: 385px;
+		min-height: 230px;
 	}
 
 	@include oGridRespondTo(S,M) {
 		flex-basis: 75%;
 	}
+
+	@include oGridRespondTo(L,XL) {
+		min-width: 300px;
+		min-height: 175px;
+	}
+
 
 }
 .event-promo-inarticle__img-block {
