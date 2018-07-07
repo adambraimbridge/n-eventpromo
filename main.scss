@@ -23,7 +23,6 @@ $ep-half-space:$ep-standard-space/2;
 
 	@include oGridRespondTo($from: M) {
 		@include oTypographyDisplayBold($scale: 6);
-		//min-width: 375px;
 	}
 
 	@include oGridRespondTo(M, L) {
