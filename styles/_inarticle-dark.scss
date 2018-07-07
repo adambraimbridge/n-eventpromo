@@ -31,8 +31,8 @@
 	z-index: 4;
 	padding: $ep-standard-space;
 	display: flex;
-    flex-flow: column;
-    justify-content: space-between;
+	flex-flow: column;
+	justify-content: space-between;
 
 	a:hover {
 		color: getColor('black-20');
