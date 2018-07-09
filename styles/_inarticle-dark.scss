@@ -45,7 +45,7 @@
 		margin-right: $ep-half-space;
 		margin-bottom: 0;
 		padding: $ep-standard-space;
-		padding-bottom: $ep-half-space;
+		padding-bottom: $ep-half-space -6;
 	}
 
 	@include oGridRespondTo($from: S) {
@@ -64,11 +64,15 @@
 
 }
 .event-promo-inarticle__img-block {
+
 	a {
 		border-bottom: none;
 		position: absolute;
 		top: 0;
 		right: 0;
+		overflow: hidden;
+		margin-left: -100px;
+
 
 		@include oGridRespondTo($until: S) {
 			width: 100%;
@@ -88,7 +92,7 @@
 
 	@include oGridRespondTo($from: S) {
 		width:340px;
-		margin-left: -100px;
+		//margin-left: -100px;
 		z-index: -1;
 	}
 
@@ -107,9 +111,9 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	margin-top: $ep-standard-space*2;
+	margin-top: $ep-standard-space;
+
 	@include oGridRespondTo($until: S) {
-		margin-bottom: $ep-half-space;
 		margin-top: 0;
 		border-top: none;
 		padding: 0;
@@ -125,7 +129,6 @@
 		@include oGridRespondTo($until: S) {
 			justify-content: center;
 			padding-bottom: 0;
-			//margin-top: $ep-half-space;
 		}
 	}
 }
