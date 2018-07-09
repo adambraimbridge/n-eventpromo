@@ -107,6 +107,7 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
+	margin-top: $ep-standard-space*2;
 	@include oGridRespondTo($until: S) {
 		margin-bottom: $ep-half-space;
 		margin-top: 0;
@@ -121,7 +122,6 @@
 	}
 	>div {
 		padding-top: $ep-standard-space;
-		padding-bottom: $ep-half-space;
 		@include oGridRespondTo($until: S) {
 			justify-content: center;
 			padding-bottom: 0;

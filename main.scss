@@ -27,10 +27,8 @@ $ep-half-space:$ep-standard-space/2;
 
 .event-promo__location {
 	@include oTypographySans($scale: 2);
-	margin-top: $ep-half-space;
 
 	@include oGridRespondTo($until: S) {
-		margin-top: 0;
 		@include oTypographySans($scale: 3);
 	}
 }
