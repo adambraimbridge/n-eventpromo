@@ -18,6 +18,7 @@ module.exports = (theEvent, variant) => {
 	}
 
 	eventUrl.searchParams.set('segmentId', theEvent.segmentId);
+	eventUrl.searchParams.set('variant', showVariant);
 
 	return {
 		id: theEvent.id,
