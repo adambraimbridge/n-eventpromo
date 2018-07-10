@@ -26,7 +26,7 @@
 }
 
 .event-promo__details {
-	background-color: rgba(38, 43, 51, 0.8);
+	background-color: rgba(38, 42, 51, 0.9);
 	color: getColor('white');
 	z-index: 4;
 	padding: $ep-standard-space;
@@ -35,7 +35,7 @@
 	justify-content: space-between;
 
 	a:hover {
-		color: getColor('black-20');
+		color: #c5cbd4;
 	}
 
 	@include oGridRespondTo($until: S) {
@@ -72,10 +72,15 @@
 		right: 0;
 		overflow: hidden;
 		margin-left: -100px;
+		max-height: 213px;
 
 
 		@include oGridRespondTo($until: S) {
 			width: 100%;
+		}
+
+		@include oGridRespondTo(L, XL) {
+			max-height: 168px;
 		}
 	}
 
@@ -114,16 +119,14 @@
 	margin-top: $ep-standard-space;
 
 	@include oGridRespondTo($until: S) {
-		margin-top: 0;
+
 		border-top: none;
 		padding: 0;
 	}
 	@include oGridRespondTo($until: S) {
 		flex-direction: column;
 	}
-	@include oGridRespondTo($from: L, $until:XL) {
-		margin-top: 0;
-	}
+
 	>div {
 		padding-top: $ep-standard-space;
 		@include oGridRespondTo($until: S) {
@@ -141,9 +144,9 @@
 
 .event-promo-inarticle__btn {
 	@include oButtons();
-	@include oButtonsTheme(primary);
+	@include oButtonsTheme(inverse);
 	@include oButtonsSize(big); //event btn style overrides
-
+	background-color:rgb(60,63,69);// rgb(82,82,87);
 
 	@include oGridRespondTo($until: S) {
 		width: 100%;
@@ -152,6 +155,13 @@
 	@include oGridRespondTo($from: S) {
 		@include oTypographySans($scale: 2);
 	}
+
+}
+
+.event-promo-inarticle__btn:not([disabled]):hover {
+	background-color: #565c64;
+	//rgba(197, 203, 212, 0.9);
+	// #c5cbd4; //rgba(255, 241, 229, 0.1);
 }
 
 .event-promo-inarticle__brand {
@@ -197,7 +207,8 @@
 		background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:pause?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg);
 		position: absolute;
 		color: getColor('white');
-		background-color: rgba(38, 43, 51, 0.4);
+		background-color: rgba(38, 42, 51, 0.4);
+;
 	}
 
 	.event-promo__control--paused {
