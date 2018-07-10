@@ -114,16 +114,14 @@
 	margin-top: $ep-standard-space;
 
 	@include oGridRespondTo($until: S) {
-		margin-top: 0;
+
 		border-top: none;
 		padding: 0;
 	}
 	@include oGridRespondTo($until: S) {
 		flex-direction: column;
 	}
-	@include oGridRespondTo($from: L, $until:XL) {
-		margin-top: 0;
-	}
+
 	>div {
 		padding-top: $ep-standard-space;
 		@include oGridRespondTo($until: S) {
