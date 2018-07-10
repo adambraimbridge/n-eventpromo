@@ -1,5 +1,7 @@
 @import "n-ui-foundations/main";
 @import 'o-buttons/main';
+$o-fonts-is-silent: false;
+@import 'o-fonts/main';
 
 $o-fonts-is-silent: false;
 @import 'o-fonts/main';
@@ -33,6 +35,7 @@ $ep-half-space:$ep-standard-space/2;
 
 .event-promo__location {
 	@include oTypographySans($scale: 2);
+	font-weight: 300;
 
 	@include oGridRespondTo($until: S) {
 		@include oTypographySans($scale: 3);
