@@ -26,7 +26,7 @@
 }
 
 .event-promo__details {
-	background-color: rgba(38, 42, 51, 0.8);
+	background-color: rgba(38, 42, 51, 0.9);
 	color: getColor('white');
 	z-index: 4;
 	padding: $ep-standard-space;
@@ -35,7 +35,7 @@
 	justify-content: space-between;
 
 	a:hover {
-		color: getColor('black-20');
+		color: #c5cbd4;
 	}
 
 	@include oGridRespondTo($until: S) {
@@ -146,7 +146,7 @@
 	@include oButtons();
 	@include oButtonsTheme(inverse);
 	@include oButtonsSize(big); //event btn style overrides
-	background-color: rgb(82,82,87);
+	background-color:rgb(60,63,69);// rgb(82,82,87);
 
 	@include oGridRespondTo($until: S) {
 		width: 100%;
@@ -159,7 +159,9 @@
 }
 
 .event-promo-inarticle__btn:not([disabled]):hover {
-	background-color: rgba(255, 241, 229, 0.1);
+	background-color: #565c64;
+	//rgba(197, 203, 212, 0.9);
+	// #c5cbd4; //rgba(255, 241, 229, 0.1);
 }
 
 .event-promo-inarticle__brand {
