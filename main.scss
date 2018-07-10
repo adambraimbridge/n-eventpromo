@@ -1,16 +1,21 @@
 @import "n-ui-foundations/main";
 @import 'o-buttons/main';
+$o-fonts-is-silent: false;
+@import 'o-fonts/main';
 
 $ep-standard-space:20px;
 $ep-half-space:$ep-standard-space/2;
 
+@include oFontsInclude(MetricWeb, $weight: light);
+
 .event-promo__title {
 	display: inline-block;
 	@include oTypographyDisplayBold($scale: 5);
-	padding: 2px 0;
+	//padding: 2px 0;
 	color: inherit;
 	text-decoration: none;
 	border: 0;
+	padding-bottom: 8px;
 
 	@include oGridRespondTo($until: S) {
 		margin-bottom: 0;
