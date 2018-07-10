@@ -72,10 +72,15 @@
 		right: 0;
 		overflow: hidden;
 		margin-left: -100px;
+		max-height: 213px;
 
 
 		@include oGridRespondTo($until: S) {
 			width: 100%;
+		}
+
+		@include oGridRespondTo(L, XL) {
+			max-height: 168px;
 		}
 	}
 
@@ -141,6 +146,7 @@
 	@include oButtons();
 	@include oButtonsTheme(inverse);
 	@include oButtonsSize(big); //event btn style overrides
+	background-color: getColor('slate-80');
 
 
 	@include oGridRespondTo($until: S) {
