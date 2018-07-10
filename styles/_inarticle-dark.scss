@@ -30,6 +30,9 @@
 	color: getColor('white');
 	z-index: 4;
 	padding: $ep-standard-space;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
 
 	a:hover {
 		color: getColor('black-20');
@@ -42,25 +45,34 @@
 		margin-right: $ep-half-space;
 		margin-bottom: 0;
 		padding: $ep-standard-space;
-		padding-bottom: $ep-half-space;
+		padding-bottom: $ep-half-space -6;
 	}
 
 	@include oGridRespondTo($from: S) {
 		flex-basis: 60%;
-		min-width: 250px;
+		min-width: 385px;
 	}
 
 	@include oGridRespondTo(S,M) {
 		flex-basis: 75%;
 	}
 
+	@include oGridRespondTo(L,XL) {
+		min-width: 300px;
+	}
+
+
 }
 .event-promo-inarticle__img-block {
+
 	a {
 		border-bottom: none;
 		position: absolute;
 		top: 0;
 		right: 0;
+		overflow: hidden;
+		margin-left: -100px;
+
 
 		@include oGridRespondTo($until: S) {
 			width: 100%;
@@ -80,7 +92,7 @@
 
 	@include oGridRespondTo($from: S) {
 		width:340px;
-		margin-left: -100px;
+		//margin-left: -100px;
 		z-index: -1;
 	}
 
@@ -99,8 +111,9 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
+	margin-top: $ep-standard-space;
+
 	@include oGridRespondTo($until: S) {
-		margin-bottom: $ep-half-space;
 		margin-top: 0;
 		border-top: none;
 		padding: 0;
@@ -113,11 +126,9 @@
 	}
 	>div {
 		padding-top: $ep-standard-space;
-		padding-bottom: $ep-half-space;
 		@include oGridRespondTo($until: S) {
 			justify-content: center;
 			padding-bottom: 0;
-			//margin-top: $ep-half-space;
 		}
 	}
 }
@@ -172,20 +183,21 @@
 	.event-promo__control {
 		cursor: pointer;
 		z-index:2;
-		border-radius: 15px;
-		height: 30px;
-		width: 30px;
-		top: 5px;
-		right: 5px;
+		border-radius: 22px;
+		height: 44px;
+		width: 44px;
+		top: 8px;
+		right: 8px;
 		display: inline-block;
 		background-repeat: no-repeat;
-		background-size: contain;
+		background-size: 70%;
+		background-position: center;
 		background-color: transparent;
 		vertical-align: baseline;
 		background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:pause?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg);
 		position: absolute;
 		color: getColor('white');
-		background-color: rgba(38, 43, 51, 0.5);
+		background-color: rgba(38, 43, 51, 0.4);
 	}
 
 	.event-promo__control--paused {
