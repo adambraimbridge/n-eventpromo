@@ -26,7 +26,7 @@
 }
 
 .event-promo__details {
-	background-color: rgba(38, 43, 51, 0.8);
+	background-color: rgba(38, 42, 51, 0.8);
 	color: getColor('white');
 	z-index: 4;
 	padding: $ep-standard-space;
@@ -139,7 +139,7 @@
 
 .event-promo-inarticle__btn {
 	@include oButtons();
-	@include oButtonsTheme(primary);
+	@include oButtonsTheme(inverse);
 	@include oButtonsSize(big); //event btn style overrides
 
 
@@ -195,7 +195,8 @@
 		background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:pause?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg);
 		position: absolute;
 		color: getColor('white');
-		background-color: rgba(38, 43, 51, 0.4);
+		background-color: rgba(38, 42, 51, 0.4);
+;
 	}
 
 	.event-promo__control--paused {
