@@ -146,8 +146,7 @@
 	@include oButtons();
 	@include oButtonsTheme(inverse);
 	@include oButtonsSize(big); //event btn style overrides
-	background-color: getColor('slate-80');
-
+	background-color: rgb(82,82,87);
 
 	@include oGridRespondTo($until: S) {
 		width: 100%;
@@ -156,6 +155,11 @@
 	@include oGridRespondTo($from: S) {
 		@include oTypographySans($scale: 2);
 	}
+
+}
+
+.event-promo-inarticle__btn:not([disabled]):hover {
+	background-color: rgba(255, 241, 229, 0.1);
 }
 
 .event-promo-inarticle__brand {
