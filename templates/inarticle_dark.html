@@ -23,14 +23,14 @@ data-focus-concept="{{id}}">
 		<span class="event-promo__control js-event-promo__control" aria-label="control animation"></span>
 			{{#each images}}
 				<a href="{{../eventUrl}}" data-trackable="event-promo" class="js-event-promo--animate">
-					<img class="event-promo-inarticle__img fade-{{@index}}" srcset="https://www.ft.com/__origami/service/image/v2/images/raw/{{this}}?source=next&amp;fit=cover&amp;compression=best&amp;width=340 340w,
+					<img class="js-event-promo--animate event-promo-inarticle__img fade-{{@index}}" srcset="https://www.ft.com/__origami/service/image/v2/images/raw/{{this}}?source=next&amp;fit=cover&amp;compression=best&amp;width=340 340w,
 						https://www.ft.com/__origami/service/image/v2/images/raw/{{this}}?source=next&amp;fit=cover&amp;compression=best&amp;width=400 740w"
 					alt="{{eventTitle}}" data-n-image-lazy-load-js role="presentation" size: "(max-width: 46.24em) 100vw, 45vw">
 				</a>
 			{{/each}}
 		{{else}}
 		<a href="{{eventUrl}}" data-trackable="event-promo">
-			<img class="event-promo-inarticle__img" srcset="https://www.ft.com/__origami/service/image/v2/images/raw/{{mainImage}}?source=next&amp;fit=cover&amp;compression=best&amp;width=340 340w,
+			<img class="js-event-promo--animate event-promo-inarticle__img" srcset="https://www.ft.com/__origami/service/image/v2/images/raw/{{mainImage}}?source=next&amp;fit=cover&amp;compression=best&amp;width=340 340w,
 					https://www.ft.com/__origami/service/image/v2/images/raw/{{mainImage}}?source=next&amp;fit=cover&amp;compression=best&amp;width=400 740w"
 			alt="{{eventTitle}}" data-n-image-lazy-load-js role="presentation" size: "(max-width: 46.24em) 100vw, 45vw">
 		</a>
