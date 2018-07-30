@@ -1,7 +1,5 @@
-const oDate = require('o-date');
-
 const staticAssets = 'https://www.ft.com/__assets/creatives/better-promo/';
-
+const setDate = require('./event-date');
 module.exports = (theEvent, variant) => {
 	const eventUrl = new URL(theEvent.eventUrl);
 
@@ -24,7 +22,7 @@ module.exports = (theEvent, variant) => {
 		id: theEvent.id,
 		eventTitle: theEvent.title,
 		mainImage: encodeURI(theEvent.imageUrl),
-		eventStart: oDate.format(theEvent.scheduledStartTime, 'dd MMMM yyyy'),
+		eventDate: setDate(theEvent),
 		eventUrl: eventUrl.toString(),
 		segmentId: theEvent.segmentId,
 		eventLocation: theEvent.location,
