@@ -33,12 +33,16 @@ $ep-half-space:$ep-standard-space/2;
 	}
 }
 
-.event-promo__location {
+.event-promo__meta {
 	@include oTypographySans($scale: 2);
 	font-weight: 300;
 
 	@include oGridRespondTo($until: S) {
 		@include oTypographySans($scale: 3);
+	}
+
+	p {
+		margin: 0;
 	}
 }
 
