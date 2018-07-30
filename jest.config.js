@@ -3,5 +3,6 @@ module.exports = {
 		'\\.html$': 'jest-handlebars'
 	},
 	coveragePathIgnorePatterns: ['/node_modules/', '/bower_components/'],
-	testEnvironment: 'node'
+	testEnvironment: 'node',
+	testURL: 'http://localhost/'
 };
