@@ -1,5 +1,6 @@
 const fetchMock = require('fetch-mock');
-const eventPromo = require('../../src/lib/event-promo-client');
+const config = require('../../src/config');
+const eventpromoClient = require('../../src/lib/event-promo-client');
 const concepts = require('../fixtures/conceptFixture');
 const liveEvent = require('../fixtures/liveEvent');
 
@@ -9,14 +10,14 @@ afterEach(() => {
 
 describe('Unit tests: getEventsFromApi()', async () => {
 	test('should get events on success', async () => {
-		fetchMock.post('/eventpromo/api/', liveEvent);
-		const subject = await eventPromo.getEventsFromApi(concepts);
+		fetchMock.post(config.apiPath, liveEvent);
+		const subject = await eventpromoClient.getEventsFromApi(concepts);
 		expect(subject).toEqual(liveEvent);
 	});
 
 	test('should get events on success when called with no concepts', async () => {
-		fetchMock.post('/eventpromo/api/', liveEvent);
-		const subject = await eventPromo.getEventsFromApi();
+		fetchMock.post(config.apiPath, liveEvent);
+		const subject = await eventpromoClient.getEventsFromApi();
 		expect(subject).toEqual(liveEvent);
 	});
 
@@ -24,11 +25,11 @@ describe('Unit tests: getEventsFromApi()', async () => {
 
 		test('when we fail to get response from api', async () => {
 			const error = new Error('some network failure');
-			fetchMock.post('/eventpromo/api/', {throws: error});
+			fetchMock.post(config.apiPath, {throws: error});
 
 			let hasError = false;
 			try {
-				await eventPromo.getEventsFromApi(concepts);
+				await eventpromoClient.getEventsFromApi(concepts);
 			} catch (e) {
 				hasError = true;
 				expect(e.message).toEqual('failed to fetch eventpromos from enventpromo-api');
@@ -38,11 +39,11 @@ describe('Unit tests: getEventsFromApi()', async () => {
 
 		test('when response from api cannot be parsed', async () => {
 			const fakeResponse = { status: 200, body: 'invalid json data'};
-			fetchMock.post('/eventpromo/api/', fakeResponse);
+			fetchMock.post(config.apiPath, fakeResponse);
 
 			let hasError = false;
 			try {
-				await eventPromo.getEventsFromApi(concepts);
+				await eventpromoClient.getEventsFromApi(concepts);
 			} catch (e) {
 				hasError = true;
 				expect(e.message).toMatch('failed to parse response from enventpromo-api');

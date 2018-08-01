@@ -1,5 +1,5 @@
 
-const anEvent = require('../fixtures/liveEvent.json').eventpromos[0];
+const anEvent = require('../fixtures/liveEvent.json').eventpromo;
 const imageArrayFixture = require('../fixtures/imagesArray');
 const mapEventData = require('../../src/lib/mapEventData');
 

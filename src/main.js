@@ -26,7 +26,10 @@ async function eventPromoInit (rootEl) {
 		throw new Error('failed to fetch eventpromos');
 	}
 
-	if (!Array.isArray(eventpromoClientResponse.eventpromo) || !eventpromoClientResponse.eventpromo.length) {
+	if (! eventpromoClientResponse.hasOwnProperty('eventpromo')
+		|| ! typeof eventpromoClientResponse.eventpromo === 'object'
+		|| Object.keys(eventpromoClientResponse.eventpromo) === 0
+	) {
 		throw new Error('no eventpromo match for this event');
 	}
 
