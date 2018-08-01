@@ -1,5 +1,5 @@
 async function getEventsFromApi (eventConcepts = []) {
-	const url = '/eventpromo/api/';
+	const url = '/eventpromo/api/get-one';
 
 	let fetchResponse;
 	try {

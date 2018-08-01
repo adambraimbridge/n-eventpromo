@@ -1,4 +1,4 @@
-const eventPromo = require('./lib/event-promo-client');
+const eventpromoClient = require('./lib/event-promo-client');
 const mapEventData = require('./lib/mapEventData');
 const hasValidConcepts = require('./lib/hasValidConcept');
 const animationToggle = require('./lib/animation-control');
@@ -18,19 +18,19 @@ async function eventPromoInit (rootEl) {
 		throw new Error('no valid concept ids for eventpromo');
 	}
 
-	let promoEvents;
+	let eventpromoClientResponse;
 	try {
-		promoEvents = await eventPromo.getEventsFromApi(concepts);
+		eventpromoClientResponse = await eventpromoClient.getEventsFromApi(concepts);
 	}
 	catch (err) {
 		throw new Error('failed to fetch eventpromos');
 	}
 
-	if (!Array.isArray(promoEvents.eventpromos) || !promoEvents.eventpromos.length) {
+	if (!Array.isArray(eventpromoClientResponse.eventpromo) || !eventpromoClientResponse.eventpromo.length) {
 		throw new Error('no eventpromo match for this event');
 	}
 
-	const mappedEvent = mapEventData(promoEvents.eventpromos[0], showVariant);
+	const mappedEvent = mapEventData(eventpromoClientResponse.eventpromo, showVariant);
 	promoSlotSelector.innerHTML = template(mappedEvent);
 
 	if(showVariant) {
