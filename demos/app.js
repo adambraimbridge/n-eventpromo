@@ -3,6 +3,7 @@
 const express = require('@financial-times/n-internal-tool');
 const fixtures = require('./conceptFixtures.json');
 const eventFixture = require('./fixtures.json');
+
 const chalk = require('chalk');
 const errorHighlight = chalk.bold.red;
 const highlight = chalk.bold.green;
@@ -31,6 +32,10 @@ app.get('/', (req, res) => {
 
 //Mock api request
 app.post('/eventpromo/api/', (req, res) => {
+	res.send(eventFixture);
+});
+
+app.post('/eventpromo/api/get-one', (req, res) => {
 	res.send(eventFixture);
 });
 

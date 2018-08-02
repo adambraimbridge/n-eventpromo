@@ -1,5 +1,6 @@
 const {JSDOM} = require('jsdom');
 const fetchMock = require('fetch-mock');
+const config = require('../src/config');
 const eventPromoInit = require('../src/main');
 
 //fixtures
@@ -102,9 +103,7 @@ describe('Unit tests: main', () => {
 				expect(hasError).toEqual(true);
 			});
 			test('should throw error when api call returns no event', async () => {
-				fetchMock.post('/eventpromo/api/', {
-					'eventpromos': []
-				});
+				fetchMock.post(config.apiPath, {});
 				const eventContainer = document.querySelector('.event-promo-container');
 				eventContainer.innerHTML = eventPromoDataEl;
 				let hasError = false;
@@ -120,8 +119,8 @@ describe('Unit tests: main', () => {
 		describe('success', () => {
 
 			test('should update dom', async () => {
-				fetchMock.post('/eventpromo/api/', liveEvent);
-				const eventSource = liveEvent.eventpromos[0];
+				fetchMock.post(config.apiPath, liveEvent);
+				const eventSource = liveEvent.eventpromo;
 				const eventContainer = document.querySelector('.event-promo-container');
 				eventContainer.innerHTML = eventPromoDataEl;
 
@@ -143,7 +142,7 @@ describe('Unit tests: main', () => {
 			test('should return true', async () => {
 				const eventContainer = document.querySelector('.event-promo-container');
 
-				fetchMock.post('/eventpromo/api/', liveEvent);
+				fetchMock.post(config.apiPath, liveEvent);
 				eventContainer.innerHTML = eventPromoDataEl;
 
 				expect(await eventPromoInit(document)).toEqual(true);
@@ -154,8 +153,8 @@ describe('Unit tests: main', () => {
 
 			test('should update dom using variant template', async () => {
 
-				fetchMock.post('/eventpromo/api/', liveEvent);
-				const eventSource = liveEvent.eventpromos[0];
+				fetchMock.post(config.apiPath, liveEvent);
+				const eventSource = liveEvent.eventpromo;
 				const eventContainer = document.querySelector('.event-promo-container');
 				eventContainer.innerHTML = eventPromoDataEl;
 

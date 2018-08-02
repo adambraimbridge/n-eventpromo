@@ -1,5 +1,5 @@
 {
-  "eventpromos": [
+  "eventpromo":
     {
       "concepts": [
         {
@@ -26,5 +26,4 @@
       "title": "FT Brexit and Beyond Summit",
       "location": "Planet Earth"
     }
-  ]
 }
