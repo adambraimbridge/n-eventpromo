@@ -1,3 +1,3 @@
 module.exports = {
-  'apiPath': 'eventpromo/api/get-one/'
+	'apiPath': 'eventpromo/api/get-one/'
 };
