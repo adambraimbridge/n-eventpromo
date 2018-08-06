@@ -36,9 +36,7 @@ async function eventPromoInit (rootEl) {
 	const mappedEvent = mapEventData(eventpromoClientResponse.eventpromo, showVariant);
 	promoSlotSelector.innerHTML = template(mappedEvent);
 
-	if(showVariant) {
-		animationToggle();
-	}
+	animationToggle();
 
 	return true;
 }
