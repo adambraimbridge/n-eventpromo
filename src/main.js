@@ -24,8 +24,6 @@ async function eventPromoInit (rootEl) {
 		template = darkTemp;
 	}
 
-	console.log(theme);
-
 	const concepts = JSON.parse(promoDataSelector.innerHTML);
 	if (!concepts || !hasValidConcepts(concepts)) {
 		throw new Error('no valid concept ids for eventpromo');
@@ -48,7 +46,6 @@ async function eventPromoInit (rootEl) {
 
 	const mappedEvent = mapEventData(eventpromoClientResponse.eventpromo, showVariant);
 
-	console.log(theme);
 	promoSlotSelector.classList.add(theme);
 	promoSlotSelector.innerHTML = template(mappedEvent);
 
