@@ -49,7 +49,7 @@
 	}
 }
 
-.event-promo-inline {
+.event-promo-inarticle {
 	margin-top: 30px;
 	display: flex;
 	flex-direction: column;
@@ -63,20 +63,20 @@
 	}
 }
 
-.event-promo-inline__blocks {
+.event-promo-inarticle__blocks {
 	display: flex;
 	@include oGridRespondTo($until: S) {
 		flex-direction: column;
 	}
 }
 
-.event-promo-inline__img-block {
+.event-promo-inarticle__img-block {
 	a {
 		border-bottom:none;
 	}
 }
 
-.event-promo-inline__img {
+.event-promo-inarticle__img {
 	width:42%;
 	@include oGridRespondTo($from: S) {
 		position: absolute;
@@ -92,7 +92,7 @@
 	}
 }
 
-.event-promo-inline__cta {
+.event-promo-inarticle__cta {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -131,13 +131,13 @@
 
 }
 
-.event-promo-inline__btn-block {
+.event-promo-inarticle__btn-block {
 	@include oGridRespondTo($until: S) {
 		width: 100%;
 	}
 }
 
-.event-promo-inline__btn {
+.event-promo-inarticle__btn {
 	@include oButtons();
 	color: getColor('black-70');
 	border: 1px solid getColor('black-70');
@@ -152,7 +152,7 @@
 	}
 }
 
-.event-promo-inline__brand {
+.event-promo-inarticle__brand {
 	display: flex;
 	align-items: center;
 	@include oTypographySans($scale: -2);
@@ -160,7 +160,7 @@
 		padding-right: $ep-half-space;
 	}
 	&::after {
-		display: inline-block;
+		display: inarticle-block;
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: 50%;
@@ -172,5 +172,32 @@
 	}
 	@include oGridRespondTo($until: S) {
 		align-self: flex-end;
+	}
+
+	.event-promo-animation {
+
+		.event-promo__control {
+			cursor: pointer;
+			z-index:2;
+			border-radius: 22px;
+			height: 44px;
+			width: 44px;
+			top: 8px;
+			right: 8px;
+			display: inarticle-block;
+			background-repeat: no-repeat;
+			background-size: 70%;
+			background-position: center;
+			background-color: transparent;
+			vertical-align: baseline;
+			background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:pause?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg);
+			position: absolute;
+			color: getColor('white');
+			background-color: rgba(38, 42, 51, 0.4);
+		}
+
+		.event-promo__control--paused {
+			background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:play?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg);
+		}
 	}
 }
