@@ -36,10 +36,17 @@
 	}
 }
 
-.event-promo__location {
-	@include oTypographyDisplay($scale: 1);
-	text-transform: uppercase;
-	margin-top: $ep-half-space;
+
+.event-promo__meta {
+	@include oTypographyDisplay($scale: 2);
+	font-weight: 300;
+
+	@include oGridRespondTo($until: S) {
+	}
+
+	p {
+		margin: 0;
+	}
 }
 
 .event-promo-inline {
@@ -111,9 +118,9 @@
 		flex-direction: column;
 	}
 
-	@include oGridRespondTo($from: L, $until:XL) {
-		margin-top:0;
-	}
+	// @include oGridRespondTo($from: L, $until:XL) {
+	// 	margin-top:0;
+	// }
 
 	> div {
 		@include oGridRespondTo($until: S) {
