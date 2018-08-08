@@ -20,7 +20,7 @@ data-focus-concept="{{id}}">
 	</div>
 	<div class="event-promo-inarticle__blocks event-promo-inarticle__img-block">
 		{{#if images }}
-		<span class="event-promo__control js-event-promo__control" aria-label="control animation"></span>
+		<span class="event-promo__control js-event-promo__control" aria-label="control animation" tabindex="0"></span>
 			{{#each images}}
 				<a href="{{../eventUrl}}" data-trackable="event-promo" class="js-event-promo--animate">
 					<img class="js-event-promo--animate event-promo-inarticle__img fade-{{@index}}" srcset="https://www.ft.com/__origami/service/image/v2/images/raw/{{this}}?source=next&amp;fit=cover&amp;compression=best&amp;width=340 340w,
