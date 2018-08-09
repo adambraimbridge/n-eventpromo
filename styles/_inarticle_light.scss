@@ -71,25 +71,59 @@
 }
 
 .event-promo-inarticle__img-block {
+
 	a {
-		border-bottom:none;
+		border-bottom: none;
+		position: absolute;
+		top: -$ep-standard-space;
+		right:-$ep-standard-space;
+		overflow: hidden;
+
+		@include oGridRespondTo($until: S) {
+			width: 100%;
+			order: -1;
+		}
+		@include oGridRespondTo(L, XL) {
+			max-height: 168px;
+		}
 	}
 }
 
 .event-promo-inarticle__img {
-	width:42%;
-	@include oGridRespondTo($from: S) {
-		position: absolute;
-		top: -$ep-standard-space;
-		right: $ep-standard-space;
-	}
+	position: relative;
+	top: 0;
+	right: 0;
+
 	@include oGridRespondTo($until: S) {
-		position: relative;
-		top: 0;
-		right: 0;
 		width: 100%;
 		order: -1;
 	}
+
+	@include oGridRespondTo(S, M) {
+		width:260px;
+		z-index: -1;
+	}
+
+	@include oGridRespondTo($from: M) {
+		width:284px;
+	}
+
+	// @include oGridRespondTo(L, XL) {
+	// 	width:300px;
+	// }
+	// width:42%;
+	// @include oGridRespondTo($from: S) {
+	// 	position: absolute;
+	// 	top: -$ep-standard-space;
+	// 	right: $ep-standard-space;
+	// }
+	// @include oGridRespondTo($until: S) {
+	// 	position: relative;
+	// 	top: 0;
+	// 	right: 0;
+	// 	width: 100%;
+	// 	order: -1;
+	// }
 }
 
 .event-promo-inarticle__cta {
@@ -183,8 +217,8 @@
 		border-radius: 22px;
 		height: 44px;
 		width: 44px;
-		top: 8px;
-		right: 8px;
+		top: -10px;
+		right: -10px;
 		display: inarticle-block;
 		background-repeat: no-repeat;
 		background-size: 70%;
