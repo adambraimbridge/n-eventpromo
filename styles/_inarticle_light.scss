@@ -5,14 +5,14 @@
 	}
 	@include oGridRespondTo($until: S) {
 		order: 1;
-		margin-top: -30px;
+		margin-top: 155px;
 		margin-left:$ep-half-space;
 		margin-right:$ep-half-space;
 		max-width: 100%;
 		padding: $ep-half-space $ep-standard-space;
 		background-color: getColor('paper');
-		z-index: 1;
-		border: 1px solid getColor('black-70');
+		z-index: 60;
+		border: 1px solid getColor('black-50');
 		border-bottom: none;
 	}
 }
