@@ -38,10 +38,11 @@
 
 
 .event-promo__meta {
-	@include oTypographyDisplay($scale: 2);
+	@include oTypographySans($scale: 2);
 	font-weight: 300;
 
 	@include oGridRespondTo($until: S) {
+		@include oTypographySans($scale: 3);
 	}
 
 	p {
