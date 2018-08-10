@@ -82,6 +82,7 @@
 		@include oGridRespondTo($until: S) {
 			width: 100%;
 			order: -1;
+			right:0;
 		}
 		@include oGridRespondTo($from: M) {
 			height:160px;
@@ -232,6 +233,10 @@
 		position: absolute;
 		color: getColor('white');
 		background-color: rgba(38, 42, 51, 0.4);
+
+		@include oGridRespondTo($until: S) {
+			right: 10px;
+		}
 	}
 
 	.event-promo__control--paused {
