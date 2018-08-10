@@ -83,6 +83,9 @@
 			width: 100%;
 			order: -1;
 		}
+		@include oGridRespondTo($from: M) {
+			height:160px;
+		}
 		@include oGridRespondTo(L, XL) {
 			max-height: 168px;
 		}
@@ -100,7 +103,7 @@
 	}
 
 	@include oGridRespondTo(S, M) {
-		width:260px;
+		max-width: 220px;
 		z-index: -1;
 	}
 
@@ -213,7 +216,7 @@
 
 	.event-promo__control {
 		cursor: pointer;
-		z-index:500;
+		z-index:50;
 		border-radius: 22px;
 		height: 44px;
 		width: 44px;
