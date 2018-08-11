@@ -17,6 +17,10 @@
 		border: 1px solid getColor('black-50');
 		border-bottom: none;
 	}
+
+	@include oGridRespondTo(L,XL) {
+		flex-basis: 56%;
+	}
 }
 
 .event-promo__title {
@@ -40,11 +44,12 @@
 
 
 .event-promo__meta {
-	@include oTypographySans($scale: 2);
+	margin-top: 10px;
+	@include oTypographySans($scale: 3);
 	font-weight: 300;
 
-	@include oGridRespondTo($until: S) {
-		@include oTypographySans($scale: 3);
+	@include oGridRespondTo(L,XL) {
+		@include oTypographySans($scale: 2);
 	}
 
 	p {
@@ -96,8 +101,8 @@
 			width:249px;
 		}
 		@include oGridRespondTo($from:M) {
-			height:160px;
-			width:284px;
+			height:191px;
+			width:340px;
 		}
 		@include oGridRespondTo(L, XL) {
 			height: 140px;
@@ -142,6 +147,10 @@
 
 	@include oGridRespondTo($until: S) {
 		flex-direction: column;
+	}
+
+	@include oGridRespondTo(L,XL) {
+		margin-top:0;
 	}
 
 	> div {
