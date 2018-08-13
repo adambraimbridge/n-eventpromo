@@ -8,14 +8,14 @@ module.exports = (theEvent) => {
 	eventUrl.searchParams.set('segmentId', theEvent.segmentId);
 
 	return {
+		dates: setDate(theEvent),
 		id: theEvent.id,
-		eventTitle: theEvent.title,
-		mainImage: encodeURI(theEvent.imageUrl),
-		eventDate: setDate(theEvent),
-		eventUrl: eventUrl.toString(),
+		image1: images[0],
+		image2: images[1],
+		image3: images[2],
+		link: eventUrl.toString(),
+		location: theEvent.location,
 		segmentId: theEvent.segmentId,
-		eventLocation: theEvent.location,
-		images,
-		strapline: theEvent.strapline
+		title: theEvent.title
 	};
 };
