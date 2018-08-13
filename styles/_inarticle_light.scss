@@ -44,6 +44,7 @@
 
 
 .event-promo__meta {
+  	max-width: 320px;
 	margin-top: 10px;
 	@include oTypographySans($scale: 3);
 	font-weight: 300;
@@ -69,7 +70,6 @@
 	@include oGridRespondTo($from: S) {
 		padding: $ep-standard-space $ep-standard-space 0;
 		border: 1px solid getColor('black-20');
-		margin-right:20px;
 	}
 
 }
@@ -87,7 +87,7 @@
 		border-bottom: none;
 		position: absolute;
 		top: -$ep-standard-space;
-		right:-$ep-standard-space;
+		right: $ep-standard-space;
 		overflow: hidden;
 		max-height: 213px;
 
@@ -102,7 +102,7 @@
 		}
 		@include oGridRespondTo($from:M) {
 			height:191px;
-			width:340px;
+			width:320px;
 		}
 		@include oGridRespondTo(L, XL) {
 			height: 140px;
@@ -215,7 +215,7 @@
 		height: 44px;
 		width: 44px;
 		top: -10px;
-		right: -10px;
+		right: 30px;
 		display: inarticle-block;
 		background-repeat: no-repeat;
 		background-size: 70%;

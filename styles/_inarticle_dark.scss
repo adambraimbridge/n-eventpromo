@@ -131,7 +131,7 @@
 	width: 100%;
 
 	@include oGridRespondTo($from: S) {
-		width:340px;
+		width:320px;
 		//margin-left: -100px;
 		z-index: -1;
 	}
