@@ -89,7 +89,7 @@
 		top: -$ep-standard-space;
 		right: $ep-standard-space;
 		overflow: hidden;
-		max-height: 213px;
+		max-height: 180px;
 
 		@include oGridRespondTo($until: S) {
 			width: 100%;
@@ -101,7 +101,7 @@
 			width:249px;
 		}
 		@include oGridRespondTo($from:M) {
-			height:191px;
+			height:180px;
 			width:320px;
 		}
 		@include oGridRespondTo(L, XL) {
