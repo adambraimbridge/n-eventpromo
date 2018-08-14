@@ -1,15 +1,15 @@
 
-
 .event-promo__title-block {
 	@include oGridRespondTo($from: S) {
-		min-height: 110px;
+		max-width: 310px;
+		min-height: 130px;
 		flex-basis: 54%;
 	}
 	@include oGridRespondTo($until: S) {
 		order: 1;
 		margin-top: 155px;
-		margin-left:$ep-half-space;
-		margin-right:$ep-half-space;
+		margin-left: $ep-half-space;
+		margin-right: $ep-half-space;
 		max-width: 100%;
 		padding: $ep-half-space $ep-standard-space;
 		background-color: getColor('paper');
@@ -18,8 +18,10 @@
 		border-bottom: none;
 	}
 
-	@include oGridRespondTo(L,XL) {
+	@include oGridRespondTo(L, XL) {
 		flex-basis: 56%;
+		min-height: 110px;
+		max-width: 250px;
 	}
 }
 
@@ -30,26 +32,24 @@
 	text-decoration: none;
 	border: 0;
 	@include oGridRespondTo($from: M) {
-		margin:0 0 5px;
+		margin: 0 0 5px;
 		@include oTypographyDisplayBold($scale: 6);
 	}
 	@include oGridRespondTo($until: S) {
 		margin-bottom: 0;
 	}
 
-	@include oGridRespondTo($from: L, $until:XL) {
+	@include oGridRespondTo($from: L, $until: XL) {
 		@include oTypographyDisplayBold($scale: 5);
 	}
 }
 
-
 .event-promo__meta {
-  	max-width: 320px;
 	margin-top: 10px;
 	@include oTypographySans($scale: 3);
 	font-weight: 300;
 
-	@include oGridRespondTo(L,XL) {
+	@include oGridRespondTo(L, XL) {
 		@include oTypographySans($scale: 2);
 	}
 
@@ -94,19 +94,19 @@
 		@include oGridRespondTo($until: S) {
 			width: 100%;
 			order: -1;
-			right:0;
+			right: 0;
 		}
-		@include oGridRespondTo(S,M) {
-			height:140px;
-			width:249px;
+		@include oGridRespondTo(S, M) {
+			height: 140px;
+			width: 249px;
 		}
-		@include oGridRespondTo($from:M) {
-			height:180px;
-			width:320px;
+		@include oGridRespondTo($from: M) {
+			height: 180px;
+			width: 320px;
 		}
 		@include oGridRespondTo(L, XL) {
 			height: 140px;
-			width:249px;
+			width: 249px;
 		}
 	}
 }
@@ -115,7 +115,7 @@
 	position: relative;
 	top: 0;
 	right: 0;
-	width:100%;
+	width: 100%;
 
 	@include oGridRespondTo($until: S) {
 		order: -1;
@@ -137,7 +137,7 @@
 
 	@include oGridRespondTo($until: S) {
 		margin-bottom: $ep-half-space;
-		margin-top:0;
+		margin-top: 0;
 		margin-right: $ep-half-space;
 		margin-left: $ep-half-space;
 		border: 1px solid getColor('black-70');
@@ -149,8 +149,8 @@
 		flex-direction: column;
 	}
 
-	@include oGridRespondTo(L,XL) {
-		margin-top:0;
+	@include oGridRespondTo(L, XL) {
+		margin-top: 0;
 	}
 
 	> div {
@@ -179,7 +179,7 @@
 	}
 
 	@include oGridRespondTo($until: S) {
-		width:100%;
+		width: 100%;
 	}
 }
 
@@ -210,7 +210,7 @@
 
 	.event-promo__control {
 		cursor: pointer;
-		z-index:50;
+		z-index: 50;
 		border-radius: 22px;
 		height: 44px;
 		width: 44px;
