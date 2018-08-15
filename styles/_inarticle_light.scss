@@ -1,0 +1,238 @@
+
+.event-promo__title-block {
+	@include oGridRespondTo($from: S) {
+		max-width: 310px;
+		min-height: 130px;
+		flex-basis: 54%;
+	}
+	@include oGridRespondTo($until: S) {
+		order: 1;
+		margin-top: 155px;
+		margin-left: $ep-half-space;
+		margin-right: $ep-half-space;
+		max-width: 100%;
+		padding: $ep-half-space $ep-standard-space;
+		background-color: getColor('paper');
+		z-index: 60;
+		border: 1px solid getColor('black-50');
+		border-bottom: none;
+	}
+
+	@include oGridRespondTo(L, XL) {
+		flex-basis: 56%;
+		min-height: 110px;
+		max-width: 250px;
+	}
+}
+
+.event-promo__title {
+	@include oTypographyDisplayBold($scale: 5);
+	padding: 2px 0;
+	color: inherit;
+	text-decoration: none;
+	border: 0;
+	@include oGridRespondTo($from: M) {
+		margin: 0 0 5px;
+		@include oTypographyDisplayBold($scale: 6);
+	}
+	@include oGridRespondTo($until: S) {
+		margin-bottom: 0;
+	}
+
+	@include oGridRespondTo($from: L, $until: XL) {
+		@include oTypographyDisplayBold($scale: 5);
+	}
+}
+
+.event-promo__meta {
+	margin-top: 10px;
+	@include oTypographySans($scale: 3);
+	font-weight: 300;
+
+	@include oGridRespondTo(L, XL) {
+		@include oTypographySans($scale: 2);
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+.event-promo-inarticle {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	@include oGridRespondTo($until: S) {
+		padding: 0;
+	}
+	@include oGridRespondTo($from: S) {
+		padding: $ep-standard-space $ep-standard-space 0;
+		border: 1px solid getColor('black-20');
+	}
+
+}
+
+.event-promo-inarticle__blocks {
+	display: flex;
+	@include oGridRespondTo($until: S) {
+		flex-direction: column;
+	}
+}
+
+.event-promo-inarticle__img-block {
+
+	a {
+		border-bottom: none;
+		position: absolute;
+		top: -$ep-standard-space;
+		right: $ep-standard-space;
+		overflow: hidden;
+		max-height: 180px;
+
+		@include oGridRespondTo($until: S) {
+			width: 100%;
+			order: -1;
+			right: 0;
+		}
+		@include oGridRespondTo(S, M) {
+			height: 140px;
+			width: 249px;
+		}
+		@include oGridRespondTo($from: M) {
+			height: 180px;
+			width: 320px;
+		}
+		@include oGridRespondTo(L, XL) {
+			height: 140px;
+			width: 249px;
+		}
+	}
+}
+
+.event-promo-inarticle__img {
+	position: relative;
+	top: 0;
+	right: 0;
+	width: 100%;
+
+	@include oGridRespondTo($until: S) {
+		order: -1;
+	}
+
+}
+
+.event-promo-inarticle__cta {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: $ep-standard-space;
+	padding-bottom: $ep-standard-space;
+
+	@include oGridRespondTo($from: S) {
+		margin-top: 15px;
+	}
+
+	@include oGridRespondTo($until: S) {
+		margin-bottom: $ep-half-space;
+		margin-top: 0;
+		margin-right: $ep-half-space;
+		margin-left: $ep-half-space;
+		border: 1px solid getColor('black-70');
+		border-top: none;
+		padding: 0 $ep-standard-space $ep-standard-space;
+	}
+
+	@include oGridRespondTo($until: S) {
+		flex-direction: column;
+	}
+
+	@include oGridRespondTo(L, XL) {
+		margin-top: 0;
+	}
+
+	> div {
+		@include oGridRespondTo($until: S) {
+			justify-content: center;
+			margin-top: $ep-standard-space;
+		}
+	}
+
+}
+
+.event-promo-inarticle__btn-block {
+	@include oGridRespondTo($until: S) {
+		width: 100%;
+	}
+}
+
+.event-promo-inarticle__btn {
+	@include oButtons();
+	color: getColor('black-70');
+	border: 1px solid getColor('black-70');
+	@include oButtonsSize(big); //event btn style overrides
+
+	@include oGridRespondTo($from: S) {
+		@include oTypographySans($scale: 2);
+	}
+
+	@include oGridRespondTo($until: S) {
+		width: 100%;
+	}
+}
+
+.event-promo-inarticle__brand {
+	display: flex;
+	align-items: center;
+	@include oTypographySans($scale: -2);
+	span {
+		padding-right: $ep-half-space;
+	}
+	&::after {
+		display: inarticle-block;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: 50%;
+		background-color: transparent;
+		content: ' ';
+		width: 60px;
+		height: 60px;
+		background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/specialisttitle-v1:brand-live-ft-logo?source=n-eventpromo')
+	}
+	@include oGridRespondTo($until: S) {
+		align-self: flex-end;
+	}
+}
+
+.event-promo-animation {
+
+	.event-promo__control {
+		cursor: pointer;
+		z-index: 50;
+		border-radius: 22px;
+		height: 44px;
+		width: 44px;
+		top: -10px;
+		right: 30px;
+		display: inarticle-block;
+		background-repeat: no-repeat;
+		background-size: 70%;
+		background-position: center;
+		background-color: transparent;
+		vertical-align: baseline;
+		background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:pause?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg);
+		position: absolute;
+		color: getColor('white');
+		background-color: rgba(38, 42, 51, 0.4);
+
+		@include oGridRespondTo($until: S) {
+			right: 10px;
+		}
+	}
+
+	.event-promo__control--paused {
+		background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:play?source=o-icons&tint=%23FFFFFF,%23FFFFFF&format=svg);
+	}
+}

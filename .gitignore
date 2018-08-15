@@ -4,6 +4,7 @@ bower_components/
 .editorconfig
 .eslintrc.js
 /public/
+/dist/
 /pa11y_screenCapture/*
 *.env*
 /.vscode
