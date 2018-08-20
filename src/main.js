@@ -16,6 +16,7 @@ async function eventPromoInit (rootEl) {
 		throw new Error('no dom for eventpromo');
 	}
 
+	//TODO manage a control and 3 variants
 	if(showVariant) {
 		template = lightTemp;
 		theme = theme.concat('light');
