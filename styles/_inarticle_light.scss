@@ -7,7 +7,7 @@
 	}
 	@include oGridRespondTo($until: S) {
 		order: 1;
-		margin-top: 155px;
+		margin-top: 148px;
 		margin-left: $ep-half-space;
 		margin-right: $ep-half-space;
 		max-width: 100%;
@@ -89,12 +89,16 @@
 		top: -$ep-standard-space;
 		right: $ep-standard-space;
 		overflow: hidden;
-		max-height: 180px;
 
 		@include oGridRespondTo($until: S) {
 			width: 100%;
+			height: 210px;
 			order: -1;
 			right: 0;
+		}
+
+		@include oGridRespondTo($from: S) {
+			max-height: 180px;
 		}
 		@include oGridRespondTo(S, M) {
 			height: 140px;
