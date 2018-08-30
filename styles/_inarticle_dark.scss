@@ -154,7 +154,7 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	margin-top: 15px;
+	margin-top: 10px;
 
 	@include oGridRespondTo($until: S) {
 
