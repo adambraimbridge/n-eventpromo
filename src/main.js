@@ -3,14 +3,13 @@ const mapEventData = require('./lib/mapEventData');
 const hasValidConcepts = require('./lib/hasValidConcept');
 const animationToggle = require('./lib/animation-control');
 const template = require('../templates/inarticle_dark.html');
-//const lightTemp = require('../templates/inarticle_light.html');
 let theme = 'event-promo-dark';
 //let template;
 
 async function eventPromoInit (rootEl) {
 	const promoDataSelector = rootEl.querySelector('.js-event-promo-data');
 	const promoSlotSelector = rootEl.querySelector('.js-event-promo');
-	const showVariant = window.FT.flags.eventPromoDarkVsDarkSL || false;
+	const showVariant = window.FT.flags.eventPromoStrapLine || false;
 
 	if (!promoDataSelector || !promoSlotSelector) {
 		throw new Error('no dom for eventpromo');
