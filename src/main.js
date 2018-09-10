@@ -2,7 +2,7 @@ const eventpromoClient = require('./lib/event-promo-client');
 const mapEventData = require('./lib/mapEventData');
 const hasValidConcepts = require('./lib/hasValidConcept');
 const animationToggle = require('./lib/animation-control');
-const template = require('../templates/inarticle_dark.html');
+const template = require('../templates/inarticle.html');
 let theme = 'event-promo-dark';
 //let template;
 
@@ -14,15 +14,6 @@ async function eventPromoInit (rootEl) {
 	if (!promoDataSelector || !promoSlotSelector) {
 		throw new Error('no dom for eventpromo');
 	}
-
-	//TODO manage a control and 3 variants
-	// if(showVariant) {
-	// 	template = lightTemp;
-	// 	theme = theme.concat('light');
-	// } else {
-	// 	theme = theme.concat('dark');
-	// 	template = darkTemp;
-	// }
 
 	const concepts = JSON.parse(promoDataSelector.innerHTML);
 	if (!concepts || !hasValidConcepts(concepts)) {
