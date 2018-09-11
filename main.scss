@@ -9,15 +9,9 @@ $o-fonts-is-silent: false;
 $ep-standard-space:20px;
 $ep-half-space:$ep-standard-space/2;
 
-.event-promo-dark {
+.event-promo {
 	@include oFontsInclude(MetricWeb, $weight: light);
-	@import './styles/inarticle_dark';
-}
-
-.event-promo-light {
-	margin-bottom: 50px;
-	max-width: 740px;
-	@import './styles/inarticle_light';
+	@import './styles/inarticle';
 }
 
 .event-promo__visually-hidden {
