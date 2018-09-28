@@ -67,7 +67,7 @@
 .event-promo__details {
 	background-color: rgba(38, 42, 51, 0.9);
 	color: getColor('white');
-	z-index: 40;
+	z-index: 5;
 	padding: $ep-standard-space;
 	display: flex;
 	flex-flow: column;
@@ -229,7 +229,7 @@
 
 	.event-promo__control {
 		cursor: pointer;
-		z-index: 50;
+		z-index: 6;
 		border-radius: 22px;
 		height: 44px;
 		width: 44px;
