@@ -9,7 +9,6 @@ let theme = 'event-promo-dark';
 async function eventPromoInit (rootEl) {
 	const promoDataSelector = rootEl.querySelector('.js-event-promo-data');
 	const promoSlotSelector = rootEl.querySelector('.js-event-promo');
-	const showVariant = window.FT.flags.eventPromoStrapLine || false;
 
 	if (!promoDataSelector || !promoSlotSelector) {
 		throw new Error('no dom for eventpromo');
@@ -35,7 +34,7 @@ async function eventPromoInit (rootEl) {
 		throw new Error('no eventpromo match for this event');
 	}
 
-	const mappedEvent = mapEventData(eventpromoClientResponse.eventpromo, showVariant);
+	const mappedEvent = mapEventData(eventpromoClientResponse.eventpromo);
 
 	promoSlotSelector.classList.add(theme);
 	promoSlotSelector.innerHTML = template(mappedEvent);
