@@ -1,13 +1,11 @@
 const config = require('../config');
 const setDate = require('./event-date');
 
-module.exports = (theEvent, variant) => {
+module.exports = (theEvent) => {
 	const eventUrl = new URL(theEvent.eventUrl);
 	const images = [...config.animationStaticImages, theEvent.imageUrl];
-	const showVariant = (variant === 'variant');
 
 	eventUrl.searchParams.set('segmentId', theEvent.segmentId);
-	eventUrl.searchParams.set('variant', showVariant.toString());
 
 	return {
 		id: theEvent.id,
@@ -18,7 +16,6 @@ module.exports = (theEvent, variant) => {
 		segmentId: theEvent.segmentId,
 		eventLocation: theEvent.location,
 		images,
-		showVariant,
 		strapline: theEvent.strapline
 	};
 };
