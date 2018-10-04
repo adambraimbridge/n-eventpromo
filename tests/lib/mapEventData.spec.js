@@ -11,6 +11,7 @@ describe('mapEventData()', () => {
 		expectedUrl.searchParams.set('segmentId', anEvent.segmentId);
 
 		expect(subject).toHaveProperty('id', anEvent.id);
+		expect(subject).toHaveProperty('strapline', anEvent.strapline);
 		expect(subject).toHaveProperty('title', anEvent.title);
 		expect(subject).toHaveProperty('images', imageArrayFixture);
 		expect(subject).toHaveProperty('link', expectedUrl.toString());

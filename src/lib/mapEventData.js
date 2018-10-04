@@ -3,7 +3,7 @@ const setDate = require('./event-date');
 
 module.exports = (theEvent) => {
 	const eventUrl = new URL(theEvent.eventUrl);
-	const images = [...config.animationStaticImages, theEvent.imageUrl];
+    const images = [theEvent.imageUrl, ...config.animationStaticImages];
 
 	eventUrl.searchParams.set('segmentId', theEvent.segmentId);
 
@@ -14,6 +14,7 @@ module.exports = (theEvent) => {
 		link: eventUrl.toString(),
 		location: theEvent.location,
 		segmentId: theEvent.segmentId,
+		strapline: theEvent.strapline,
 		title: theEvent.title
 	};
 };
