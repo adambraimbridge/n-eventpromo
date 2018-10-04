@@ -1,4 +1,4 @@
-const promoInit = require('../../src/index.js');
+const {eventPromoInit} = require('../../src/index.js');
 
 const demoVersion = document.location.search ? document.location.search.trim().split('=')[1] : false; // use either 'control' or 'variant' as values
 
@@ -17,10 +17,10 @@ async function init () {
 	}
 
 	try {
-		await promoInit(document);
+		await eventPromoInit(document);
 	}
 	catch (err) {
-		throw new Error('failed to initialise eventpromo');
+		throw new Error(`failed to initialise eventpromo, ${err.toString()}`);
 	}
 }
 
