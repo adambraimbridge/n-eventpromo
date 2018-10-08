@@ -17,7 +17,8 @@ test-debug:
 	jest tests --coverage --debug
 
 demo-build:
-	@webpack --config webpack.config.js ---mode development
+	rm -r ./dist
+	@webpack --config webpack.config.js --env development --mode development
 	@$(DONE)
 
 demo: demo-build
@@ -27,6 +28,3 @@ a11y: demo-build
 	@node .pa11yci.js
 	@PA11Y=true node demos/app
 	@$(DONE)
-
-test: verify unit-test
-	make a11y
