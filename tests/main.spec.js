@@ -132,7 +132,6 @@ describe('Unit tests: main', () => {
 
 				const expectedUrl = new URL(eventSource.eventUrl);
 				expectedUrl.searchParams.set('segmentId', eventSource.segmentId);
-				expectedUrl.searchParams.set('variant', false);
 
 				expect(injectedPromo).toBeTruthy();
 				expect(injectedPromo.childElementCount).toBeGreaterThan(0);
