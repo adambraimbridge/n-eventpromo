@@ -1,12 +1,12 @@
-const { promoInit } = require('../../main');
+const {eventPromoInit} = require('../../src/index.js');
 
 const demoVersion = document.location.search ? document.location.search.trim().split('=')[1] : false; // use either 'control' or 'variant' as values
 
 // Set a fake windows.FT.flags object just for local demo
-if(!window.FT) {
+if (!window.FT) {
 	window.FT = {
-			flags :  {
-				eventPromoStrapLine: demoVersion
+		flags: {
+			eventPromoVariantTest: demoVersion
 		}
 	};
 }
@@ -17,11 +17,11 @@ async function init () {
 	}
 
 	try {
-		await promoInit(document);
+		await eventPromoInit(document);
 	}
 	catch (err) {
-		throw new Error('failed to initialise eventpromo');
+		throw new Error(`failed to initialise eventpromo, ${err.toString()}`);
 	}
 }
 
-init ();
+init();

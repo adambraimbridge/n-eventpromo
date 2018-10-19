@@ -3,6 +3,7 @@
 const express = require('@financial-times/n-internal-tool');
 const fixtures = require('./conceptFixtures.json');
 const eventFixture = require('./fixtures.json');
+const template = require('./src/template.js');
 
 const chalk = require('chalk');
 const errorHighlight = chalk.bold.red;
@@ -16,15 +17,17 @@ const app = module.exports = express({
 	withNavigation: false,
 	withAnonMiddleware: false,
 	hasHeadCss: false,
-	viewsDirectory: '/demos',
+	viewsDirectory: '/demos/src',
 	partialsDirectory: process.cwd(),
 	directory: process.cwd(),
 	demo: true,
 	s3o: false
 });
 
+app.use('/dist', express.static('dist'));
+
 app.get('/', (req, res) => {
-	res.render('demo', Object.assign({
+	res.send(template({
 		title: 'Test App',
 		fixtures: JSON.stringify(fixtures)
 	}));

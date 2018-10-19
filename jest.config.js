@@ -1,8 +1,11 @@
 module.exports = {
-	transform: {
-		'\\.html$': 'jest-handlebars'
-	},
-	coveragePathIgnorePatterns: ['/node_modules/', '/bower_components/'],
-	//testEnvironment: 'node',
+	coveragePathIgnorePatterns: [
+	    '/node_modules/',
+        '/bower_components/'
+    ],
+    testPathIgnorePatterns: [
+        '/node_modules/',
+        '/bower_components/'
+    ],
 	testURL: 'http://localhost/'
 };
