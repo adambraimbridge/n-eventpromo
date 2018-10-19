@@ -1,21 +1,24 @@
 const config = require('../config');
-const setDate = require('./event-date');
+const {getFormattedDate} = require('./event-date');
 
-module.exports = (theEvent) => {
+function getMappedData (theEvent) {
 	const eventUrl = new URL(theEvent.eventUrl);
-	const images = [...config.animationStaticImages, theEvent.imageUrl];
+    const images = [theEvent.imageUrl, ...config.animationStaticImages];
 
 	eventUrl.searchParams.set('segmentId', theEvent.segmentId);
 
 	return {
+		dates: getFormattedDate(theEvent),
 		id: theEvent.id,
-		eventTitle: theEvent.title,
-		mainImage: encodeURI(theEvent.imageUrl),
-		eventDate: setDate(theEvent),
-		eventUrl: eventUrl.toString(),
-		segmentId: theEvent.segmentId,
-		eventLocation: theEvent.location,
 		images,
-		strapline: theEvent.strapline
+		link: eventUrl.toString(),
+		location: theEvent.location,
+		segmentId: theEvent.segmentId,
+		strapline: theEvent.strapline,
+		title: theEvent.title
 	};
+};
+
+module.exports = {
+	getMappedData
 };

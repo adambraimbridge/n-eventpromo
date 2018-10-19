@@ -1,21 +1,4 @@
-@import "n-ui-foundations/main";
-@import 'o-buttons/main';
-$o-fonts-is-silent: false;
-@import 'o-fonts/main';
-
-$o-fonts-is-silent: false;
-@import 'o-fonts/main';
-
-$ep-standard-space:20px;
-$ep-half-space:$ep-standard-space/2;
-
-.event-promo {
-	@include oFontsInclude(MetricWeb, $weight: light);
-	@import './styles/inarticle';
-}
-
-.event-promo__visually-hidden {
-	@include oNormaliseVisuallyHidden();
-}
-
-@import './styles/animation';
+//@import 'x-eventpromo/dist/Eventpromo';
+//@import 'node_modules/@financial-times/x-eventpromo/dist/Eventpromo';
+//@import '~@financial-times/x-eventpromo/dist/Eventpromo';
+@import '~@financial-times/x-eventpromo/dist/Eventpromo';
