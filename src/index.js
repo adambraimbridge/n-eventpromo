@@ -36,7 +36,7 @@ async function eventPromoInit (rootEl) {
 
     const mappedEvent = getMappedData(eventpromoClientResponse.eventpromo, showVariant);
 
-	const promoElement = <Eventpromo isPaused={true} {...mappedEvent} />;
+	const promoElement = <Eventpromo isPaused={false} {...mappedEvent} />;
     ReactDOM.render(promoElement, promoSlotSelector);
 
 	return true;
