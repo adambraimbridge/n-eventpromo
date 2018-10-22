@@ -1,4 +1,4 @@
-import {renderEventpromo} from "../components/eventpromo/main";
+import {renderEventpromo} from '../components/eventpromo/main';
 
 export async function loadModule (magnetPlaceholderSelector, magnetData)
 {

@@ -6,7 +6,6 @@ import * as config from '../../lib/config';
 
 export async function renderEventpromo (magnetPlaceholderSelector, magnetData) {
 
-    console.log('calling render eventpromor with', magnetData);
     try {
         const formattedData = getMappedData(magnetData.data.eventpromo);
         const promoElement = <Eventpromo isPaused={true} {...formattedData} />;

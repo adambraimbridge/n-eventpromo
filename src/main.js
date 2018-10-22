@@ -1,5 +1,5 @@
-import {getMagnetData} from "./lib/magnet-engine";
-import {loadModule} from "./lib/magnet-renderer";
+import {getMagnetData} from './lib/magnet-engine';
+import {loadModule} from './lib/magnet-renderer';
 
 export async function magnetInit () {
     const magnetDataSelector = document.querySelector('.js-magnet-data');
