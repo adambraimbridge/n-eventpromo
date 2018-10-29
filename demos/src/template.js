@@ -6,9 +6,9 @@ const template = function ({title, fixtures}) {
 			<meta charset="utf-8">
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<title>${title}</title>
-			<link rel="stylesheet" href="/dist/css/n-eventpromo.css" />
+			<link rel="stylesheet" href="eventpromo-demo/static/demo.css" />
 
-			<script async defer type="application/javascript" src="/dist/demo.js"></script>
+			<script async defer type="application/javascript" src="eventpromo-demo/static/demo.js"></script>
 		</head>
 		<body>
 			<div class="o-grid-container">

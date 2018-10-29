@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {Eventpromo} from '@financial-times/x-eventpromo';
+import xEngine from '@financial-times/x-engine';
 import {getEventsFromApi} from './lib/event-promo-client';
 import {getMappedData} from './lib/mapEventData';
 import {hasValidConcept} from './lib/hasValidConcept';
@@ -37,7 +37,7 @@ async function eventPromoInit (rootEl) {
     const mappedEvent = getMappedData(eventpromoClientResponse.eventpromo, showVariant);
 
 	const promoElement = <Eventpromo isPaused={false} {...mappedEvent} />;
-    ReactDOM.render(promoElement, promoSlotSelector);
+    xEngine.render(promoElement, promoSlotSelector);
 
 	return true;
 }
