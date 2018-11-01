@@ -22,26 +22,6 @@ describe('mapEventData()', () => {
 		expect(subject.images).toEqual(expect.arrayContaining(imageArrayFixture));
 	});
 
-    //Relevant to AB test probably ok to remove amend on conclusion.
-    test('test provides the correct control properties', () => {
-
-        const subject = getMappedData(anEvent);
-        const expectedUrl = new URL(anEvent.eventUrl);
-
-        expectedUrl.searchParams.set('segmentId', anEvent.segmentId);
-
-        expect(subject.images).toEqual(expect.arrayContaining(imageArrayFixture));
-    });
-
-	test('test provides the correct control properties', () => {
-
-		const subject = getMappedData(anEvent, 'variant');
-		const expectedUrl = new URL(anEvent.eventUrl);
-		expectedUrl.searchParams.set('segmentId', anEvent.segmentId);
-
-		expect(subject.images).toEqual(expect.arrayContaining(imageArrayFixture));
-	});
-
 	test('test it sets date range if start and end dates differ', () => {
 		anEvent.scheduledEndTime = '2018-06-14T07:00:00.000Z';
 		const subject = getMappedData(anEvent);

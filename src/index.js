@@ -8,7 +8,6 @@ import {hasValidConcept} from './lib/hasValidConcept';
 async function eventPromoInit (rootEl) {
 	const promoDataSelector = rootEl.querySelector('.js-event-promo-data');
 	const promoSlotSelector = rootEl.querySelector('.js-event-promo');
-	const showVariant = window.FT.flags.eventPromoVariantTest || false;
 
 	if (!promoDataSelector || !promoSlotSelector) {
 		throw new Error('no dom for eventpromo');
@@ -34,7 +33,7 @@ async function eventPromoInit (rootEl) {
 		throw new Error('no eventpromo match for this event');
 	}
 
-    const mappedEvent = getMappedData(eventpromoClientResponse.eventpromo, showVariant);
+    const mappedEvent = getMappedData(eventpromoClientResponse.eventpromo);
 
 	const promoElement = <Eventpromo isPaused={false} {...mappedEvent} />;
     xEngine.render(promoElement, promoSlotSelector);
