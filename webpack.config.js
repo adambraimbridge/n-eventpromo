@@ -1,18 +1,17 @@
 const path = require('path');
-//const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const xEngine = require('@financial-times/x-engine/src/webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const webpackConfig = (env) => {
-    const commonConfig = {
+const webpackConfig = () => {
+    return {
         entry: {
-            main: './src/index.js',
-            styles: './node_modules/@financial-times/x-eventpromo/dist/Eventpromo.css'
+            demo: ['./main.js', './demos/src/demo.js', './demos/demo.scss']
         },
         resolve: {
-            extensions: ['*', '.js', '.jsx']
+            extensions: ['*', '.js', '.jsx', '.css', '.scss']
         },
         output: {
-            path: path.resolve(__dirname, 'dist'),
+            path: path.resolve(__dirname, 'dist/demo'),
             filename: '[name].js'
         },
         module: {
@@ -25,42 +24,29 @@ const webpackConfig = (env) => {
                     }
                 },
                 {
-                    test: /\.(css)$/,
+                    test: /\.(css|scss)$/,
                     use: [
+                        MiniCssExtractPlugin.loader,
                         {
-                            loader: 'file-loader',
-                            options: {
-                                name: 'n-eventpromo.css',
-                                outputPath: 'css/'
-                            }
+                            loader: 'css-loader'
                         },
+                        {
+                            loader: 'sass-loader'
+                        }
                     ]
                 },
             ]
         },
         plugins: [
-            xEngine()
+            xEngine(),
+            new MiniCssExtractPlugin({
+                // Options similar to the same options in webpackOptions.output
+                // both options are optional
+                filename: '[name].css',
+                chunkFilename: '[id].css'
+            })
         ]
     };
-
-    const devConfig = {
-        entry: {
-            ...commonConfig.entry,
-            ...{demo: './demos/src/demo.js'}
-        }
-    };
-
-    const prodConfig = {
-        externals: {
-            'o-date': 'oDate',
-            '@financial-times/x-engine': 'xEngine'
-        }
-    };
-
-    if (env === 'production') {
-        return {...commonConfig, ...prodConfig};
-    }
-    return {...commonConfig, ...devConfig};
 };
 
 module.exports = webpackConfig;
