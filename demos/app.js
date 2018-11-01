@@ -9,7 +9,7 @@ const highlight = chalk.bold.green;
 
 const app = module.exports = express({
     name: 'public',
-    systemCode: 'n-magnet',
+    systemCode: 'n-eventpromo',
     withFlags: false,
     withHandlebars: true,
     withNavigation: false,
