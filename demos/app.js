@@ -22,6 +22,15 @@ const app = module.exports = express({
     s3o: false
 });
 
+//ingore favaicon request for demo
+app.use((req, res, next)=> {
+    if (req.originalUrl === '/favicon.ico') {
+        res.status(204).json({nope: true});
+      } else {
+        next();
+      }
+})
+
 app.get(['/', '/eventpromo-demo'], (req, res) => {
     res.send(eventpromoTemplate({
         title: 'Test magnet app',
@@ -36,6 +45,11 @@ app.get('/eventpromo/api/get-one', (req, res) => {
     res.send(eventFixture);
 });
 app.post('/eventpromo/api/get-one', (req, res) => {
+    res.send(eventFixture);
+});
+
+
+app.post('/eventpromo/api/get-personal', (req, res) => {
     res.send(eventFixture);
 });
 
