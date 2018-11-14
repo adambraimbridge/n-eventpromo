@@ -5,16 +5,18 @@ import {getEventsFromApi} from './lib/event-promo-client';
 import {getMappedData} from './lib/mapEventData';
 import {hasValidConcept} from './lib/hasValidConcept';
 
-async function eventPromoInit (rootEl) {
+async function eventPromoInit (rootEl, uuid) {
 	const promoDataSelector = rootEl.querySelector('.js-event-promo-data');
 	const promoSlotSelector = rootEl.querySelector('.js-event-promo');
+
 
 	if (!promoDataSelector || !promoSlotSelector) {
 		throw new Error('no dom for eventpromo');
 	}
 
-	const concepts = JSON.parse(promoDataSelector.innerHTML);
-	if (!concepts || !hasValidConcept(concepts)) {
+	const articleConcepts = JSON.parse(promoDataSelector.innerHTML);
+	const concepts = {uuid, ...articleConcepts};
+	if (!uuid && !hasValidConcept(concepts)) {
 		throw new Error('no valid concept ids for eventpromo');
 	}
 
