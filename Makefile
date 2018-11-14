@@ -13,6 +13,9 @@ test:
 	make verify
 	make unit-test
 
+test-verbose:
+	jest tests --verbose
+
 test-debug:
 	jest tests --coverage --debug
 

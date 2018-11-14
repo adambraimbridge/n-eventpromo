@@ -4,7 +4,8 @@
     "react"
   ],
   "plugins": [
-    "transform-runtime"
+    "transform-runtime",
+    "syntax-object-rest-spread"
   ],
   "ignore": [
     "node_modules"

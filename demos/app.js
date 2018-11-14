@@ -29,7 +29,7 @@ app.use((req, res, next)=> {
       } else {
         next();
       }
-})
+});
 
 app.get(['/', '/eventpromo-demo'], (req, res) => {
     res.send(eventpromoTemplate({
