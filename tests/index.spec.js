@@ -5,7 +5,7 @@ const {eventPromoInit} = require('../src/index');
 
 //fixtures
 const conceptFixture = JSON.stringify(require('./fixtures/conceptFixture.json'));
-const emptyConceptFixture = JSON.stringify(require('./fixtures/emptyConceptFixture.json'));
+const emptyConceptFixture = JSON.stringify({'conceptIds': {'focus': [], 'speakers': []}});
 const eventPromoDataEl = `<script class="js-event-promo-data" type="application/json">${conceptFixture}</script>
 <div class="event-promo js-event-promo" ></div>`;
 const eventPromoDataElNoData = `<script class="js-event-promo-data" type="application/json">${emptyConceptFixture}</script>
