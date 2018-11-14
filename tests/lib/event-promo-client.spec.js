@@ -9,9 +9,10 @@ afterEach(() => {
 });
 
 describe('Unit tests: getEventsFromApi()', async () => {
+	const uuid = '000';
 	test('should get events on success', async () => {
 		fetchMock.post(config.apiPath, liveEvent);
-		const subject = await getEventsFromApi(concepts);
+		const subject = await getEventsFromApi(concepts, uuid);
 		expect(subject).toEqual(liveEvent);
 	});
 
@@ -29,7 +30,7 @@ describe('Unit tests: getEventsFromApi()', async () => {
 
 			let hasError = false;
 			try {
-				await getEventsFromApi(concepts);
+				await getEventsFromApi(concepts, uuid);
 			} catch (e) {
 				hasError = true;
 				expect(e.message).toEqual('failed to fetch eventpromos from enventpromo-api');
@@ -43,7 +44,7 @@ describe('Unit tests: getEventsFromApi()', async () => {
 
 			let hasError = false;
 			try {
-				await getEventsFromApi(concepts);
+				await getEventsFromApi(concepts, uuid);
 			} catch (e) {
 				hasError = true;
 				expect(e.message).toMatch('failed to parse response from enventpromo-api');

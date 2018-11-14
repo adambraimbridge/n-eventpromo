@@ -15,14 +15,14 @@ async function eventPromoInit (rootEl, uuid) {
 	}
 
 	const articleConcepts = JSON.parse(promoDataSelector.innerHTML);
-	const concepts = {uuid, ...articleConcepts};
-	if (!uuid && !hasValidConcept(concepts)) {
+
+	if (!uuid && !hasValidConcept(articleConcepts)) {
 		throw new Error('no valid concept ids for eventpromo');
 	}
 
 	let eventpromoClientResponse;
 	try {
-		eventpromoClientResponse = await getEventsFromApi(concepts);
+		eventpromoClientResponse = await getEventsFromApi(articleConcepts, uuid);
 	}
 	catch (err) {
 		throw new Error('failed to fetch eventpromos');
