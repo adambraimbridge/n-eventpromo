@@ -1,11 +1,11 @@
 const config = require('../config');
 
 async function getEventsFromApi (eventConcepts = [], uuid = '') {
-	const concepts = {...eventConcepts, uuid};
+	const bodyParams = {...eventConcepts, uuid};
 	let fetchResponse;
 	try {
 		fetchResponse = await fetch(config.apiPath, {
-			body: JSON.stringify(concepts),
+			body: JSON.stringify(bodyParams),
 			headers: {
 				'accept': 'application/json',
 				'content-type': 'application/json'
