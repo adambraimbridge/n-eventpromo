@@ -22,7 +22,7 @@ const app = module.exports = express({
     s3o: false
 });
 
-//ingore favaicon request for demo
+//ignore favaicon request for demo
 app.use((req, res, next)=> {
     if (req.originalUrl === '/favicon.ico') {
         res.status(204).json({nope: true});
