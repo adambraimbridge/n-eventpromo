@@ -1,7 +1,7 @@
 const config = require('../config');
 
 async function getEventsFromApi (eventConcepts = [], uuid = '') {
-	const bodyParams = {...eventConcepts, uuid};
+	const bodyParams = Object.assign({}, eventConcepts, uuid );
 	let fetchResponse;
 	try {
 		fetchResponse = await fetch(config.apiPath, {
