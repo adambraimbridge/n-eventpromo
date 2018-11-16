@@ -1,6 +1,6 @@
 const {eventPromoInit} = require('../../src/index.js');
 //TODO spoof a uuid?
-const uuid = '0';
+const uuid = '00000000-0000-0000-0000-000000000000';
 async function init () {
 	if (!document.querySelector('.event-promo')) {
 		throw new Error('.event-promo not found');
