@@ -1,0 +1,15 @@
+node_modules
+bower_components
+*.env*
+package-lock.json
+test
+.circleci
+demo
+tmp
+public
+tooling
+bower.json
+secret-squirrel.js
+Makefile
+jest.config.js
+dist
