@@ -1,5 +1,5 @@
 {
-  "name": "x-eventpromo",
+  "name": "n-eventpromo",
   "private": true,
   "main": "dist/Eventpromo.es5.js",
   "dependencies": {
