@@ -53,5 +53,11 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "x-dash": {
+    "engine": {
+      "server": "react",
+      "browser": "react"
+    }
   }
 }
