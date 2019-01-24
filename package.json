@@ -11,7 +11,8 @@
     "test": "make test",
     "precommit": "node_modules/.bin/secret-squirrel",
     "commitmsg": "node_modules/.bin/secret-squirrel-commitmsg",
-    "prepush": "make verify -j3"
+    "prepush": "make verify -j3",
+    "postinstall": "bower install"
   },
   "keywords": [],
   "author": "",
