@@ -5,7 +5,6 @@ test_build
 package-lock.json
 tmp
 public
-dist
 .editorconfig
 .eslintrc.js
 .stylelintrc
