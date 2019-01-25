@@ -1,4 +1,5 @@
-import { h } from '@financial-times/x-engine';
+import xEngine from '@financial-times/x-engine';
+
 import Footer from './Footer';
 import Meta from './Meta';
 import styles from './Details.scss';

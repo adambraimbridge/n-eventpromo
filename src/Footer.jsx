@@ -1,4 +1,5 @@
-import { h } from '@financial-times/x-engine';
+import xEngine from '@financial-times/x-engine';
+
 import styles from './Footer.scss';
 
 const Footer = ({ url }) => {

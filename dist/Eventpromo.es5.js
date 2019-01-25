@@ -2,7 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-require('@financial-times/x-engine');
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var xEngine = _interopDefault(require('@financial-times/x-engine'));
 var xInteraction = require('@financial-times/x-interaction');
 
 function _objectWithoutPropertiesLoose(source, excluded) {

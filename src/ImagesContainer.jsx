@@ -1,4 +1,4 @@
-import { h } from '@financial-times/x-engine';
+import xEngine from '@financial-times/x-engine';
 import Image from './Image';
 import styles from './ImagesContainer.scss';
 import { withActions } from '@financial-times/x-interaction';

@@ -1,4 +1,4 @@
-import { h } from '@financial-times/x-engine';
+import xEngine from '@financial-times/x-engine';
 import styles from './Meta.scss';
 
 const Meta = ({ location, dates }) => {
