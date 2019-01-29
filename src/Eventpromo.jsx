@@ -1,4 +1,5 @@
-import { h } from '@financial-times/x-engine';
+import xEngine from '@financial-times/x-engine';
+
 import Details from './Details';
 import ImagesContainer from './ImagesContainer';
 import styles from './Eventpromo.scss';
