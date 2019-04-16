@@ -6,7 +6,7 @@ const Footer = ({ url }) => {
 	return (
 		<div className={styles['cta-container']}>
 			<div className={styles['btn-block']}>
-				<a href={url} className={styles['btn']} data-trackable="event-promo">
+				<a href={url} className={styles['btn']} data-trackable="event-promo" role="button">
 					Register now
 				</a>
 			</div>
