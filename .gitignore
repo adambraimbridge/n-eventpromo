@@ -9,3 +9,4 @@ public
 .eslintrc.js
 .stylelintrc
 .pa11yci.js
+dist
