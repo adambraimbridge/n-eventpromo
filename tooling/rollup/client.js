@@ -1,4 +1,3 @@
-const bowerResolve = require('rollup-plugin-bower-resolve');
 const resolve = require('rollup-plugin-node-resolve');
 const babel = require('rollup-plugin-babel');
 const postcss = require('rollup-plugin-postcss');
@@ -14,7 +13,7 @@ module.exports = {
 		format: 'cjs'
 	},
 	plugins: [
-        postcss(postcssConfig(pkg.style)),
+		postcss(postcssConfig(pkg.style)),
 		resolve({
 			extensions: [
 				'.mjs',
