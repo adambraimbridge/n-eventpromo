@@ -20,7 +20,7 @@ module.exports = {
 		'^.+\\.jsx?$': './tooling/babel/jest'
 	},
 	setupTestFrameworkScriptFile: './tooling/jest/setup',
-    moduleNameMapper: {
-        "\\.(css|less|scss)$": "<rootDir>/test/__mocks__/styleMock.js"
-    }
+		moduleNameMapper: {
+			'\\.(css|less|scss)$': '<rootDir>/test/__mocks__/styleMock.js'
+		}
 };
