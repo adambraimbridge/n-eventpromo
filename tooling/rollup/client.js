@@ -16,6 +16,7 @@ module.exports = {
 		postcss(postcssConfig(pkg.style)),
 		resolve({
 			extensions: [
+				'.scss',
 				'.mjs',
 				'.js',
 				'.json',
