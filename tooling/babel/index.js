@@ -17,16 +17,6 @@ exports.client = {
 			}
 		]
 	],
-	plugins: [
-		[
-			'module:fast-async',
-			{
-				compiler: {
-					noRuntime: true
-				}
-			}
-		]
-	]
 };
 
 exports.server = {

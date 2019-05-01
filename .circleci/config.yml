@@ -80,6 +80,9 @@ jobs:
           name: shared-helper / generate-build-state-artifacts
           command: .circleci/shared-helpers/helper-generate-build-state-artifacts
           when: always
+      - run:
+          name: Build dist files
+          command: make build
       - *cache_npm_cache
       - store_artifacts:
           path: build-state
