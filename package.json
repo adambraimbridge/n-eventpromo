@@ -12,7 +12,8 @@
     "precommit": "node_modules/.bin/secret-squirrel",
     "commitmsg": "node_modules/.bin/secret-squirrel-commitmsg",
     "prepush": "make verify -j3 && make build",
-    "postinstall": "bower install"
+    "postinstall": "bower install",
+    "prepare": "npx snyk protect || npx snyk protect -d || true"
   },
   "keywords": [],
   "author": "",
@@ -39,7 +40,8 @@
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-postcss": "^2.0.0",
-    "rollup-plugin-replace": "^2.1.0"
+    "rollup-plugin-replace": "^2.1.0",
+    "snyk": "^1.167.2"
   },
   "repository": {
     "type": "git",
