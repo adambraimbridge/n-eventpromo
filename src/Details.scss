@@ -64,10 +64,10 @@
 	}
 
 	@include oGridRespondTo($from: M) {
-		@include oTypographyDisplay($scale: 6, $weight: 'bold');
+		@include oTypographyDisplay($scale: 6, $include-font-family: false);
 	}
 
 	@include oGridRespondTo(L, XL) {
-		@include oTypographyDisplay($scale: 5, $weight: 'bold');
+		@include oTypographyDisplay($scale: 5, $include-font-family: false);
 	}
 }
