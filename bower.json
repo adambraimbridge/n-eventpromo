@@ -3,10 +3,10 @@
   "private": true,
   "main": "dist/Eventpromo.es5.js",
   "dependencies": {
-    "o-buttons": "^5.14.0",
-    "o-colors": "^4.7.2",
-    "o-grid": "^4.4.3",
-    "o-typography": "^5.7.5"
+    "o-buttons": "^6.0.2",
+    "o-colors": "^5.0.2",
+    "o-grid": "^5.0.0",
+    "o-typography": "^6.0.1"
   },
   "homepage": "https://github.com/Financial-Times/n-eventpromo",
   "description": "",

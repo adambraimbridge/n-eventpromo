@@ -32,9 +32,11 @@
 }
 
 .btn {
-	@include oButtons();
-	@include oButtonsTheme(inverse);
-	@include oButtonsSize(big); //event btn style overrides
+	@include oButtonsContent($opts: (
+		'size': 'big',
+		'theme': 'inverse',
+		'type': 'secondary',
+	));
 	background-color: rgb(60, 63, 69); // rgb(82,82,87);
 
 	@include oGridRespondTo($until: S) {
