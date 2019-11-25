@@ -3,7 +3,7 @@
   "private": true,
   "main": "dist/Eventpromo.es5.js",
   "dependencies": {
-    "o-buttons": "^5.14.0",
+    "o-buttons": "^6.0.2",
     "o-colors": "^4.7.2",
     "o-grid": "^4.4.3",
     "o-typography": "^5.7.5"
