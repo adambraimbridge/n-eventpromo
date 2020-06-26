@@ -26,7 +26,7 @@ exports.server = {
 			'@babel/preset-env',
 			{
 				targets: {
-					node: 8
+					node: 12
 				}
 			}
 		],
