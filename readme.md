@@ -47,3 +47,33 @@ Property             | Type                | Notes
 `location`           | String              | No set format: "London", "New York", "ExCeL London", etc
 `strapline`          | String              |
 `title`              | String              | 
+
+## Development
+
+```sh
+git clone git@github.com:Financial-Times/n-eventpromo.git
+cd n-eventpromo
+make install
+make build
+```
+
+### Linking to an application
+
+This package does not have a demonstration application, so to test we can link to [`n-magnet` repostiory](https://github.com/Financial-Times/n-magnet) which consumes this.
+
+Complete the installation for `n-magnet` locally then link `n-eventpromo` by running:
+
+```sh
+cd ../n-magnet
+npm link ../n-eventpromo
+make build && make demo
+```
+
+When making changes after first linking `n-eventpromo` run:
+
+```sh
+# in ./n-eventpromo
+make build
+# in ./n-magnet
+make build && make demo
+```
