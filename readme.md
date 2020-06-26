@@ -4,7 +4,7 @@ Eventpromo is used to promote content from [live.ft.com](http://live.ft.com).
 
 ## Installation
 
-This module is compatible with Node 6+ and is distributed on npm.
+This module is compatible with Node 12+ and is distributed on npm.
 
 ```bash
 npm install --save @financial-times/n-eventpromo @financial-times/x-engine
